@@ -1,0 +1,1419 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="方法库," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="jQuery是js的一个库，封装了我们开发过程中常用的一些功能，方便我们来调用，提高了我们的开发效率。">
+<meta name="keywords" content="方法库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery总结">
+<meta property="og:url" content="http://yoursite.com/2014/10/11/jQuery总结/index.html">
+<meta property="og:site_name" content="Mar-x 个人博客">
+<meta property="og:description" content="jQuery是js的一个库，封装了我们开发过程中常用的一些功能，方便我们来调用，提高了我们的开发效率。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-25T01:14:08.163Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery总结">
+<meta name="twitter:description" content="jQuery是js的一个库，封装了我们开发过程中常用的一些功能，方便我们来调用，提高了我们的开发效率。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2014/10/11/jQuery总结/"/>
+
+
+
+
+
+  <title>jQuery总结 | Mar-x 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mar-x 个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一位在前端的道路上奋斗的阿毛同学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/10/11/jQuery总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿毛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mar-x 个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-11T15:10:18+08:00">
+                2014-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  jQuery是js的一个库，封装了我们开发过程中常用的一些功能，方便我们来调用，提高了我们的开发效率。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="jQuery总结"><a href="#jQuery总结" class="headerlink" title="jQuery总结"></a>jQuery总结</h1><h2 id="jQuery相关资料"><a href="#jQuery相关资料" class="headerlink" title="jQuery相关资料"></a>jQuery相关资料</h2><ul>
+<li><p>官网： <a href="http://jquery.com/" target="_blank" rel="external">jQuery官网</a></p>
+</li>
+<li><p>在线API： <a href="http://api.jquery.com/" target="_blank" rel="external">jQuery在线API</a></p>
+</li>
+<li><p>W3School：<a href="http://www.w3school.com.cn/jquery/index.asp" target="_blank" rel="external">W3School-jQuery教程（中文版哦）</a></p>
+</li>
+<li><p>下载jQuery：<a href="https://code.jquery.com/jquery/#jquery-all-1.x" target="_blank" rel="external">jQuery各版本下载</a></p>
+</li>
+<li><p>jQurey3.0： <a href="http://jquery.com/upgrade-guide/3.0/" target="_blank" rel="external">jQuery 3.0 更新</a></p>
+</li>
+<li><p>参考书：《锋利的jQuery》、《jQuery技术内幕-深入解析jQuery架构设计与实现原理》</p>
+</li>
+</ul>
+<h2 id="1-jQuery的基本使用和jQuery选择器"><a href="#1-jQuery的基本使用和jQuery选择器" class="headerlink" title="1 jQuery的基本使用和jQuery选择器"></a>1 jQuery的基本使用和jQuery选择器</h2><h4 id="1-1-jQuery描述（理解）"><a href="#1-1-jQuery描述（理解）" class="headerlink" title="1.1 jQuery描述（理解）"></a>1.1 jQuery描述（理解）</h4><p>jQuery是js的一个库，封装了我们开发过程中常用的一些功能，方便我们来调用，提高了我们的开发效率。</p>
+<p>Js库是把我们常用的功能放到一个单独的文件中，我们用的时候，直接引用到页面里面来就可以了。</p>
+<p>animate.js是我们自己封装的库，而jQuery是别人帮我们封装好的库。</p>
+<h4 id="1-2-学习jQuery主要是学什么？"><a href="#1-2-学习jQuery主要是学什么？" class="headerlink" title="1.2. 学习jQuery主要是学什么？"></a>1.2. 学习jQuery主要是学什么？</h4><p>目前这个阶段，主要学习如何来使用jQuery操作DOM，其实就是学习jQuery封装好的那些功能方法，</p>
+<p>这些方法叫做API（Application Programming Interface应用程序编程接口）。</p>
+<p>这些API的共同特点是：几乎全都是方法。所以，在使用jQuery的API时，都是方法调用，</p>
+<p>也就是说要加小括号()，小括号里面是相应的参数，参数不同，功能不同。</p>
+<h3 id="1-3-如何使用jQuery？（重点）"><a href="#1-3-如何使用jQuery？（重点）" class="headerlink" title="1.3 如何使用jQuery？（重点）"></a>1.3 如何使用jQuery？（重点）</h3><ul>
+<li>使用步骤：</li>
+</ul>
+<p>1．引用jQuery文件</p>
+<p>2．入口函数</p>
+<p>3．功能实现代码（事件处理）</p>
+<ul>
+<li>案例：点击按钮设置文字和展示div功能</li>
+</ul>
+<h4 id="1-3-1-jQuery的优势"><a href="#1-3-1-jQuery的优势" class="headerlink" title="1.3.1 jQuery的优势"></a>1.3.1 jQuery的优势</h4><h3 id="1-4-jQuery详细解释"><a href="#1-4-jQuery详细解释" class="headerlink" title="1.4 jQuery详细解释"></a>1.4 jQuery详细解释</h3><h4 id="1-4-1-版本介绍（了解）"><a href="#1-4-1-版本介绍（了解）" class="headerlink" title="1.4.1 版本介绍（了解）"></a>1.4.1 版本介绍（了解）</h4><ul>
+<li>jQuery的三个版本：</li>
+</ul>
+<p>v1.xx 版本（使用）</p>
+<p>v2.xx 版本 和 v3.xx 版本（最新版，是v2.xx版本的延续）</p>
+<p>版本的区别：2.x版本和3.x版本，不再支持IE6、7、8</p>
+<p>考虑兼容性使用：1.xx版本</p>
+<ul>
+<li>同版本两个文件的区别：（压缩和不压缩的区别）</li>
+</ul>
+<p>min：压缩版，压缩过后，体积会更小</p>
+<p>压缩指的是：把注释、空格、换行全部去掉，把变量名称尽可能的换成更加简短的字符。</p>
+<p>压缩的主要目的：就是让文件变的更小。</p>
+<p>两个文件的选择建议：</p>
+<p>平时开发过程中，这两个文件使用哪个都可以；但是，项目上线的时候，推荐使用压缩版。</p>
+<h4 id="1-4-2-引包注意点（理解）"><a href="#1-4-2-引包注意点（理解）" class="headerlink" title="1.4.2 引包注意点（理解）"></a>1.4.2 引包注意点（理解）</h4><ul>
+<li><p>1 先引用jQuery文件再写jQuery代码</p>
+</li>
+<li><p>2 src路径要正确</p>
+</li>
+</ul>
+<h4 id="1-4-3-jQuery的入口函数（重点）"><a href="#1-4-3-jQuery的入口函数（重点）" class="headerlink" title="1.4.3 jQuery的入口函数（重点）"></a>1.4.3 jQuery的入口函数（重点）</h4><ul>
+<li>方式一：</li>
+</ul>
+<p>\$(document).ready(<strong>function</strong>(){</p>
+<p><em>// 功能代码</em></p>
+<p>});</p>
+<ul>
+<li>方式二：</li>
+</ul>
+<p>\$(<strong>function</strong>(){</p>
+<p><em>// 功能代码</em></p>
+<p>});</p>
+<h4 id="1-4-4-jQuery入口函数与js入口函数的区别（理解）"><a href="#1-4-4-jQuery入口函数与js入口函数的区别（理解）" class="headerlink" title="1.4.4 jQuery入口函数与js入口函数的区别（理解）"></a>1.4.4 jQuery入口函数与js入口函数的区别（理解）</h4><p>js入口函数指的是：window.onload = function() {}; - 区别：</p>
+<p>1、书写个数不同</p>
+<p>Js入口函数只能出现一次，出现多次会存在事件覆盖的问题。</p>
+<p>jQuery的入口函数，可以出现任意多次，并不会存在事件覆盖问题。</p>
+<p>2、执行时机不同</p>
+<p>Js入口函数是在所有的文件资源加载完成后，才执行。</p>
+<p>这些文件资源包括：页面文档、外部的js文件、外部的css文件、图片等。</p>
+<p>jQuery的入口函数，是在文档加载完成后，就执行。文档加载完成指的是：DOM树加载完成后，就可以操作DOM了，</p>
+<p>不用等到所有的外部资源都加载完成。</p>
+<ul>
+<li>文档加载的顺序：从上往下，边解析边执行。</li>
+</ul>
+<h4 id="1-4-5-jQuery的-符号（重点）"><a href="#1-4-5-jQuery的-符号（重点）" class="headerlink" title="1.4.5 jQuery的\$符号（重点）"></a>1.4.5 jQuery的\$符号（重点）</h4><ul>
+<li><p>Js命名规范允许出现的字符有：数字、字母、下划线、\$。</p>
+</li>
+<li><p>Js命名规范允许作为变量命名开头的字符有：字母、下划线、\$；但是，不允许以数字作为变量命名的开头。</p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+<p><strong>var</strong> \$ <strong>=</strong> “我是字符串”;</p>
+<p><strong>var</strong> \$ <strong>=</strong> 123;</p>
+<p><strong>function</strong> \$(){</p>
+<p>alert(“我是函数\$”);</p>
+<p>}</p>
+<p>\$(); <em>// 调用我们自定义的函数\$</em></p>
+<ul>
+<li>jQuery里面的\$符号实际上是一个函数</li>
+</ul>
+<p>// jQuery里面使用\$的方式</p>
+<p>\$(document).ready(function(){ }); // 调用入口函数</p>
+<p>\$(function(){ }); // 调用入口函数</p>
+<p>\$(“#btnShow”) // 获取id属性为btnShow的元素</p>
+<p>\$(“div”) // 获取所有的div元素</p>
+<p>jQuery里面的\$函数，根据传入参数的不同，进行不同的调用，实现不同的功能。返回的是jQuery对象</p>
+<p>jQuery这个js库，除了\$之外，还提供了另外一个函数：jQuery</p>
+<p>jQuery函数跟\$函数的关系：jQuery === \$</p>
+<h4 id="1-4-6-jQuery对象和DOM对象的相互转换（难点）"><a href="#1-4-6-jQuery对象和DOM对象的相互转换（难点）" class="headerlink" title="1.4.6 jQuery对象和DOM对象的相互转换（难点）"></a>1.4.6 jQuery对象和DOM对象的相互转换（难点）</h4><ul>
+<li>DOM对象</li>
+</ul>
+<p><em>// btn就是一个DOM对象</em></p>
+<p><strong>var</strong> btn <strong>=</strong> document.getElementById(“btnShow”);</p>
+<ul>
+<li>jQuery对象</li>
+</ul>
+<p><em>// \$btn就是一个jQuery对象</em></p>
+<p><strong>var</strong> \$btn <strong>=</strong> \$(“#btnShow”);</p>
+<ul>
+<li><p>jQuery对象是包装的DOM对象的集合，即：包装集</p>
+</li>
+<li><p>DOM对象转换成jQuery对象：</p>
+</li>
+</ul>
+<p><strong>var</strong> \$btn <strong>=</strong> \$(btn); <em>// 此时就把DOM对象btn转换成了jQuery对象\$btn</em></p>
+<ul>
+<li>jQuery对象转换成DOM对象：</li>
+</ul>
+<p>// 方式一</p>
+<p>var btn1 = \$btn[0]; // 此时就把jQuery对象\$btn转换成了DOM对象btn1<br>（推荐使用此方式）</p>
+<p>// 方式二</p>
+<p>var btn2 = \$btn.get(0);// 此时就把jQuery对象\$btn转换成了DOM对象btn2</p>
+<p>以上两种方式都要记住，使用哪一种都可以。</p>
+<p>所有这些，都体现了jQuery对js的封装！</p>
+<h3 id="1-5-JS跟jQuery的区别是什么？（理解）"><a href="#1-5-JS跟jQuery的区别是什么？（理解）" class="headerlink" title="1.5 JS跟jQuery的区别是什么？（理解）"></a>1.5 JS跟jQuery的区别是什么？（理解）</h3><h2 id="1-6-jQuery选择器"><a href="#1-6-jQuery选择器" class="headerlink" title="1.6 jQuery选择器"></a>1.6 jQuery选择器</h2><h4 id="1-6-1-JS提供的选择DOM元素的方法"><a href="#1-6-1-JS提供的选择DOM元素的方法" class="headerlink" title="1.6.1 JS提供的选择DOM元素的方法"></a>1.6.1 JS提供的选择DOM元素的方法</h4><ul>
+<li>考虑兼容性的话，js里面提供的选择DOM的方法只有两个：</li>
+</ul>
+<p>// 通过id属性获取指定元素</p>
+<p>document.getElementById();</p>
+<p>// 通过标签名获取指定元素</p>
+<p>document.getElementsByTagName();</p>
+<h4 id="1-6-2-强大的jQuery选择器（重点）"><a href="#1-6-2-强大的jQuery选择器（重点）" class="headerlink" title="1.6.2 强大的jQuery选择器（重点）"></a>1.6.2 强大的jQuery选择器（重点）</h4><p>jQuery实现了从CSS1到CSS3所有的选择器以及其他常用的选择器，各种选择器之间可以相互代替</p>
+<h4 id="1-6-3-jQuery选择器（重点）"><a href="#1-6-3-jQuery选择器（重点）" class="headerlink" title="1.6.3 jQuery选择器（重点）"></a>1.6.3 jQuery选择器（重点）</h4><ul>
+<li><p>ID选择器（js一般尽量用ID选择器，效率最高）</p>
+<ul>
+<li>\$(“#id”)</li>
+</ul>
+</li>
+<li><p>类选择器</p>
+<ul>
+<li>\$(“.className”)</li>
+</ul>
+</li>
+<li><p>标签选择器</p>
+<ul>
+<li>\$(‘p’)</li>
+</ul>
+</li>
+<li><p>后代选择器</p>
+<ul>
+<li>\$(“li .link”)</li>
+</ul>
+</li>
+<li><p>父子选择器</p>
+<ul>
+<li>\$(“ul > li”)</li>
+</ul>
+</li>
+<li><p>伪类选择器</p>
+<ul>
+<li><p>\$(“ul li:eq(3)”)</p>
+</li>
+<li><p>\$(“li:even”)</p>
+</li>
+<li><p>\$(“li:odd”)</p>
+</li>
+</ul>
+</li>
+<li><p>表单选择器</p>
+<ul>
+<li><p>\$(“:checkbox”)</p>
+</li>
+<li><p>\$(“:checked”)</p>
+</li>
+<li><p>\$(“:text”)</p>
+</li>
+</ul>
+</li>
+<li><p>属性选择器</p>
+<ul>
+<li><p>\$(“li[id]”)</p>
+</li>
+<li><p>\$(“li[id=’link’]”)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-6-4-常用选择器汇总"><a href="#1-6-4-常用选择器汇总" class="headerlink" title="1.6.4 常用选择器汇总"></a>1.6.4 常用选择器汇总</h4><p>* \$(“*“) 所有元素</p>
+<p>#id \$(“#lastname”) id=”lastname” 的元素</p>
+<p>.class \$(“.intro”) 所有 class=”intro” 的元素</p>
+<p>element \$(“p”) 所有 \<p\> 元素</p\></p>
+<p>.class.class \$(“.intro.demo”) 所有 class 具有 “intro” 且 “demo” 的元素</p>
+<p>s1,s2,s3 \$(“th,td,.intro”) 所有带有匹配选择的元素</p>
+<p>:even \$(“tr:even”) 所有偶数 \<tr\> 元素</tr\></p>
+<p>:odd \$(“tr:odd”) 所有奇数 \<tr\> 元素</tr\></p>
+<p>:first \$(“p:first”) 第一个 \<p\> 元素</p\></p>
+<p>:last \$(“p:last”) 最后一个 \<p\> 元素</p\></p>
+<p>:eq(index) \$(“ul li:eq(3)”) 列表中的第四个元素（index 从 0 开始）</p>
+<p>:gt(index) \$(“ul li:gt(3)”) 列出 index 大于 3 的元素 greater than</p>
+<p>:lt(index) \$(“ul li:lt(3)”) 列出 index 小于 3 的元素 less than</p>
+<p>:not(selector) \$(“input:not(:empty)”) 所有不为空的 input 元素</p>
+<p>:header \$(“:header”) 所有标题元素 \<h1\> - \<h6\></h6\></h1\></p>
+<p>:animated \$(“:animated”) 所有正在执行动画的元素</p>
+<p>:contains(text) \$(“:contains(‘W3School’)”) 包含指定字符串的所有元素</p>
+<p>:empty \$(“:empty”) 无子（元素）节点的所有元素</p>
+<p>:hidden \$(“p:hidden”) 所有隐藏的 \<p\> 元素</p\></p>
+<p>:visible \$(“table:visible”) 所有可见的表格</p>
+<p>[attribute] \$(“[href]”) 所有带有 href 属性的元素</p>
+<p>[attribute=value] \$(“[href=’#‘]”) 所有 href 属性的值等于 “#“ 的元素</p>
+<p>[attribute!=value] \$(“[href!=’#‘]”) 所有 href 属性的值不等于 “#“ 的元素</p>
+<p>[attribute\$=value] \$(“[href\$=’.jpg’]”) 所有 href 属性的值包含以 “.jpg”<br>结尾的元素</p>
+<p>:input \$(“:input”) 所有 \<input\> 元素</input\></p>
+<p>:text \$(“:text”) 所有 type=”text” 的 \<input\> 元素</input\></p>
+<p>:password \$(“:password”) 所有 type=”password” 的 \<input\> 元素</input\></p>
+<p>:radio \$(“:radio”) 所有 type=”radio” 的 \<input\> 元素</input\></p>
+<p>:checkbox \$(“:checkbox”) 所有 type=”checkbox” 的 \<input\> 元素</input\></p>
+<p>:submit \$(“:submit”) 所有 type=”submit” 的 \<input\> 元素</input\></p>
+<p>:reset \$(“:reset”) 所有 type=”reset” 的 \<input\> 元素</input\></p>
+<p>:button \$(“:button”) 所有 按钮元素（\<button\>\</button\> 或者 input=”button”）</p>
+<p>:image \$(“:image”) 所有 type=”image” 的 \<input\> 元素</input\></p>
+<p>:file \$(“:file”) 所有 type=”file” 的 \<input\> 元素</input\></p>
+<p>:enabled \$(“:enabled”) 所有激活的 input 元素</p>
+<p>:disabled \$(“:disabled”) 所有禁用的 input 元素</p>
+<p>:selected \$(“:selected”) 所有被选取的 input 元素</p>
+<p>:checked \$(“:checked”) 所有被选中的 input 元素</p>
+<h4 id="1-6-5-jQuery选择方法"><a href="#1-6-5-jQuery选择方法" class="headerlink" title="1.6.5 jQuery选择方法"></a>1.6.5 jQuery选择方法</h4><ul>
+<li>获取父级元素</li>
+</ul>
+<p>* \$(selector).parent(); //获取直接父级</p>
+<p>\$(selector).parents(‘p’); //获取所有父级元素直到html</p>
+<ul>
+<li>获取子代和后代的元素</li>
+</ul>
+<p>* \$(selector).children(); //获取直接子元素</p>
+<p>* \$(selector).find(“span”); //获取所有的后代元素 find方法 可能用的多。</p>
+<ul>
+<li>获取同级的元素</li>
+</ul>
+<p>* \$(selector).siblings() //所有的兄弟节点</p>
+<p>\$(selector).next() //下一个兄弟节点</p>
+<p>\$(selector).nextAll() //后面的所有节点</p>
+<p>\$(selector).prev() //前面一个的兄弟节点</p>
+<p>\$(selector).prevAll() //前面的所有的兄弟节点</p>
+<ul>
+<li>过滤方法</li>
+</ul>
+<p>* \$(“p”).eq(1); //取第n个元素</p>
+<p>\$(“div p”).last(); //取最后一个元素</p>
+<p>\$(“div p”).first(); //取第一个元素</p>
+<p>\$(“p”).filter(“.intro”); //过滤，选择所有p标签带有 .intro类</p>
+<p>\$(“p”).not(“.intro”); //去除，跟上面的filetr正好相反</p>
+<h2 id="2-jQuery常用DOM操作"><a href="#2-jQuery常用DOM操作" class="headerlink" title="2 jQuery常用DOM操作"></a>2 jQuery常用DOM操作</h2><h3 id="2-1-样式操作（重点）"><a href="#2-1-样式操作（重点）" class="headerlink" title="2.1 样式操作（重点）"></a>2.1 样式操作（重点）</h3><h4 id="2-1-1-基本样式属性操作"><a href="#2-1-1-基本样式属性操作" class="headerlink" title="2.1.1 基本样式属性操作"></a>2.1.1 基本样式属性操作</h4><p>作用：设置或获取元素的样式属性值</p>
+<ul>
+<li>设置样式属性操作</li>
+</ul>
+<p>设置单个样式：</p>
+<p>// 第一个参数表示：样式属性名称</p>
+<p>// 第二个参数表示：样式属性值</p>
+<p>\$(selector).css(“color”, “red”);</p>
+<p>设置多个样式：（也可以设置单个）</p>
+<p>// 参数为 {}（对象）</p>
+<p>\$(selector).css({“color”: “red”, “font-size”: “30px”});</p>
+<ul>
+<li>获取样式属性操作：</li>
+</ul>
+<p>// 参数表示要获取的 样式属性名称</p>
+<p>var fs = \$(selector).css(“font-size”);</p>
+<h4 id="2-1-2-类样式操作"><a href="#2-1-2-类样式操作" class="headerlink" title="2.1.2 类样式操作"></a>2.1.2 类样式操作</h4><ul>
+<li>添加类样式：</li>
+</ul>
+<p>作用：为指定元素添加类className</p>
+<p>\$(selector).addClass(“liItem”);</p>
+<ul>
+<li>移除类样式：</li>
+</ul>
+<p>作用：为指定元素移除类 className</p>
+<p>\$(selector).removeClass(“liItem”);</p>
+<p>\$(selector).removeClass(); 不指定参数，表示移除被选中元素的所有类</p>
+<ul>
+<li>判断有没有类样式：</li>
+</ul>
+<p>作用：判断指定元素是否包含类 className</p>
+<p>var hasC = \$(selector).hasClass(“liItem”);</p>
+<p>此时，会返回true或false</p>
+<ul>
+<li>切换类样式：</li>
+</ul>
+<p>作用：为指定元素切换类 className，该元素有类则移除，没有指定类则添加。</p>
+<p>\$(selector).toggleClass(“liItem”);</p>
+<ul>
+<li>注意点：</li>
+</ul>
+<p>操作类样式的时候，所有的类名 都不带点（.）</p>
+<p>经验：</p>
+<p>1 操作的样式非常少，那么可以通过.css()这个 方法来操作</p>
+<p>2 操作的样式很多，那么要通过使用类的方式来操作</p>
+<p>3<br>如果考虑以后维护方便（把CSS从js中分离出来）的话，推荐使用类的方式来操作。类比CSS书写位置（把css从html中分离出来）</p>
+<h3 id="2-2-jQuery动画"><a href="#2-2-jQuery动画" class="headerlink" title="2.2 jQuery动画"></a>2.2 jQuery动画</h3><p>前面内容特色总结：简约、”粗暴”、干净利落、直截了当</p>
+<p>jQuery动画是：</p>
+<p>jQuery提供的一组网页中常见的动画效果，这些动画是标准的、有规律的效果；</p>
+<p>同时还提供给我们了自定义动画的功能。</p>
+<h4 id="2-2-1-隐藏和显示"><a href="#2-2-1-隐藏和显示" class="headerlink" title="2.2.1 隐藏和显示"></a>2.2.1 隐藏和显示</h4><ul>
+<li>显示方法 show()</li>
+</ul>
+<p>作用：让匹配的元素展示出来</p>
+<p>// 用法一：</p>
+<p>// 参数为数值类型，表示：执行动画时长</p>
+<p>/* 单位为：毫秒（ms），参数2000表示动画执行时长为2000毫秒，即2秒钟 */</p>
+<p>\$(selector).show(2000);</p>
+<p>// 用法二：</p>
+<p>// 参数为字符串类型，是jQuery预设的值，共有三个，分别是：slow、normal、fast</p>
+<p>/* 跟用法一的对应关系为： */</p>
+<p>/* slow：600ms、normal：400ms、fast：200ms */</p>
+<p>\$(selector).show(“slow”);</p>
+<p>// 用法三：</p>
+<p>// 参数一：可以是数值类型或者字符串类型</p>
+<p>// 参数二：动画执行完后立即执行的回调函数</p>
+<p>\$(selector).show(2000, function() {});</p>
+<p>// 用法四：</p>
+<p>// 不带参数，作用等同于 css(“display”, “block”)</p>
+<p>/* 注意：此时没有动画效果 */</p>
+<p>\$(selector).show();</p>
+<p>注意：</p>
+<p>jQuery预设的三组动画效果的语法几乎一致：</p>
+<p>参数可以有两个，第一个是动画的执行时长，第二个是动画执行完成后的回调函数。</p>
+<p>第一个参数可以是：指定字符或者毫秒数</p>
+<ul>
+<li>隐藏方法 hide()</li>
+</ul>
+<p>作用：让匹配元素隐藏掉（用法参考show方法）</p>
+<p>\$(selector).hide(1000);</p>
+<p>\$(selector).hide(“slow”);</p>
+<p>\$(selector).hide(1000, function(){});</p>
+<p>\$(selector).hide();</p>
+<h4 id="2-2-2-滑入滑出动画"><a href="#2-2-2-滑入滑出动画" class="headerlink" title="2.2.2 滑入滑出动画"></a>2.2.2 滑入滑出动画</h4><ul>
+<li>滑入动画效果 slideDown()</li>
+</ul>
+<p>作用：让元素以下拉动画效果展示出来</p>
+<p>\$(selector).slideDown(speed, callback);</p>
+<p>\$(selector).slideDown();</p>
+<ul>
+<li>滑出动画效果 slideUp()</li>
+</ul>
+<p>作用：让元素以上拉动画效果隐藏起来</p>
+<p>\$(selector).slideUp(speed, callback);</p>
+<ul>
+<li>滑入滑出切换动画效果 slideToggle()</li>
+</ul>
+<p>\$(selector).slideToggle(speed, callback);</p>
+<ul>
+<li>注意点：省略参数或者传入不合法的字符串，那么则使用默认值：400毫秒（同样适用于fadeIn/slideDown/slideUp）</li>
+</ul>
+<h4 id="2-2-3-淡入淡出动画"><a href="#2-2-3-淡入淡出动画" class="headerlink" title="2.2.3 淡入淡出动画"></a>2.2.3 淡入淡出动画</h4><p>1 淡入动画效果</p>
+<p>作用：让元素以淡淡的进入视线的方式展示出来</p>
+<p>\$(selector).fadeIn(speed, callback);</p>
+<p>2 淡出动画效果</p>
+<p>作用：让元素以渐渐消失的方式隐藏起来</p>
+<p>\$(selector).fadeOut(1000);</p>
+<p>3 淡入淡出切换动画效果</p>
+<p>作用：通过改变不透明度，切换匹配元素的显示或隐藏状态</p>
+<p>\$(selector).fadeToggle(‘fast’, callback);</p>
+<ul>
+<li>改变不透明度到某个值</li>
+</ul>
+<p>作用：改变匹配元素的不透明度</p>
+<p>// 用法有别于其他动画效果</p>
+<p>// 第一个参数表示：时长</p>
+<p>// 第二个参数表示：不透明度值，取值范围：0-1</p>
+<p>\$(selector).fadeTo(1000, .5); // 0全透，1全不透</p>
+<p>// 第一个参数为0，此时作用相当于：.css(“opacity”, .5);</p>
+<p>\$(selector).fadeTo(0, .5);</p>
+<p>与淡入淡出的区别：淡入淡出只能控制元素的不透明度从 完全不透明 到 完全透明；</p>
+<p>而fadeTo可以指定元素不透明度的具体值。</p>
+<ul>
+<li>jQuery提供的动画使用方法总结：</li>
+</ul>
+<h4 id="2-2-4-自定义动画"><a href="#2-2-4-自定义动画" class="headerlink" title="2.2.4 自定义动画"></a>2.2.4 自定义动画</h4><ul>
+<li>jQuery内置动画的规律：</li>
+</ul>
+<p>jQuery提供的这几个动画效果控制的CSS属性包括：高度、宽度、不透明度。{height:400px;<br>width:300px; opacity:.4;}</p>
+<p>这三个CSS属性的共性是：</p>
+<p>1 样式属性的值只有一个</p>
+<p>2 这个值是数值（去掉单位后）。</p>
+<p>注意：所有能够执行动画的属性必须只有一个数字类型的值。</p>
+<p>比如：要改变字体大小，要使用：fontSize（font-size），不要使用：font</p>
+<p><a href="http://www.w3school.com.cn/jquery/effect_animate.asp" target="_blank" rel="external">动画支持的属性</a></p>
+<ul>
+<li>自定义动画 animate()</li>
+</ul>
+<p>作用：执行一组CSS属性的自定义动画</p>
+<p>// 第一个参数表示：要执行动画的CSS属性（必选）</p>
+<p>// 第二个参数表示：执行动画时长（可选）</p>
+<p>// 第三个参数表示：动画执行完后立即执行的回调函数（可选）</p>
+<p>\$(selector).animate({params}, speed, callback);</p>
+<h4 id="2-2-5-停止动画-stop"><a href="#2-2-5-停止动画-stop" class="headerlink" title="2.2.5 停止动画 stop()"></a>2.2.5 停止动画 stop()</h4><p>作用：停止当前正在执行的动画</p>
+<p>// 第一个参数表示是否清空所有的后续动画</p>
+<p>// 第二个参数表示是否立即执行完当前正在执行的动画</p>
+<p>\$(selector).stop(clearQueue, jumpToEnd);</p>
+<ul>
+<li>解释：</li>
+</ul>
+<p>stop(true, true) 后续动画不会执行，当前动画立即跳到结束的位置</p>
+<p>stop(true, false) 后续动画不会执行，当前动画立即停止</p>
+<p>stop(false, true) 立即执行后续动画，当前动画立即跳到结束的位置</p>
+<p>stop(false, false) 立即执行后续动画，当前动画立即停止</p>
+<ul>
+<li>注意：如果元素动画还没有执行完，调用sotp() 那么回调函数不会被执行</li>
+</ul>
+<h3 id="2-4-jQuery节点操作"><a href="#2-4-jQuery节点操作" class="headerlink" title="2.4 jQuery节点操作"></a>2.4 jQuery节点操作</h3><h4 id="2-4-1-动态创建元素"><a href="#2-4-1-动态创建元素" class="headerlink" title="2.4.1 动态创建元素"></a>2.4.1 动态创建元素</h4><p>// \$()函数的另外一个作用：动态创建元素</p>
+<p>var \$spanNode = \$(“\<span\>我是一个span元素\</span\>“);</p>
+<h4 id="2-4-2-添加元素（重点）"><a href="#2-4-2-添加元素（重点）" class="headerlink" title="2.4.2 添加元素（重点）"></a>2.4.2 添加元素（重点）</h4><p>在元素的最后一个子元素后面追加元素：</p>
+<p>append()（重点）</p>
+<p>作用：在被选元素内部的最后一个子元素（或内容）后面插入内容（页面中存在或者创建出来的元素都可以）</p>
+<p>// 在\$(selector)中追加\$node</p>
+<p>\$(selector).append(\$node);</p>
+<p>// 在\$(selector)中追加div元素，参数为htmlString</p>
+<p>\$(selector).append(‘\<div\>\</div\>‘);</p>
+<p>注意：</p>
+<p>如果是页面中存在的元素，那么调用append()后，会把这个元素从原先的位置移除，然后再插入到新的位置。</p>
+<p>如果是给多个目标追加一个元素，那么append()方法的内部会复制多份这个元素，然后追加到多个目标里面去。（最好不要这么做）</p>
+<p>常用参数：htmlString 或者 jQuery对象</p>
+<ul>
+<li>不常用操作：（用法跟append()方法基本一致）（了解）</li>
+</ul>
+<p>\$(selector).appendTo(node);<br>作用：同append()，区别是：把\$(selector)追加到node中去</p>
+<p>\$(selector).prepend(node); 作用：在元素的第一个子元素前面追加内容或节点</p>
+<p>\$(selector).after(node); 作用：在被选元素之后，作为兄弟元素插入内容或节点</p>
+<p>\$(selector).before(node); 作用：在被选元素之前，作为兄弟元素插入内容或节点</p>
+<h4 id="2-4-3-html创建元素（推荐使用，重点）"><a href="#2-4-3-html创建元素（推荐使用，重点）" class="headerlink" title="2.4.3 html创建元素（推荐使用，重点）"></a>2.4.3 html创建元素（推荐使用，重点）</h4><p>作用：设置或返回所选元素的html内容（包括 HTML 标记）</p>
+<p>设置内容的时候，如果是html标记，会动态创建元素，此时作用跟js里面的<br>innerHTML属性相同</p>
+<p>// 动态创建元素</p>
+<p>\$(selector).html(“\<span\>传智播客\</span\>“);</p>
+<p>// 获取html内容</p>
+<p>\$(selector).html();</p>
+<p>总结：推荐使用html(“\<span\>\</span\>“)方法来创建元素或者html(“”)清空元素</p>
+<h4 id="2-4-4-清空元素"><a href="#2-4-4-清空元素" class="headerlink" title="2.4.4 清空元素"></a>2.4.4 清空元素</h4><p>// 清空指定元素的所有子元素（光杆司令）</p>
+<p>// 没有参数</p>
+<p>\$(selector).empty();</p>
+<p>\$(selector).html(“”);</p>
+<p>// “自杀” 把自己（包括所有内部元素）从文档中删除掉</p>
+<p>\$(selector).remove();</p>
+<h4 id="2-4-5-复制元素"><a href="#2-4-5-复制元素" class="headerlink" title="2.4.5 复制元素"></a>2.4.5 复制元素</h4><p>作用：复制匹配的元素</p>
+<p>// 复制\$(selector)所匹配到的元素</p>
+<p>// 返回值为复制的新元素</p>
+<p>\$(selector).clone();</p>
+<h3 id="2-5-操作form表单（重点）"><a href="#2-5-操作form表单（重点）" class="headerlink" title="2.5 操作form表单（重点）"></a>2.5 操作form表单（重点）</h3><h4 id="2-5-1-属性操作"><a href="#2-5-1-属性操作" class="headerlink" title="2.5.1 属性操作"></a>2.5.1 属性操作</h4><p>设置属性：</p>
+<p>// 第一个参数表示：要设置的属性名称</p>
+<p>// 第二个参数表示：改属性名称对应的值</p>
+<p>\$(selector).attr(“title”, “传智播客”);</p>
+<p>获取属性：</p>
+<p>// 参数为：要获取的属性的名称，改操作会返回指定属性对应的值</p>
+<p>\$(selector).attr(“title”);</p>
+<p>此时，返回指定属性的值</p>
+<p>移除属性：</p>
+<p>// 参数为：要移除的属性的名称</p>
+<p>\$(selector).removeAttr(“title”);</p>
+<p>注意：checked、selected、disabled要使用 .prop() 方法。</p>
+<p>prop方法通常用来影响DOM元素的动态状态，而不是改变的HTML属性。例如：input和button的disabled特性，以及checkbox的checked特性。</p>
+<p>细节参考：<a href="http://api.jquery.com/prop/" target="_blank" rel="external">http://api.jquery.com/prop/</a></p>
+<h4 id="2-5-2-值和内容"><a href="#2-5-2-值和内容" class="headerlink" title="2.5.2 值和内容"></a>2.5.2 值和内容</h4><p>val()方法：</p>
+<p>作用：设置或返回表单元素的值，例如：input,select,textarea的值</p>
+<p>// 获取匹配元素的值，只匹配第一个元素</p>
+<p>\$(selector).val();</p>
+<p>// 设置所有匹配到的元素的值</p>
+<p>\$(selector).val(“具体值”);</p>
+<p>text() 方法:</p>
+<p>作用：设置或获取匹配元素的文本内容</p>
+<p>//获取操作不带参数（注意：这时候会把所有匹配到的元素内容拼接为一个字符串，不同于其他获取操作！）</p>
+<p>\$(selector).text();</p>
+<p>//设置操作带参数，参数表示要设置的文本内容</p>
+<p>\$(selector).text(“我是内容”);</p>
+<h3 id="2-6-其他样式操作"><a href="#2-6-其他样式操作" class="headerlink" title="2.6 其他样式操作"></a>2.6 其他样式操作</h3><p>\$(selector).height() 设置或返回匹配元素的高度。// 数值类型</p>
+<p>\$(selector).width() 设置或返回匹配元素的宽度。</p>
+<p>\$(selector).css(“height”); 字符串类型</p>
+<p>\$(selector).offset() 返回第一个匹配元素相对于文档左上角的位置。left,top</p>
+<p>\$(selector).offsetParent() 返回最近的定位祖先元素。</p>
+<p>\$(selector).position() 返回第一个匹配元素相对于父元素的位置。</p>
+<p>\$(window).scrollLeft() 设置或返回匹配元素相对滚动条左侧的偏移。</p>
+<p>\$(window).scrollTop(0) 设置或返回匹配元素相对滚动条顶部的偏移。</p>
+<p>\$(selector).scroll(function() {}); 滚动事件</p>
+<p>对scrollTop的理解：</p>
+<p>垂直滚动条位置 是可滚动区域 在 可视区域上方的 被隐藏区域的高度。</p>
+<p>如果滚动条在最上方没有滚动 或者 当前元素没有出现滚动条，那么这个距离为0</p>
+<h2 id="3-jQuery事件机制和补充"><a href="#3-jQuery事件机制和补充" class="headerlink" title="3 jQuery事件机制和补充"></a>3 jQuery事件机制和补充</h2><p>jQuery的事件机制，指的是：jQuery对JavaScript操作DOM事件的封装，包括了：事件绑定、事件解绑、事件触发。</p>
+<ul>
+<li>绑定事件示例：</li>
+</ul>
+<p>JavaScript：</p>
+<p>btn.onclick = function() {}; 表示：给这个按钮绑定事件</p>
+<p>jQuery：</p>
+<p>\$btn.click(function() {}); 表示：给按钮绑定事件</p>
+<h3 id="3-1-jQuery事件的发展历程（了解）"><a href="#3-1-jQuery事件的发展历程（了解）" class="headerlink" title="3.1 jQuery事件的发展历程（了解）"></a>3.1 jQuery事件的发展历程（了解）</h3><p>简单事件绑定 >> bind事件绑定 >> delegate事件绑定 >> on【重点】</p>
+<ul>
+<li>简单事件绑定</li>
+</ul>
+<p>click(handler) 单击事件</p>
+<p>blur(handler) 失去焦点事件</p>
+<p>mouseenter(handler) 鼠标进入事件</p>
+<p>mouseleave(handler) 鼠标离开事件</p>
+<p>dbclick(handler) 双击事件</p>
+<p>change(handler) 改变事件，如：文本框值改变，下来列表值改变等</p>
+<p>focus(handler) 获得焦点事件</p>
+<p>keydown(handler) 键盘按下事件</p>
+<p>其他参考：<a href="http://www.w3school.com.cn/jquery/jquery_ref_events.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/jquery_ref_events.asp</a></p>
+<ul>
+<li>bind方式（不推荐，1.7以后的jQuery版本被on取代）</li>
+</ul>
+<p>作用：给匹配到的元素直接绑定事件</p>
+<p>// 绑定单击事件处理程序</p>
+<p>第一个参数：事件类型</p>
+<p>第二个参数：事件处理程序</p>
+<p>\$(“p”).bind(“click mouseenter”, function(e){</p>
+<p>//事件响应方法</p>
+<p>});</p>
+<p>比简单事件绑定方式的优势：</p>
+<p>可以同时绑定多个事件，比如：bind(“mouseenter mouseleave”, function(){ });</p>
+<p>缺点：要绑定事件的元素必须存在文档中。</p>
+<ul>
+<li>delegate方式（特点：性能高，支持动态创建的元素）</li>
+</ul>
+<p>作用：给匹配到的元素绑定事件，对支持动态创建的元素有效</p>
+<p>// 第一个参数：selector，要绑定事件的元素</p>
+<p>// 第二个参数：事件类型</p>
+<p>// 第三个参数：事件处理函数</p>
+<p>\$(“.parentBox”).delegate(“p”, “click”, function(){</p>
+<p>//为 .parentBox下面的所有的p标签绑定事件</p>
+<p>});</p>
+<p>与前两种方式最大的优势：减少事件绑定次数提高效率，支持动态创建出来的元素绑定事件！</p>
+<h4 id="3-1-1-on方式（最现代的方式，兼容zepto-移动端类似jQuery的一个库-，强烈建议使用的方式）（重点）"><a href="#3-1-1-on方式（最现代的方式，兼容zepto-移动端类似jQuery的一个库-，强烈建议使用的方式）（重点）" class="headerlink" title="3.1.1 on方式（最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用的方式）（重点）"></a>3.1.1 on方式（最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用的方式）（重点）</h4><p>jQuery1.7版本后，jQuery用on统一了所有的事件处理的方法</p>
+<p>作用：给匹配的元素绑定事件，包括了上面所有绑定事件方式的优点</p>
+<p>语法：</p>
+<p>//<br>第一个参数：events，绑定事件的名称可以是由空格分隔的多个事件（标准事件或者自定义事件）</p>
+<p>// 第二个参数：selector, 执行事件的后代元素</p>
+<p>// 第三个参数：data，传递给处理函数的数据，事件触发的时候通过event.data来使用</p>
+<p>// 第四个参数：handler，事件处理函数</p>
+<p>\$(selector).on(events[,selector][,data],handler);</p>
+<p>// 表示给\$(selector)绑定事件，当必须是它的内部元素span才能执行这个事件</p>
+<p>\$(selector).on(“click”,”span”, function() {});</p>
+<p>// 绑定多个事件</p>
+<p>// 表示给\$(selector)匹配的元素绑定单击和鼠标进入事件</p>
+<p>\$(selector).on(“click mouseenter”, function(){ });</p>
+<h4 id="3-1-2-事件解绑"><a href="#3-1-2-事件解绑" class="headerlink" title="3.1.2 事件解绑"></a>3.1.2 事件解绑</h4><ul>
+<li>unbind() 方式 和 undelegate() 方式</li>
+</ul>
+<p>作用：解绑 bind方式绑定的事件</p>
+<p>\$(selector).unbind(); //解绑所有的事件</p>
+<p>\$(selector).unbind(“click”); //解绑指定的事件</p>
+<p>作用：解绑delegate方式绑定的事件</p>
+<p>\$( selector ).undelegate(); //解绑所有的delegate事件</p>
+<p>\$( selector).undelegate( “click” ); //解绑所有的click事件</p>
+<ul>
+<li>off解绑on方式绑定的事件（重点）</li>
+</ul>
+<p>// 解绑匹配元素的所有事件</p>
+<p>\$(selector).off();</p>
+<p>// 解绑匹配元素的所有click事件</p>
+<p>\$(selector).off(“click”);</p>
+<p>// 解绑所有代理的click事件，元素本身的事件不会被解绑</p>
+<p>\$(selector).off( “click”, “**“ );</p>
+<h4 id="3-1-3-事件触发"><a href="#3-1-3-事件触发" class="headerlink" title="3.1.3 事件触发"></a>3.1.3 事件触发</h4><p>\$(selector).click(); // 简单事件触发，触发 click事件</p>
+<p>\$(selector).trigger(“click”); // trigger方法触发事件</p>
+<p>\$(selector).triggerHandler(“focus”); // triggerHandler触发<br>事件响应方法，不触发浏览器行为 比如:文本框获得焦点的默认行为</p>
+<h4 id="3-1-4-jQuery事件对象介绍"><a href="#3-1-4-jQuery事件对象介绍" class="headerlink" title="3.1.4 jQuery事件对象介绍"></a>3.1.4 jQuery事件对象介绍</h4><p>event.data 传递给事件处理程序的额外数据</p>
+<p>event.currentTarget 等同于this</p>
+<p>event.pageX 鼠标相对于页面左边的位置</p>
+<p>event.target 触发事件源，不一定===this</p>
+<p>event.stopPropagation()； 阻止事件冒泡</p>
+<p>event.preventDefault(); 阻止默认行为</p>
+<p>event.type 事件类型：click，dbclick…</p>
+<p>event.which 鼠标的按键类型：左1 中2 右3</p>
+<p>event.keyCode 键盘按键代码</p>
+<p>return false; // 同时具有阻止冒泡和阻止默认行为的功能</p>
+<p>this：哪个元素触发的事件，this就指向这个元素。</p>
+<h3 id="3-2-jQuery补充"><a href="#3-2-jQuery补充" class="headerlink" title="3.2 jQuery补充"></a>3.2 jQuery补充</h3><h4 id="3-2-1-链式编程"><a href="#3-2-1-链式编程" class="headerlink" title="3.2.1 链式编程"></a>3.2.1 链式编程</h4><p>// 链式编程代码示例</p>
+<p>\$(“li”).parent(“ul”).parent(“div”).siblings(“div”).children(“div”).html(“内容”);</p>
+<p>链式编程原理：return this;</p>
+<p>通常情况下，只有设置操作才能把链式编程延续下去。因为获取操作的时候，会返回获取到的相应的值，无法返回<br>this。</p>
+<p>end(); // 结束当前链最近的一次过滤操作，并且返回匹配元素之前的一次状态。</p>
+<p>1.4.2 隐式迭代</p>
+<p>// 设置操作</p>
+<p>\$(“div”).css(“color”, “red”);</p>
+<p>// 获取操作</p>
+<p>\$(“div”).css(“color”); // 返回第一个元素的值</p>
+<p>隐式迭代的意思是：在方法的内部会为匹配到的所有元素进行循环遍历，执行相应的方法；</p>
+<p>而不用我们再进行循环，简化我们的操作，方便我们调用。</p>
+<p>如果获取的是多元素的值，返回的是第一个元素的值。</p>
+<h4 id="3-2-2-each方法"><a href="#3-2-2-each方法" class="headerlink" title="3.2.2 each方法"></a>3.2.2 each方法</h4><ul>
+<li>有了隐式迭代，为什么还要使用each函数遍历？</li>
+</ul>
+<p>大部分情况下是不需要使用each方法的，因为jQuery的隐式迭代特性。</p>
+<p>如果要对每个元素做不同的处理，这时候就用到了each方法</p>
+<p>作用：遍历jQuery对象集合，为每个匹配的元素执行一个函数</p>
+<p>// 参数一表示当前元素在所有匹配元素中的索引号</p>
+<p>// 参数二表示当前元素（DOM对象）</p>
+<p>\$(selector).each(function(index, element){});</p>
+<p>\$.each(object, function(k, v) {});</p>
+<h4 id="3-2-3-多库共存（了解）"><a href="#3-2-3-多库共存（了解）" class="headerlink" title="3.2.3 多库共存（了解）"></a>3.2.3 多库共存（了解）</h4><p>此处多库共存指的是：jQuery占用了\$<br>和jQuery这两个变量。当在同一个页面中引用了jQuery这个js库，</p>
+<p>并且引用的其他库（或者其他版本的jQuery库）中也用到了\$或者jQuery这两个变量，那么，</p>
+<p>要保证每个库都能正常使用，这时候就有了多库共存的问题。</p>
+<p>// 模拟另外的库使用了 \$ 这个变量</p>
+<p>// 此时，就与jQuery库产生了冲突</p>
+<p>var \$ = { name : “itecast” };</p>
+<p>解决方式：</p>
+<p>\$.noConflict();</p>
+<p>让jQuery释放对\$的控制权，让其他库能够使用\$符号，达到多库共存的目的。此后，只能使用jQuery来调用jQuery提供的方法</p>
+<h4 id="3-2-4-jQuery插件机制"><a href="#3-2-4-jQuery插件机制" class="headerlink" title="3.2.4 jQuery插件机制"></a>3.2.4 jQuery插件机制</h4><p>jQuery这个js库，虽然功能强大，但也不是面面俱到包含所有的功能。</p>
+<p>jQuery是通过插件的方式，来扩展它的功能：</p>
+<p>当你需要某个插件的时候，你可以”安装”到jQuery上面，然后，使用。</p>
+<p>当你不再需要这个插件，那你就可以从jQuery上”卸载”它。</p>
+<p>（联想：手机软件，安装的app就好比插件，用的时候安装上，不用的时候卸载掉）</p>
+<h4 id="3-2-5-使用第三方插件"><a href="#3-2-5-使用第三方插件" class="headerlink" title="3.2.5 使用第三方插件"></a>3.2.5 使用第三方插件</h4><ul>
+<li>1 jQuery.color.js 插件</li>
+</ul>
+<p>animate()自定义动画：不支持背景的动画效果</p>
+<p>使用步骤：</p>
+<ol>
+<li><p>引入jQuery文件</p>
+</li>
+<li><p>引入插件</p>
+</li>
+<li><p>使用插件</p>
+</li>
+</ol>
+<ul>
+<li>2 jQueryUI 插件</li>
+</ul>
+<p>使用场景：网站的管理后台</p>
+<p>jQueryUI专指由jQuery官方维护的UI（用户接口）方向的插件。</p>
+<p>官方API：<a href="http://api.jqueryui.com/category/all/" target="_blank" rel="external">http://api.jqueryui.com/category/all/</a></p>
+<p>其他教程：<a href="http://www.runoob.com/jqueryui/jqueryui-intro.html" target="_blank" rel="external">http://www.runoob.com/jqueryui/jqueryui-intro.html</a></p>
+<p>基本使用:</p>
+<ol>
+<li><p>引入jQueryUI的样式文件</p>
+</li>
+<li><p>引入jQuery</p>
+</li>
+<li><p>引入jQueryUI的js文件</p>
+</li>
+<li><p>使用jQueryUI功能</p>
+</li>
+</ol>
+<h4 id="3-2-6-制作插件"><a href="#3-2-6-制作插件" class="headerlink" title="3.2.6 制作插件"></a>3.2.6 制作插件</h4><p>如何创建jQuery插件：</p>
+<p><a href="http://learn.jquery.com/plugins/basic-plugin-creation/" target="_blank" rel="external">http://learn.jquery.com/plugins/basic-plugin-creation/</a></p>
+<p>全局jQuery函数扩展方法</p>
+<p>\$.pluginName = function() {};</p>
+<p>\$.pluginName();</p>
+<p>jQuery对象扩展方法</p>
+<p>\$.fn.pluginName = function() {};</p>
+<p>\$(selector).pluginName();</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/方法库/" rel="tag"># 方法库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/08/20/JavaScript保留字关键字大全/" rel="next" title="JavaScript保留字关键字大全">
+                <i class="fa fa-chevron-left"></i> JavaScript保留字关键字大全
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/10/28/相等运算符与等同运算符对比/" rel="prev" title="相等运算符与等同运算符对比">
+                相等运算符与等同运算符对比 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460"
+               alt="阿毛" />
+          <p class="site-author-name" itemprop="name">阿毛</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人在前端开发中遇到的一些问题总结</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery总结"><span class="nav-number">1.</span> <span class="nav-text">jQuery总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery相关资料"><span class="nav-number">1.1.</span> <span class="nav-text">jQuery相关资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-jQuery的基本使用和jQuery选择器"><span class="nav-number">1.2.</span> <span class="nav-text">1 jQuery的基本使用和jQuery选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-jQuery描述（理解）"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1.1 jQuery描述（理解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-学习jQuery主要是学什么？"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">1.2. 学习jQuery主要是学什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-如何使用jQuery？（重点）"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.3 如何使用jQuery？（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-jQuery的优势"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.3.1 jQuery的优势</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-jQuery详细解释"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.4 jQuery详细解释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-版本介绍（了解）"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1.4.1 版本介绍（了解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-引包注意点（理解）"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">1.4.2 引包注意点（理解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3-jQuery的入口函数（重点）"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">1.4.3 jQuery的入口函数（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-4-jQuery入口函数与js入口函数的区别（理解）"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">1.4.4 jQuery入口函数与js入口函数的区别（理解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-5-jQuery的-符号（重点）"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">1.4.5 jQuery的\$符号（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-6-jQuery对象和DOM对象的相互转换（难点）"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">1.4.6 jQuery对象和DOM对象的相互转换（难点）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-JS跟jQuery的区别是什么？（理解）"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.5 JS跟jQuery的区别是什么？（理解）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-jQuery选择器"><span class="nav-number">1.3.</span> <span class="nav-text">1.6 jQuery选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-1-JS提供的选择DOM元素的方法"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">1.6.1 JS提供的选择DOM元素的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-2-强大的jQuery选择器（重点）"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">1.6.2 强大的jQuery选择器（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-3-jQuery选择器（重点）"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">1.6.3 jQuery选择器（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-4-常用选择器汇总"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">1.6.4 常用选择器汇总</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-5-jQuery选择方法"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">1.6.5 jQuery选择方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-jQuery常用DOM操作"><span class="nav-number">1.4.</span> <span class="nav-text">2 jQuery常用DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-样式操作（重点）"><span class="nav-number">1.4.1.</span> <span class="nav-text">2.1 样式操作（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-基本样式属性操作"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">2.1.1 基本样式属性操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-类样式操作"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">2.1.2 类样式操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-jQuery动画"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.2 jQuery动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-隐藏和显示"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">2.2.1 隐藏和显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-滑入滑出动画"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">2.2.2 滑入滑出动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-淡入淡出动画"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">2.2.3 淡入淡出动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-自定义动画"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">2.2.4 自定义动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5-停止动画-stop"><span class="nav-number">1.4.2.5.</span> <span class="nav-text">2.2.5 停止动画 stop()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-jQuery节点操作"><span class="nav-number">1.4.3.</span> <span class="nav-text">2.4 jQuery节点操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-1-动态创建元素"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">2.4.1 动态创建元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-2-添加元素（重点）"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">2.4.2 添加元素（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-3-html创建元素（推荐使用，重点）"><span class="nav-number">1.4.3.3.</span> <span class="nav-text">2.4.3 html创建元素（推荐使用，重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-4-清空元素"><span class="nav-number">1.4.3.4.</span> <span class="nav-text">2.4.4 清空元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-5-复制元素"><span class="nav-number">1.4.3.5.</span> <span class="nav-text">2.4.5 复制元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-操作form表单（重点）"><span class="nav-number">1.4.4.</span> <span class="nav-text">2.5 操作form表单（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-1-属性操作"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">2.5.1 属性操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-2-值和内容"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">2.5.2 值和内容</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-其他样式操作"><span class="nav-number">1.4.5.</span> <span class="nav-text">2.6 其他样式操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-jQuery事件机制和补充"><span class="nav-number">1.5.</span> <span class="nav-text">3 jQuery事件机制和补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-jQuery事件的发展历程（了解）"><span class="nav-number">1.5.1.</span> <span class="nav-text">3.1 jQuery事件的发展历程（了解）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-on方式（最现代的方式，兼容zepto-移动端类似jQuery的一个库-，强烈建议使用的方式）（重点）"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">3.1.1 on方式（最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用的方式）（重点）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-事件解绑"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">3.1.2 事件解绑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-事件触发"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">3.1.3 事件触发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-4-jQuery事件对象介绍"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">3.1.4 jQuery事件对象介绍</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-jQuery补充"><span class="nav-number">1.5.2.</span> <span class="nav-text">3.2 jQuery补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-链式编程"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">3.2.1 链式编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-each方法"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">3.2.2 each方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-多库共存（了解）"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">3.2.3 多库共存（了解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-4-jQuery插件机制"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">3.2.4 jQuery插件机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-5-使用第三方插件"><span class="nav-number">1.5.2.5.</span> <span class="nav-text">3.2.5 使用第三方插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-6-制作插件"><span class="nav-number">1.5.2.6.</span> <span class="nav-text">3.2.6 制作插件</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿毛</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
