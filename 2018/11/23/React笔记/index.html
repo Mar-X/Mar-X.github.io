@@ -1,0 +1,889 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="React项目结构安装步骤： ​    1、安装node.js ​    2、npx create-react-app my-appcd   安装create-react-app并新建项目 ​    3、npm start    启动项目 1234567891011121314151617181920212223node_modules    		node依赖包public	favicon.ico">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React笔记">
+<meta property="og:url" content="http://yoursite.com/2018/11/23/React笔记/index.html">
+<meta property="og:site_name" content="Mar-x 个人博客">
+<meta property="og:description" content="React项目结构安装步骤： ​    1、安装node.js ​    2、npx create-react-app my-appcd   安装create-react-app并新建项目 ​    3、npm start    启动项目 1234567891011121314151617181920212223node_modules    		node依赖包public	favicon.ico">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-02T05:50:35.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React笔记">
+<meta name="twitter:description" content="React项目结构安装步骤： ​    1、安装node.js ​    2、npx create-react-app my-appcd   安装create-react-app并新建项目 ​    3、npm start    启动项目 1234567891011121314151617181920212223node_modules    		node依赖包public	favicon.ico">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/23/React笔记/"/>
+
+
+
+
+
+  <title>React笔记 | Mar-x 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mar-x 个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一位在前端的道路上奋斗的阿毛同学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/React笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿毛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mar-x 个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T18:51:39+08:00">
+                2018-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="React项目结构"><a href="#React项目结构" class="headerlink" title="React项目结构"></a>React项目结构</h3><p>安装步骤：</p>
+<p>​    1、安装node.js</p>
+<p>​    2、npx create-react-app my-appcd   安装create-react-app并新建项目</p>
+<p>​    3、npm start    启动项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">node_modules    		node依赖包</div><div class="line">public</div><div class="line">	favicon.ico		页面标签显示的logo</div><div class="line">	index.html			入口页面</div><div class="line">	manifest.json</div><div class="line">src						源码目录</div><div class="line">	assets				样式、静态文件</div><div class="line">	&gt;components			抽离的公用组件</div><div class="line">	  &gt;Header			头部</div><div class="line">	  	 Header.js</div><div class="line">	  &gt;Persons          主体部分</div><div class="line">	&gt;container			根组件</div><div class="line">      App.css			</div><div class="line">      App.js				</div><div class="line">      App.test.js			</div><div class="line">	index.css			</div><div class="line">	index.js			</div><div class="line">	logo.svg</div><div class="line">	serviceWorker.js</div><div class="line">.gitignore				Git上传需要忽略的文件格式</div><div class="line">package-lock.json		记录当前状态下实际安装的各个npm package的具体来源和版本号。</div><div class="line">package.json			项目需要依赖的包依赖基础信息</div><div class="line">README.md               项目说明</div></pre></td></tr></table></figure>
+<h3 id="package-json介绍"><a href="#package-json介绍" class="headerlink" title="package.json介绍"></a>package.json介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;my-appcd&quot;,</div><div class="line">  &quot;version&quot;: &quot;0.1.0&quot;,</div><div class="line">  &quot;private&quot;: true,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;react&quot;: &quot;^16.6.3&quot;,				react库文件</div><div class="line">    &quot;react-dom&quot;: &quot;^16.6.3&quot;,			将react的jsx语法渲染到dom文件中</div><div class="line">    &quot;react-scripts&quot;: &quot;2.1.1&quot;		</div><div class="line">  &#125;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;start&quot;: &quot;react-scripts start&quot;,		借助react-scripts启动项目</div><div class="line">    &quot;build&quot;: &quot;react-scripts build&quot;,		借助react-scripts打包项目</div><div class="line">    &quot;test&quot;: &quot;react-scripts test&quot;,</div><div class="line">    &quot;eject&quot;: &quot;react-scripts eject&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;eslintConfig&quot;: &#123;</div><div class="line">    &quot;extends&quot;: &quot;react-app&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;browserslist&quot;: [</div><div class="line">    &quot;&gt;0.2%&quot;,</div><div class="line">    &quot;not dead&quot;,</div><div class="line">    &quot;not ie &lt;= 11&quot;,</div><div class="line">    &quot;not op_mini all&quot;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h3><p>下面两段页面显示一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">react书写方法</div><div class="line">const element = React.createElement(</div><div class="line">  &apos;h1&apos;,</div><div class="line">  &#123;className: &apos;greeting&apos;&#125;,</div><div class="line">  &apos;Hello, world!&apos;</div><div class="line">);</div><div class="line"></div><div class="line">jsx书写方法</div><div class="line">const element = (</div><div class="line">  &lt;h1 className=&quot;greeting&quot;&gt;</div><div class="line">    Hello, world!</div><div class="line">  &lt;/h1&gt;</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>1、标签的属性命名：小驼峰命名 来定义属性的名称，而不是使用 HTML 的属性名称。</p>
+<p>​                例如，<code>class</code> 变成了 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/className" target="_blank" rel="external"><code>className</code></a>，而 <code>tabindex</code> 则对应着 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex" target="_blank" rel="external"><code>tabIndex</code></a>。</p>
+<h3 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h3><p>使用步骤</p>
+<p>​    1、在文件夹新建组件文件及其js文件。</p>
+<p>​    2、引入React，并使用jsx语法创建组件内内容</p>
+<p>​    3、在父组件中引入子组件，并使用标签显示。</p>
+<p>​        显示有两种方式：单标签<home>和双标签<home></home></home></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&gt;Home(新建文件)</div><div class="line"></div><div class="line">import React from &apos;react&apos;</div><div class="line">const home = () =&gt; &#123;</div><div class="line">    return &lt;p&gt;我是一个组件&lt;/p&gt;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default home</div><div class="line"></div><div class="line">&gt;App.js</div><div class="line"></div><div class="line">// 加./在src当前文件下开始查找，不加直接从node_modules查找</div><div class="line">import Home from &apos;./Home/Home&apos;</div><div class="line"></div><div class="line">//注意：1、jsx语法中，有且只有一个容器</div><div class="line">	 //2、jsx语法的注释为 &#123;/*注释*/&#125;</div><div class="line">class App extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">          &lt;Home /&gt;   		&#123;/*使用组件方式1*/&#125;</div><div class="line">          &lt;Home&gt;&lt;/Home&gt;		&#123;/*使用组件方式2*/&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 导出APP</div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<h3 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h3><p>使用步骤：</p>
+<p>​    1、在父组件中给引入子组件的标签中加入属性名并传值</p>
+<p>​    2、在子组件中使用形参接受传递过来的值</p>
+<p>​    3、使用{props.name}来赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&gt;Home(新建文件)</div><div class="line"></div><div class="line">import React from &apos;React&apos;</div><div class="line"></div><div class="line">//props是一个形参，用来接收数据可以任意命名，不过props更有语义化</div><div class="line">const home = ( props ) =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;div&gt;</div><div class="line">  			&lt;p&gt;我的名字叫&#123;props.name&#125;,年纪有&#123;props.num&#125;岁&lt;/p&gt;</div><div class="line">  			</div><div class="line">  		    &#123;/*注释：children展示父组件给子组件传递的标签内值*/&#125;		</div><div class="line">            &lt;span&gt;&#123;props.children&#125;&lt;/span&gt;</div><div class="line">  		&lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default home</div><div class="line"></div><div class="line">&gt;App.js</div><div class="line"></div><div class="line">// 加./在src当前文件下开始查找，不加直接从node_modules查找</div><div class="line">import Home from &apos;./Home/Home&apos;</div><div class="line"></div><div class="line">// 有且只有一个容器</div><div class="line">class App extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">      	  </div><div class="line">      	 &#123;/*给组件中加入属性或者标签内加入值给组件传递数据*/&#125;</div><div class="line">      	 </div><div class="line">          &lt;Home name=&quot;张三&quot; num=&apos;13&apos;/&gt;   		</div><div class="line">          &lt;Home name=&quot;王五&quot; num=&apos;16&apos;&gt;这是传递过去的值&lt;/Home&gt;		</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 导出APP</div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<h3 id="状态组件分类"><a href="#状态组件分类" class="headerlink" title="状态组件分类"></a>状态组件分类</h3><h4 id="有状态组件"><a href="#有状态组件" class="headerlink" title="有状态组件"></a>有状态组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;</div><div class="line"></div><div class="line">class Home extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;div&gt;有状态组件&lt;div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Home</div></pre></td></tr></table></figure>
+<p>​    1、相当于一个类，class XY extends Component {} 。</p>
+<p>​    2、继承了Component 的属性可以使用state动态数值。</p>
+<p>​    3、能够使用生命周期函数。</p>
+<p>​    4、可以通过this来接收状态和属性(this.state.XY &amp; this.props.XY)</p>
+<p>使用场景：只有在需要管理状态或者需要使用生命周期时使用。</p>
+<h4 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">const Home = (props) =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;div&gt;无状态组件&lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Home</div></pre></td></tr></table></figure>
+<p>​    1、是一个函数式，const XY= ( props ) =&gt; {}   </p>
+<p>​    2、没有state动态数值。</p>
+<p>​    3、没有生命周期函数。</p>
+<p>​    4、可以通过属性实现数据传递(props.XY)</p>
+<p>使用场景：基本组件一般都用无状态组件生成，保证页面加载。</p>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>创建组件时：</p>
+<p>​    getDefaultProps()：设置默认属性</p>
+<p>​    constructor()：是ES6提供的构造函数，相当于getInitialState()，调用父级super(props)和设置状态state。</p>
+<p>​    componentWillMount()：修改状态</p>
+<p>​    render()：创建虚拟DOM，更新DOM</p>
+<p>​    加载所有的子组件</p>
+<p>​    componentDidMount()：组件渲染完毕（不要更新状态，如果修改就会更新render(),变成死循环）</p>
+<p>更新组件时：</p>
+<p>​    componententWillReceiveProps(nextProps)：组件发生改变时触发</p>
+<p>​    shouldComponentUpdate(nxPro,nxSta)：控制组件是否重新渲染</p>
+<p>​    componentWillUpdate(nxPro,nxSta)：进入重新渲染流程</p>
+<p>​    runder()</p>
+<p>​    更新与当前相关的子组件</p>
+<p>​    componentDidUpdate()：组件渲染完毕    </p>
+<h3 id="state状态管理"><a href="#state状态管理" class="headerlink" title="state状态管理"></a>state状态管理</h3><p>setState() ：专门用来改变state中的状态</p>
+<p>同步更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">this.setState(&#123;</div><div class="line">  counter: this.state.counter,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>异步更新：该函数将接收先前的状态作为第一个参数，将此次更新被应用时的props做为第二个参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">this.setState((prevState, props) =&gt; (&#123;</div><div class="line">  counter: prevState.counter + props.increment</div><div class="line">&#125;));</div></pre></td></tr></table></figure>
+<p>合并更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">componentDidMount() &#123;</div><div class="line">   fetchPosts().then(response =&gt; &#123;</div><div class="line">     this.setState(&#123;</div><div class="line">       posts: response.posts</div><div class="line">     &#125;);</div><div class="line">   &#125;);</div><div class="line"></div><div class="line">   fetchComments().then(response =&gt; &#123;</div><div class="line">     this.setState(&#123;</div><div class="line">       comments: response.comments</div><div class="line">     &#125;);</div><div class="line">   &#125;);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>使用步骤：</p>
+<p>​    1、在父组件中创建state作为管理的库，且只能在拥有继承了Component的下面使用</p>
+<p>​    2、在引入的子组件标签中找到state数据，并使用state中的数据更改子组件状态值</p>
+<p>​    3、如果是静态更改，需要给标签的属性或者标签内使用{this.state.otherState}</p>
+<p>​          如果是动态更改，需要在事件中使用setState({otherState:’状态值’})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">App.js</div><div class="line"></div><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  // state使用管理状态，但只能在继承了Component的下面使用</div><div class="line">  state = &#123;</div><div class="line">      Homes:[</div><div class="line">        &#123;name:&apos;大王&apos;,num:&apos;52&apos;&#125;,</div><div class="line">        &#123;name:&apos;小王&apos;,num:&apos;48&apos;&#125;,</div><div class="line">      ],</div><div class="line">      otherState:&apos;双王争霸&apos;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  stateType= () =&gt;&#123;</div><div class="line">      //ES6中this指向就近的函数，而ES5中的this指向window</div><div class="line">      this.setState(&#123;</div><div class="line">         Homes:[</div><div class="line">          &#123;name:&apos;老虎&apos;,num:&apos;66&apos;&#125;,</div><div class="line">          &#123;name:&apos;狮子&apos;,num:&apos;88&apos;&#125;,</div><div class="line">        ],</div><div class="line">        otherState:&apos;动物争霸&apos;</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line"></div><div class="line">         &lt;button onClick=&#123;this.stateType&#125;&gt;变身&lt;/button&gt;</div><div class="line"></div><div class="line">           &#123;/*给组件中加入属性或者标签内加入值给组件传递数据*/&#125;</div><div class="line">          &lt;Home </div><div class="line">              name=&#123;this.state.Homes[0].name&#125; </div><div class="line">              num=&#123;this.state.Homes[0].num&#125;</div><div class="line">              /&gt;   		</div><div class="line">          &lt;Home </div><div class="line">              name=&#123;this.state.Homes[1].name&#125; </div><div class="line">              num=&#123;this.state.Homes[1].num&#125;</div><div class="line">              &gt;&#123;this.state.otherState&#125;&lt;/Home&gt;	</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 导出APP</div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<h3 id="事件相关"><a href="#事件相关" class="headerlink" title="事件相关"></a>事件相关</h3><h4 id="事件注册"><a href="#事件注册" class="headerlink" title="事件注册"></a>事件注册</h4><p>​    以onClick的驼峰命名形式注册事件，与之前的js事件方法类似。</p>
+<h4 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h4><p>​    有两种形式传递参数</p>
+<p>​        1、使用ES6语法，让this指向当前class App extends Component</p>
+<p>​            onClick={() =&gt; this.stateType(‘姓名’)}</p>
+<p>​        2、使用React中bind，让this指向当前class App extends Component</p>
+<p>​            onClick={this.stateType.bind(this,’姓名’)}</p>
+<h4 id="传递事件"><a href="#传递事件" class="headerlink" title="传递事件"></a>传递事件</h4><p>​    使用步骤：</p>
+<p>​        1、在父组件中使用组件通信的形式传递事件，myclick={this.stateType.bind(this,’miss’)}传递</p>
+<p>​        2、在子组件中给需要绑定的元素加入传递来的属性，onClick={props.myclick}接收                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">App.js</div><div class="line"></div><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  // state使用管理状态，但只能在继承了Component的下面使用</div><div class="line">  state = &#123;</div><div class="line">      Homes:[</div><div class="line">        &#123;name:&apos;大王&apos;,num:&apos;52&apos;&#125;,</div><div class="line">        &#123;name:&apos;小王&apos;,num:&apos;48&apos;&#125;,</div><div class="line">      ],</div><div class="line">      otherState:&apos;双王争霸&apos;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  //使用形参接受传递的值</div><div class="line">  stateType= (name) =&gt;&#123;</div><div class="line">      //ES6中this指向就近的函数，而ES5中的this指向window</div><div class="line">      this.setState(&#123;</div><div class="line">         Homes:[</div><div class="line">          &#123;name:name,num:&apos;66&apos;&#125;,</div><div class="line">          &#123;name:&apos;狮子&apos;,num:&apos;88&apos;&#125;,</div><div class="line">        ],</div><div class="line">        otherState:&apos;动物争霸&apos;</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">      </div><div class="line">      	&#123;/*如果这样写this.stateType()，页面打开会立即触发*/&#125;</div><div class="line">      	&lt;button onClick=&#123;this.stateType&#125;&gt;变身&lt;/button&gt;</div><div class="line">      </div><div class="line">		 &#123;/*传参方法一*/&#125;</div><div class="line">         &lt;button onClick=&#123;() =&gt; this.stateType(&apos;啦啦&apos;)&#125;&gt;变身1&lt;/button&gt; </div><div class="line">         </div><div class="line">         &#123;/*传参方法二*/&#125;</div><div class="line">         &lt;button onClick=&#123;this.stateType.bind(this,&apos;哈哈&apos;)&#125;&gt;变身2&lt;/button&gt; </div><div class="line"></div><div class="line">           &#123;/*给组件中加入属性或者标签内加入值给组件传递数据*/&#125;</div><div class="line">          &lt;Home </div><div class="line">              name=&#123;this.state.Homes[0].name&#125; </div><div class="line">              num=&#123;this.state.Homes[0].num&#125;</div><div class="line">              /&gt;   		</div><div class="line">          &lt;Home</div><div class="line">           	  &#123;/*使用属性传递事件*/&#125;    	  </div><div class="line">          	  myclick=&#123;this.stateType.bind(this,&apos;miss&apos;)&#125;</div><div class="line">          	  </div><div class="line">              name=&#123;this.state.Homes[1].name&#125; </div><div class="line">              num=&#123;this.state.Homes[1].num&#125;</div><div class="line">              &gt;&#123;this.state.otherState&#125;&lt;/Home&gt;	</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 导出APP</div><div class="line">export default App;</div><div class="line"></div><div class="line"></div><div class="line">&gt;Home(新建文件)</div><div class="line"></div><div class="line">import React from &apos;React&apos;</div><div class="line"></div><div class="line">//props是一个形参，用来接收数据可以任意命名，不过props更有语义化</div><div class="line">const home = ( props ) =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;div&gt;</div><div class="line">  			&lt;p onClick=&#123;props.myclick&#125;&gt;我的名字叫&#123;props.name&#125;,年纪有&#123;props.num&#125;岁&lt;/p&gt;</div><div class="line">  			</div><div class="line">  		    &#123;/*注释：children展示父组件给子组件传递的标签内值*/&#125;		</div><div class="line">            &lt;span&gt;&#123;props.children&#125;&lt;/span&gt;</div><div class="line">  		&lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default home</div></pre></td></tr></table></figure>
+<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p>使用步骤：</p>
+<p>​    1、给子组件中绑定onChange={props.changed}</p>
+<p>​    2、在父组件中绑定子组件传递来的属性changed，并使用事件changed={this.inputChange}接收传递来的值</p>
+<p>​    3、在事件中使用形参event接收传递来的参数，并使用setState()来更改状态中的值</p>
+<p>​        event.target.value 为当前接收到的值，event.target为目标对象</p>
+<p>​    4、在子组件中使用defaultValue接收父组件赋的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">App.js</div><div class="line"></div><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  // state使用管理状态，但只能在继承了Component的下面使用</div><div class="line">  state = &#123;</div><div class="line">      inputValue:&apos;双王争霸&apos;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  //使用形参接受传递的值</div><div class="line">  inputChange= (event) =&gt;&#123;</div><div class="line">      this.setState(&#123;</div><div class="line">        inputValue:event.target.value</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">          &lt;Home onClick=&#123;this.inputChange&#125;/&gt;   		</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 导出APP</div><div class="line">export default App;</div><div class="line"></div><div class="line"></div><div class="line">&gt;Home(新建文件)</div><div class="line"></div><div class="line">import React from &apos;React&apos;</div><div class="line"></div><div class="line">//props是一个形参，用来接收数据可以任意命名，不过props更有语义化</div><div class="line">const home = ( props ) =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;div&gt;</div><div class="line">        	 &lt;p&gt;&#123;props.inputValue&#125;&lt;p&gt;</div><div class="line">        	 </div><div class="line">        	 &#123;/*要使用defaultValue代替value，否则会报错*/&#125;</div><div class="line">  			&lt;input onChange=&quot;props.changed&quot; defaultValue=&#123;props.inputValue&#125;&gt;</div><div class="line">  		&lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default home</div></pre></td></tr></table></figure>
+<h3 id="React中的样式"><a href="#React中的样式" class="headerlink" title="React中的样式"></a>React中的样式</h3><p>使用方式分两种：</p>
+<p>​    1、引入样式：</p>
+<p>​            1、直接在对应的子组件文件中创建css，然后在组件中引入使用。</p>
+<p>​            2、在组件中使用className使用样式    ，有两种使用方式，一种一直只用样式类名，还有一种是以对象形式获得样式。    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&gt;Home.css</div><div class="line">.bgclass&#123;</div><div class="line">  background-color:red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">&gt;Home.js(子组件)</div><div class="line">import React from &apos;React&apos;</div><div class="line">import &apos;./Home.css&apos;</div><div class="line">或者</div><div class="line">import classs from &apos;./Home.css&apos;</div><div class="line"></div><div class="line"></div><div class="line">const home = ( props ) =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;div&gt;</div><div class="line">        	 &lt;p className=&quot;bgclass&quot;&gt;一行文字&lt;p&gt;</div><div class="line">        	 或者</div><div class="line">        	 &lt;p className=&quot;classs.bgclass&quot;&gt;一行文字&lt;p&gt;</div><div class="line">  		&lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default home</div></pre></td></tr></table></figure>
+<p>​    2、行内样式：</p>
+<p>​             1、在render() 中创建const style={}，里面的复合样式用驼峰命名。</p>
+<p>​             2、在给组件标签中添加style={style}，获取样式内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">App.js(父组件)</div><div class="line"></div><div class="line">class App extends Component &#123; </div><div class="line">  render() &#123;</div><div class="line">  </div><div class="line">   //添加样式:复合样式都用驼峰命名</div><div class="line">   const style=&#123;</div><div class="line">      backgroundColor:&apos;red&apos;;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">          &lt;Home style=&#123;style&#125; /&gt;   		</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 导出APP</div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<h3 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h3><p>render()：内容发生变化就会从新执行里面内容</p>
+<p>使用步骤：</p>
+<p>​    1、在state中声明存放一个if判断你的布尔值。</p>
+<p>​    2、创建更改state状态的事件。</p>
+<p>​    3、在render()内创建存放切换内容的变量和JSX语法中的if判断式，if中的内容存放在【变量名=()】中，并判断state中的状态更改时切换变量中内容。</p>
+<p>​    4、在{}显示内容。</p>
+<p>​           方式一（内容多时）：在return给需要显示的的地方放{showHomeDom}用来显示</p>
+<p>​           方式二（内容少时）：当内容少时可以用三元运算符直接写，就少去步骤三。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  //存放状态变量</div><div class="line">  state = &#123;</div><div class="line">      showHome:false</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  //更改状态的事件</div><div class="line">  showHomeType=()=&gt;&#123;</div><div class="line">    let type =this.state.showHome</div><div class="line">    this.setState(&#123;</div><div class="line">      showHome:!type</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">  	let showHomeDom = null</div><div class="line">  	if(this.state.showHome)&#123;</div><div class="line">  		showHomeDom=(</div><div class="line">  			&lt;div&gt;需要切换状态的内容&lt;/div&gt;</div><div class="line">  		)</div><div class="line">    &#125;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">      	  &lt;button onClick=&#123;()=&gt;this.showHomeType()&#125;&gt;切换状态&lt;/button&gt;</div><div class="line">      	  方式一：</div><div class="line">      	  &#123;showHomeDom&#125;</div><div class="line">      	  </div><div class="line">      	  方式二：</div><div class="line">      	  &#123;</div><div class="line">      	  	 this.state.showHome ?</div><div class="line"> 			 &lt;div&gt;需要切换状态的内容&lt;/div&gt;</div><div class="line">             ：null</div><div class="line">		  &#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>使用步骤：</p>
+<p>​    1、在state中存放需要循环的数组。</p>
+<p>​    2、在需要展示的地方用{}内写上循环语法，return出需要循环的内容。可以用一个唯一的容器包裹需要循环的内容，里面跟dom书写方法一样。</p>
+<p>​    3、要加入Key值，否则会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  //存放循环数组</div><div class="line">  state = &#123;</div><div class="line">      Homes:[</div><div class="line">        &#123;name:&apos;大王&apos;,num:&apos;52&apos;&#125;,</div><div class="line">        &#123;name:&apos;小王&apos;,num:&apos;48&apos;&#125;,</div><div class="line">        &#123;name:&apos;小明&apos;,num:&apos;66&apos;&#125;,</div><div class="line">      ],</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">      	   &#123;</div><div class="line">           </div><div class="line">           this.state.Homes.map((val,index)=&gt;&#123;</div><div class="line">             return &lt;div key=&#123;index&#125;&gt;</div><div class="line">               &lt;p&gt;这是一个循环里面的值：&#123;val.name&#125;&lt;/p&gt;</div><div class="line">               &lt;span&gt;=================================&lt;/span&gt;</div><div class="line">             &lt;/div&gt;</div><div class="line">           &#125;)</div><div class="line">           </div><div class="line">           &#125;   </div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="增删改功能"><a href="#增删改功能" class="headerlink" title="增删改功能"></a>增删改功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  //存放循环数组</div><div class="line">  state = &#123;</div><div class="line">      Homes:[</div><div class="line">        &#123;id:1,name:&apos;大王&apos;,num:&apos;52&apos;&#125;,</div><div class="line">        &#123;id:2,name:&apos;小王&apos;,num:&apos;48&apos;&#125;,</div><div class="line">        &#123;id:3,name:&apos;大鬼&apos;,num:&apos;886&apos;&#125;,</div><div class="line">        &#123;id:4,name:&apos;小鬼&apos;,num:&apos;666&apos;&#125;,</div><div class="line">      ],</div><div class="line">      addHomes:&#123;id:&apos;&apos;,name:&apos;&apos;,num:&apos;&apos;&#125;,</div><div class="line">  &#125;;</div><div class="line">  </div><div class="line">    // 添加数组</div><div class="line">  addHomeValue=(val,leng)=&gt;&#123;</div><div class="line">    var add = this.state.addHomes;</div><div class="line">    //  &#123;id:1,name:&apos;大王&apos;,num:&apos;52&apos;&#125;,</div><div class="line">    if(leng === 1) add.id = val.target.value</div><div class="line">    if(leng === 2) add.name = val.target.value</div><div class="line">    if(leng === 3) add.num = val.target.value</div><div class="line">  &#125;</div><div class="line">  // 判断对象中是否值为空</div><div class="line">  removeProperty =(object)=&gt;&#123;</div><div class="line">     let flag = true;</div><div class="line">      for(var key in object)&#123;</div><div class="line">        // console.log(object[key])</div><div class="line">          if (object[key] !== &apos;0&apos; &amp;&amp; !object[key]) &#123;</div><div class="line">              return false</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">      return flag;</div><div class="line">    &#125;</div><div class="line">  addHomeList=(val)=&gt;&#123;</div><div class="line">    let type =this.removeProperty(this.state.addHomes)</div><div class="line">    // console.log(this.state.addHomes,type)</div><div class="line">    if(type)&#123;</div><div class="line">      this.state.Homes.push(this.state.addHomes)</div><div class="line">      this.setState(&#123;</div><div class="line">        Homes:this.state.Homes</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">   // 修改功能</div><div class="line">  	HomeChenge=(event,id)=&gt;&#123;</div><div class="line">    // 找到当前需要修改的索引</div><div class="line">    const HomeIndex = this.state.Homes.findIndex(val=&gt;&#123;</div><div class="line">        return val.id === id;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    // 找到当前修改的对象</div><div class="line">    const thisHome = &#123;</div><div class="line">      ...this.state.Homes[HomeIndex]</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    // 给当前需要修改的对象属性赋值</div><div class="line">    // event.target.value为input取到的值</div><div class="line">    thisHome.name = event.target.value</div><div class="line"></div><div class="line">    // 找到原型数组</div><div class="line">    const Homes = [...this.state.Homes];</div><div class="line"></div><div class="line">    // 给原型数组添加修改的对象</div><div class="line">    Homes[HomeIndex] = thisHome</div><div class="line"></div><div class="line">    // 将修改好的数组从新更改给state</div><div class="line">    this.setState(&#123;</div><div class="line">      Homes:Homes</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  // 删除功能</div><div class="line">  HomesDel=(i)=&gt;&#123;</div><div class="line">    // let Homes =this.state.Homes</div><div class="line">    let Homes =[...this.state.Homes]</div><div class="line">    Homes.splice(i,1)</div><div class="line">    this.setState(&#123;</div><div class="line">      Homes:Homes</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">         &lt;div&gt;</div><div class="line">           &lt;input type=&quot;text&quot; onChange=&#123;(event) =&gt; this.addHomeValue(event,1)&#125;/&gt;</div><div class="line">           &lt;input type=&quot;text&quot; onChange=&#123;(event) =&gt; this.addHomeValue(event,2)&#125;/&gt;</div><div class="line">           &lt;input type=&quot;text&quot; onChange=&#123;(event) =&gt; this.addHomeValue(event,3)&#125;/&gt;</div><div class="line">           &lt;button onClick=&#123;()=&gt;this.addHomeList()&#125;&gt;添加数组&lt;/button&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">      	   &#123;</div><div class="line">           </div><div class="line">           this.state.Homes.map((val,index)=&gt;&#123;</div><div class="line">             return &lt;div key=&#123;index&#125;&gt;</div><div class="line">               &lt;p&gt;这是一个循环里面的值：&#123;val.name&#125;&lt;/p&gt;</div><div class="line">               &lt;span&gt;=================================&lt;/span&gt;</div><div class="line">                修改&lt;input type=&quot;text&quot; onChange=&#123;(event) =&gt; this.HomeChenge(event,val.id)&#125;/&gt;</div><div class="line">               &lt;span&gt;=================================&lt;/span&gt;</div><div class="line">               删除&lt;i onClick=&#123;()=&gt;this.HomesDel(index)&#125;&gt;【X】&lt;/i&gt;</div><div class="line">               &lt;span&gt;=================================&lt;/span&gt;</div><div class="line">             &lt;/div&gt;</div><div class="line">           &#125;)          </div><div class="line">           &#125;   </div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="动态样式"><a href="#动态样式" class="headerlink" title="动态样式"></a>动态样式</h3><h4 id="切换样式"><a href="#切换样式" class="headerlink" title="切换样式"></a>切换样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  //存放循环数组</div><div class="line">  state = &#123;</div><div class="line">      showHome:false</div><div class="line">  &#125;;</div><div class="line">  </div><div class="line">  //切换样式事件</div><div class="line">  styleType=()=&gt;&#123;</div><div class="line">    let type =this.state.showHome</div><div class="line">    console.log(type)</div><div class="line">    this.setState(&#123;</div><div class="line">      showHome:!type</div><div class="line">    &#125;)</div><div class="line">  &#125;;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">  </div><div class="line">        let textColor;</div><div class="line">        if(this.state.showHome)&#123;</div><div class="line">          // textColor.push(&apos;color_red&apos;)</div><div class="line">          textColor = &apos;color_red&apos;</div><div class="line">        &#125;else&#123;</div><div class="line">          // textColor.push(&apos;color_blue&apos;)</div><div class="line">          textColor = &apos;color_blue&apos;</div><div class="line">        &#125;</div><div class="line">    </div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">      	 &lt;button className=&#123;textColor&#125; onClick=&#123;()=&gt;this.styleType()&#125;&gt;切换状态&lt;/button&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="添加样式"><a href="#添加样式" class="headerlink" title="添加样式"></a>添加样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  //存放循环数组</div><div class="line">  state = &#123;</div><div class="line">     Homes:[</div><div class="line">        &#123;id:1,name:&apos;大王&apos;,num:&apos;52&apos;&#125;,</div><div class="line">        &#123;id:2,name:&apos;小王&apos;,num:&apos;48&apos;&#125;,</div><div class="line">        &#123;id:3,name:&apos;大鬼&apos;,num:&apos;886&apos;&#125;,</div><div class="line">        &#123;id:4,name:&apos;小鬼&apos;,num:&apos;666&apos;&#125;,</div><div class="line">      ],</div><div class="line">  &#125;;</div><div class="line">  </div><div class="line">  //切换样式事件</div><div class="line">  styleType=()=&gt;&#123;</div><div class="line">    let type =this.state.showHome</div><div class="line">    console.log(type)</div><div class="line">    this.setState(&#123;</div><div class="line">      showHome:!type</div><div class="line">    &#125;)</div><div class="line">  &#125;;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">    </div><div class="line">      const classs = [];</div><div class="line">      if(this.state.Homes.length &lt;= 2)&#123;</div><div class="line">        classs.push(&quot;color_blue&quot;)</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      if(this.state.Homes.length &lt;= 3)&#123;</div><div class="line">      	classs.push(&quot;color_red&quot;)</div><div class="line">      &#125;</div><div class="line">    </div><div class="line">      &lt;div className=&quot;App&quot;&gt;</div><div class="line">      	&lt;h1 className=&#123;classs.join(&quot; &quot;)&#125;&gt;我是动态样式&lt;/h1&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="React路由"><a href="#React路由" class="headerlink" title="React路由"></a>React路由</h3><h4 id="基础路由配置"><a href="#基础路由配置" class="headerlink" title="基础路由配置"></a>基础路由配置</h4><p>1、安装react-router-dom    </p>
+<p>​      yarn add react-router-dom</p>
+<p>2、配置路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">index.js</div><div class="line"></div><div class="line">// eslint-disable-next-line</div><div class="line">import &#123; BrowserRouter as Router, Route, NavLink, Switch &#125; from &apos;react-router-dom&apos;;</div><div class="line">//使用哪个组件就引入哪个组件</div><div class="line"></div><div class="line">import Home from &apos;./pages/Home/Home&apos;;</div><div class="line">import News from &apos;./pages/News/News&apos;; </div><div class="line">import Course from &apos;./pages/Course/Course&apos;; </div><div class="line">import JoinUs from &apos;./pages/JoinUs/JoinUs&apos;;</div><div class="line"></div><div class="line">const App = () =&gt; (</div><div class="line">    &lt;Router&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            &lt;header&gt;</div><div class="line">                &lt;nav&gt;</div><div class="line">                    &lt;ul&gt;</div><div class="line">                        &lt;li&gt;&lt;NavLink exact to=&quot;/&quot;&gt;首页&lt;/NavLink&gt;&lt;/li&gt;</div><div class="line">                        &lt;li&gt;&lt;NavLink to=&quot;/news&quot;&gt;新闻&lt;/NavLink&gt;&lt;/li&gt;</div><div class="line">                        &lt;li&gt;&lt;NavLink to=&apos;/course&apos;&gt;课程&lt;/NavLink&gt;&lt;/li&gt;</div><div class="line">                        &lt;li&gt;&lt;NavLink to=&quot;/joinUs&quot;&gt;加入我们&lt;/NavLink&gt;&lt;/li&gt;</div><div class="line">                    &lt;/ul&gt;</div><div class="line">                &lt;/nav&gt;</div><div class="line">            &lt;/header&gt;</div><div class="line">            &lt;Switch&gt;</div><div class="line">              &lt;Route exact path=&quot;/&quot; component=&#123;Home&#125;/&gt;</div><div class="line">              &lt;Route path=&quot;/news&quot; component=&#123;News&#125;/&gt;</div><div class="line">              &lt;Route path=&quot;/course&quot; component=&#123;Course&#125;/&gt;</div><div class="line">              &lt;Route path=&quot;/joinUs&quot; render=&#123;(props) =&gt; &lt;JoinUs &#123;...props&#125;/&gt;&#125;/&gt;</div><div class="line">            &lt;/Switch&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/Router&gt;</div><div class="line">)</div><div class="line"></div><div class="line">ReactDOM.render( &lt;App/&gt; , document.getElementById(&apos;root&apos;));</div></pre></td></tr></table></figure>
+<p><navlink>：跳转地址的导航标签组件</navlink></p>
+<p><switch>: </switch></p>
+<p>​    1、只找到第一个被location匹配到的<route>就立即停止继续匹配，并且把它渲染出来</route></p>
+<p>​    2、当前面所有的路由都匹配不上时，会匹配最后一个<code>path=&quot;*&quot;</code>的路由，该路由再重定向到404页面。</p>
+<p><route>: 路由渲染的内容</route></p>
+<p>​    path：需要匹配的路由路径</p>
+<p>​    runder：渲染的内容</p>
+<p>​    exact：只有URL和该<route>的path属性进行精确比对后完全相同该<route>才会被渲染</route></route></p>
+<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">pages/Course.js</div><div class="line"></div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;</div><div class="line">import &#123;</div><div class="line">	Route,</div><div class="line">	NavLink</div><div class="line">&#125; from &apos;react-router-dom&apos;</div><div class="line"></div><div class="line">class Course extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        let &#123; match &#125; = this.props;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;list&quot;&gt;</div><div class="line">                &lt;Header /&gt;</div><div class="line">                &lt;NavLink to=&#123;`$&#123;match.url&#125;/front-end`&#125;&gt;前端技术&lt;/NavLink&gt;</div><div class="line">                &lt;NavLink to=&#123;`$&#123;match.url&#125;/big-data`&#125;&gt;大数据&lt;/NavLink&gt;</div><div class="line">                &lt;NavLink to=&#123;`$&#123;match.url&#125;/algorithm`&#125;&gt;算法&lt;/NavLink&gt;</div><div class="line"></div><div class="line">                &lt;Route path=&#123;`$&#123;match.path&#125;/:name`&#125; render=&#123;(props) =&gt; &lt;div&gt;&#123;props.match.params.name&#125;&lt;/div&gt;&#125;/&gt;</div><div class="line">            &lt;/div&gt;  </div><div class="line">        ) </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Course</div></pre></td></tr></table></figure>
+<p>match：是实现嵌套路由的对象，当我们在某个页面跳转到它的下一级子页面时，我们不会显示地写出当前页面的路由，而是用<code>match</code>对象的<code>path</code>和<code>url</code>属性</p>
+<h4 id="父子路由传参"><a href="#父子路由传参" class="headerlink" title="父子路由传参"></a>父子路由传参</h4><p>父组件通过to属性的search，hash, state向子组件传参，</p>
+<p>​    search: ‘’, //会添加到url里面，形如”?name=melody&amp;age=20”</p>
+<p>​    hash: ‘’, //会添加到url里面，形如”#tab1”</p>
+<p>​    state: {},//不会添加到url里面</p>
+<p>子组件通过<code>this.props.location.search|hash|state</code>获取</p>
+<p><strong>传递方式：</strong></p>
+<p>方法一：将配置子路由的写在index.js里面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">index.js</div><div class="line"></div><div class="line">&lt;Route exact path=&quot;/news&quot; component=&#123;News&#125;/&gt;</div><div class="line">&lt;Route path=&quot;/news/:id&quot; component=&#123;NewsDetail&#125;/&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">pages/News.js</div><div class="line"></div><div class="line">class News extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;news&quot;&gt;</div><div class="line">                &lt;Header /&gt;</div><div class="line">                &lt;h1 className=&quot;title&quot;&gt;请选择一条新闻：&lt;/h1&gt; </div><div class="line">                &#123;data.map((item) =&gt; (</div><div class="line">                    &lt;div key=&#123;item.id&#125;&gt;</div><div class="line">                        &lt;NavLink to=&#123;&#123;</div><div class="line">                            pathname: `$&#123;this.props.match.url&#125;/$&#123;item.id&#125;`,</div><div class="line">                            state: &#123;data: item&#125;</div><div class="line">                        &#125;&#125;&gt;</div><div class="line">                            &#123;item.title&#125;</div><div class="line">                        &lt;/NavLink&gt;</div><div class="line">                    &lt;/div&gt;</div><div class="line">                ))&#125;</div><div class="line">            &lt;/div&gt;  </div><div class="line">        ) </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">pages/NewsDetail.js</div><div class="line"></div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;</div><div class="line">import Header from &apos;../components/Header&apos;</div><div class="line"></div><div class="line">class NewsDetail extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        super(props)</div><div class="line">        this.data = props.location.state.data; //获取父组件传递过来的数据</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;news&quot;&gt;</div><div class="line">                &lt;Header /&gt;</div><div class="line">                &lt;h1&gt;&#123;this.data.title&#125;&lt;/h1&gt;</div><div class="line">                &lt;p&gt;&#123;this.data.content&#125;&lt;/p&gt;</div><div class="line">            &lt;/div&gt;  </div><div class="line">        ) </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default NewsDetail</div></pre></td></tr></table></figure>
+<p>方法二：仍然将子路由配置写在News.js里面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">index.js</div><div class="line">&lt;Route path=&quot;/news&quot; component=&#123;News&#125;/&gt;</div></pre></td></tr></table></figure>
+<p>注意：这里一定不能加exact，否则子组件永远渲染不出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">pages/News.js</div><div class="line">class NewsPage extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;news&quot;&gt;</div><div class="line">                &lt;Header /&gt;</div><div class="line">                &lt;h1 className=&quot;title&quot;&gt;请选择一条新闻：&lt;/h1&gt; </div><div class="line">                &#123;data.map((item) =&gt; (</div><div class="line">                    &lt;div key=&#123;item.id&#125;&gt;</div><div class="line">                        &lt;NavLink to=&#123;&#123;</div><div class="line">                            pathname: `$&#123;this.props.match.url&#125;/$&#123;item.id&#125;`,</div><div class="line">                            state: &#123;data: item&#125;</div><div class="line">                        &#125;&#125;&gt;</div><div class="line">                            &#123;item.title&#125;</div><div class="line">                        &lt;/NavLink&gt;</div><div class="line">                    &lt;/div&gt;</div><div class="line">                ))&#125;</div><div class="line">            &lt;/div&gt;  </div><div class="line">        ) </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const News = (&#123;match&#125;) =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;div&gt;</div><div class="line">            &lt;Route path=&#123;`$&#123;match.path&#125;/:id`&#125; component=&#123;NewsDetail&#125;/&gt;</div><div class="line">            &lt;Route exact path=&#123;match.path&#125; render=&#123;(props) =&gt; &lt;NewsPage &#123;...props&#125; /&gt;&#125;/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default News</div></pre></td></tr></table></figure>
+<p><strong>接收方式：</strong></p>
+<p>props.match.params比props.location.state.data更安全获取数据</p>
+<p>方法一：数据量少时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">pages/NewsDetail.js</div><div class="line"></div><div class="line">constructor(props) &#123;</div><div class="line">    super(props)</div><div class="line">    this.id = props.match.params.id;</div><div class="line">        this.state = &#123;</div><div class="line">          data: &apos;&apos;</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">componentWillMount() &#123;</div><div class="line">  this.getNewsDetail();</div><div class="line">&#125;</div><div class="line">getNewsDetail() &#123;</div><div class="line">  fetch(`xxx?id=$&#123;this.id&#125;`).then(res =&gt; res.json())</div><div class="line">      .then(resData =&gt; &#123;</div><div class="line">        this.setState(&#123;data: resData&#125;);</div><div class="line">      &#125;)</div><div class="line">&#125;</div><div class="line">render() &#123;</div><div class="line">    let title = this.state.data &amp;&amp; this.state.data.title;</div><div class="line">    let content = this.state.data &amp;&amp; this.state.data.content;</div><div class="line">    return(</div><div class="line">        &lt;div&gt;</div><div class="line">            &lt;h1&gt;&#123;title&#125;&lt;/h1&gt;</div><div class="line">            &lt;p&gt;&#123;content&#125;&lt;/p&gt;</div><div class="line">        &lt;/div&gt;  </div><div class="line">    ) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>方法二：数据量多时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">pages/NewsDetail.js</div><div class="line"></div><div class="line">class NewsDetail extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        super(props)</div><div class="line">        this.data = props.location.state ? props.location.state.data : &#123;&#125; ;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        let title = this.data.title || &apos;&apos;;</div><div class="line">        let content = this.data.content || &apos;&apos;;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;news&quot;&gt;</div><div class="line">                &lt;Header /&gt;</div><div class="line">                &lt;h1&gt;&#123;title&#125;&lt;/h1&gt;</div><div class="line">                &lt;p&gt;&#123;content&#125;&lt;/p&gt;</div><div class="line">            &lt;/div&gt;  </div><div class="line">        ) </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="React错误查询工具"><a href="#React错误查询工具" class="headerlink" title="React错误查询工具"></a>React错误查询工具</h3><p>谷歌工具：React Developer Tools    </p>
+<p>​        </p>
+<h3 id="VScode-常用插件"><a href="#VScode-常用插件" class="headerlink" title="VScode  常用插件"></a>VScode  常用插件</h3><p>1、【vscode-fileheader】 添加文件头</p>
+<p>​    使用：Ctrl+Ait+i</p>
+<p>2、【reactjs code snippets】 react 开发的一些简写，提高开发效率 </p>
+<p>​    使用：rcc+回车</p>
+<p>3、【Path Autocomplete】   路径提示功能 </p>
+<p>4、【git blame】 安装git后， git blame可以基于git去审查每一行的代码最近一次修改的作者</p>
+<p>5、【rc-beautify vscode】 格式化JS，JSX代码</p>
+<p>​    使用：CTRL + B</p>
+<h3 id="挖坑总结"><a href="#挖坑总结" class="headerlink" title="挖坑总结"></a>挖坑总结</h3><p>报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Download the React DevTools for a better development experience: https://fb.me/react-devtools</div></pre></td></tr></table></figure>
+<p>解决方法：安装React Devtools调试工具，<a href="https://blog.csdn.net/one_girl/article/details/80916232" target="_blank" rel="external">https://blog.csdn.net/one_girl/article/details/80916232</a></p>
+<p>报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Line 14:  &apos;JoinUs&apos; is defined but never used  no-unused-vars</div><div class="line"></div><div class="line">Search for the keywords to learn more about each warning.</div><div class="line">To ignore, add // eslint-disable-next-line to the line before.</div></pre></td></tr></table></figure>
+<p>解决方法：关闭eslint语法检测，在单独需要关闭的js文件头部加上下面的函数    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/*eslint-disable*/</div><div class="line">function test() &#123;</div><div class="line">    return true</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/01/ES6等新知识点/" rel="next" title="ES6等新知识点">
+                <i class="fa fa-chevron-left"></i> ES6等新知识点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/18/Vue2-0笔记-持续更新/" rel="prev" title="Vue2.0笔记[持续更新]">
+                Vue2.0笔记[持续更新] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460"
+               alt="阿毛" />
+          <p class="site-author-name" itemprop="name">阿毛</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人在前端开发中遇到的一些问题总结</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React项目结构"><span class="nav-number">1.</span> <span class="nav-text">React项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-json介绍"><span class="nav-number">2.</span> <span class="nav-text">package.json介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX语法"><span class="nav-number">3.</span> <span class="nav-text">JSX语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件使用"><span class="nav-number">4.</span> <span class="nav-text">组件使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件通信"><span class="nav-number">5.</span> <span class="nav-text">组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态组件分类"><span class="nav-number">6.</span> <span class="nav-text">状态组件分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有状态组件"><span class="nav-number">6.1.</span> <span class="nav-text">有状态组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无状态组件"><span class="nav-number">6.2.</span> <span class="nav-text">无状态组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">7.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state状态管理"><span class="nav-number">8.</span> <span class="nav-text">state状态管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件相关"><span class="nav-number">9.</span> <span class="nav-text">事件相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件注册"><span class="nav-number">9.1.</span> <span class="nav-text">事件注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件传参"><span class="nav-number">9.2.</span> <span class="nav-text">事件传参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传递事件"><span class="nav-number">9.3.</span> <span class="nav-text">传递事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双向绑定"><span class="nav-number">10.</span> <span class="nav-text">双向绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React中的样式"><span class="nav-number">11.</span> <span class="nav-text">React中的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if分支"><span class="nav-number">12.</span> <span class="nav-text">if分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for循环"><span class="nav-number">13.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增删改功能"><span class="nav-number">14.</span> <span class="nav-text">增删改功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态样式"><span class="nav-number">15.</span> <span class="nav-text">动态样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#切换样式"><span class="nav-number">15.1.</span> <span class="nav-text">切换样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加样式"><span class="nav-number">15.2.</span> <span class="nav-text">添加样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React路由"><span class="nav-number">16.</span> <span class="nav-text">React路由</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础路由配置"><span class="nav-number">16.1.</span> <span class="nav-text">基础路由配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套路由"><span class="nav-number">16.2.</span> <span class="nav-text">嵌套路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父子路由传参"><span class="nav-number">16.3.</span> <span class="nav-text">父子路由传参</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React错误查询工具"><span class="nav-number">17.</span> <span class="nav-text">React错误查询工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VScode-常用插件"><span class="nav-number">18.</span> <span class="nav-text">VScode  常用插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挖坑总结"><span class="nav-number">19.</span> <span class="nav-text">挖坑总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿毛</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

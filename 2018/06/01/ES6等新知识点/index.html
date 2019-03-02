@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="JS获取元素的大小及相视口位置返回元素的大小及其相对于视口的位置的对象值 1getBoundingClientRect() ES6总结对象的方法汇总删除对象1delete o.p 循环对象1、$.each循环 2、for in循环 添加对象1、date[“对象名”] = 对象值 2、date.对象名 = 对象值 3、遍地添加 12345对象中添加属性及命名let rules = &amp;#123;&amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6等新知识点">
+<meta property="og:url" content="http://yoursite.com/2018/06/01/ES6等新知识点/index.html">
+<meta property="og:site_name" content="Mar-x 个人博客">
+<meta property="og:description" content="JS获取元素的大小及相视口位置返回元素的大小及其相对于视口的位置的对象值 1getBoundingClientRect() ES6总结对象的方法汇总删除对象1delete o.p 循环对象1、$.each循环 2、for in循环 添加对象1、date[“对象名”] = 对象值 2、date.对象名 = 对象值 3、遍地添加 12345对象中添加属性及命名let rules = &amp;#123;&amp;#1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-02T05:48:26.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6等新知识点">
+<meta name="twitter:description" content="JS获取元素的大小及相视口位置返回元素的大小及其相对于视口的位置的对象值 1getBoundingClientRect() ES6总结对象的方法汇总删除对象1delete o.p 循环对象1、$.each循环 2、for in循环 添加对象1、date[“对象名”] = 对象值 2、date.对象名 = 对象值 3、遍地添加 12345对象中添加属性及命名let rules = &amp;#123;&amp;#1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/01/ES6等新知识点/"/>
+
+
+
+
+
+  <title>ES6等新知识点 | Mar-x 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mar-x 个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一位在前端的道路上奋斗的阿毛同学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/ES6等新知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿毛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mar-x 个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6等新知识点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T13:47:22+08:00">
+                2018-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><h4 id="获取元素的大小及相视口位置"><a href="#获取元素的大小及相视口位置" class="headerlink" title="获取元素的大小及相视口位置"></a>获取元素的大小及相视口位置</h4><p>返回元素的大小及其相对于视口的位置的对象值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getBoundingClientRect()</div></pre></td></tr></table></figure>
+<h2 id="ES6总结"><a href="#ES6总结" class="headerlink" title="ES6总结"></a>ES6总结</h2><h3 id="对象的方法汇总"><a href="#对象的方法汇总" class="headerlink" title="对象的方法汇总"></a>对象的方法汇总</h3><h4 id="删除对象"><a href="#删除对象" class="headerlink" title="删除对象"></a>删除对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete o.p</div></pre></td></tr></table></figure>
+<h4 id="循环对象"><a href="#循环对象" class="headerlink" title="循环对象"></a>循环对象</h4><p>1、$.each循环</p>
+<p>2、for in循环</p>
+<h4 id="添加对象"><a href="#添加对象" class="headerlink" title="添加对象"></a>添加对象</h4><p>1、date[“对象名”] = 对象值</p>
+<p>2、date.对象名 = 对象值</p>
+<p>3、遍地添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">对象中添加属性及命名</div><div class="line">let rules = &#123;&#125;</div><div class="line">this.list.forEach(item =&gt; &#123;</div><div class="line">     rules[item.name] = item.rule</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<h4 id="Object-assign-复制和合并对象"><a href="#Object-assign-复制和合并对象" class="headerlink" title="Object.assign()复制和合并对象"></a>Object.assign()复制和合并对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">复制</div><div class="line">var obj = &#123; a: 1 &#125;;</div><div class="line">var copy = Object.assign(&#123;&#125;, obj);</div><div class="line">console.log(copy); // &#123; a: 1 &#125;</div><div class="line"></div><div class="line">合并</div><div class="line">var o1 = &#123; a: 1 &#125;;</div><div class="line">var o2 = &#123; b: 2 &#125;;</div><div class="line">var o3 = &#123; c: 3 &#125;;</div><div class="line"></div><div class="line">var obj = Object.assign(o1, o2, o3);</div></pre></td></tr></table></figure>
+<p>解释：将传入的对象合并成一个对象，如果里面有相同的属性名的话，后面的对象属性覆盖前面对象的属性</p>
+<h4 id="Object-is-判断两个值是否相同"><a href="#Object-is-判断两个值是否相同" class="headerlink" title="Object.is()判断两个值是否相同"></a>Object.is()判断两个值是否相同</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Object.is(&apos;haorooms&apos;, &apos;haorooms&apos;);     // true</div><div class="line">Object.is(window, window);   // true</div><div class="line"></div><div class="line">Object.is(&apos;foo&apos;, &apos;bar&apos;);     // false</div><div class="line">Object.is([], []);           // false</div></pre></td></tr></table></figure>
+<h4 id="Object-entries-对象转化二维数组"><a href="#Object-entries-对象转化二维数组" class="headerlink" title="Object.entries()对象转化二维数组"></a>Object.entries()对象转化二维数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const obj = &#123; foo: &apos;bar&apos;, baz: 42 &#125;;</div><div class="line">console.log(Object.entries(obj)); // [ [&apos;foo&apos;, &apos;bar&apos;], [&apos;baz&apos;, 42] ]</div></pre></td></tr></table></figure>
+<h4 id="返回对象名称数组"><a href="#返回对象名称数组" class="headerlink" title="返回对象名称数组"></a>返回对象名称数组</h4><p><strong>Object.keys()</strong></p>
+<p>用于获取对象自身所有的可枚举的属性值，但不包括原型中的属性，然后返回一个由属性名组成的数组。</p>
+<p><strong>Object.getOwnPropertyNames()</strong></p>
+<p>返回对象的所有自身属性的属性名（包括不可枚举的属性）组成的数组，但不会获取原型链上的属性。</p>
+<p>参考资料：<a href="https://www.cnblogs.com/goloving/p/7680572.html" target="_blank" rel="external">https://www.cnblogs.com/goloving/p/7680572.html</a></p>
+<p>​           <a href="https://www.haorooms.com/post/js_objectoperate" target="_blank" rel="external">https://www.haorooms.com/post/js_objectoperate</a>    </p>
+<h3 id="数组操作方法"><a href="#数组操作方法" class="headerlink" title="数组操作方法"></a>数组操作方法</h3><h4 id="some-与every-数组判断"><a href="#some-与every-数组判断" class="headerlink" title="some()与every()数组判断"></a>some()与every()数组判断</h4><p>some()：一真即真，只要其中一个为true 就会返回true的。</p>
+<p>every()：一假即假，只要其中一个味false就会返回false的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[].some(item =&gt; item &lt; 1)</div><div class="line">[].every(item =&gt; item &gt; 1)</div></pre></td></tr></table></figure>
+<h4 id="filter-过滤数组"><a href="#filter-过滤数组" class="headerlink" title="filter()过滤数组"></a>filter()过滤数组</h4><p>给需要过滤的数组调用filter()函数，并在括号中填写滤掉条件，并返回过滤完的数组传给变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [20,30,50, 96,50]</div><div class="line">var newArr = arr.filter(item =&gt; item&gt;40)  </div><div class="line">console.log(newArr)</div></pre></td></tr></table></figure>
+<h4 id="reduce-数组求和"><a href="#reduce-数组求和" class="headerlink" title="reduce()数组求和"></a>reduce()数组求和</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let arr=[1,2,3,4,5];</div><div class="line">let result=arr.reduce(function(num,item,index)&#123;</div><div class="line">  console.log(num);   //1 3 6 10 num相当每次两数相加的中间结果,第一次会把数组第一个数给它</div><div class="line">  console.log(item);  //2 3 4 5  item就是数组中的每个数,由于第一个给num了,所以第二个给它</div><div class="line">  console.log(index); //1 2 3 4  项的索引,由于第一次没有前一次的计算,用arr[0]来抵      </div><div class="line">  return num+item;</div><div class="line">&#125;);</div><div class="line">console.log(result);    // 15</div></pre></td></tr></table></figure>
+<h4 id="class创建构造函数"><a href="#class创建构造函数" class="headerlink" title="class创建构造函数"></a>class创建构造函数</h4><p>创建实例的时候里面会有一个constructer()方法，可以做New函数中的传入对象操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class HttpRequest &#123;</div><div class="line">  constructor (baseUrl = baseURL) &#123;</div><div class="line">  //括号中传入参数。</div><div class="line">  //HttpRequestbaseUrl = baseURL 是ES6写法相当于 baseUrl =baseUrl || baseURL</div><div class="line">  </div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="import-mapGetters-from-“vuex”（结构赋值）"><a href="#import-mapGetters-from-“vuex”（结构赋值）" class="headerlink" title="import { mapGetters } from “vuex”（结构赋值）"></a>import { mapGetters } from “vuex”（结构赋值）</h4><p>定义：讲单独一个或者多个方法引入给文件</p>
+<p>优点：调用引入的文件中的方法，把需要调用的方法名暴露给引入的文件中，这样就不用全部方法都引入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Es5:</div><div class="line">import Vue from &quot;vuex&quot;;</div><div class="line">const mapGetters = Vue.mapGetters </div><div class="line"></div><div class="line">Es6:</div><div class="line">import &#123; mapGetters &#125; from &quot;vuex&quot;</div><div class="line"></div><div class="line"></div><div class="line">相当于：</div><div class="line">创建：</div><div class="line">export const authorization = () =&gt; &#123;</div><div class="line">  return </div><div class="line">&#125;</div><div class="line"></div><div class="line">使用：</div><div class="line">import &#123; authorization &#125; from &apos;./response/user&apos;</div></pre></td></tr></table></figure>
+<h4 id="…（扩展运算符）"><a href="#…（扩展运算符）" class="headerlink" title="…（扩展运算符）"></a>…（扩展运算符）</h4><p>展开一个对象，将里面的内容都扁平化展现出来。数组直接写函数名当做需要在此页面调用的全局方法，可以直接调用获取state中的值，对象的调取方式为使用箭头函数获取state文件，然后获得state内的对象值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">template:</div><div class="line">	&lt;p&gt;&#123;&#123;appName&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">computed: &#123;</div><div class="line">		//Es5:</div><div class="line">		appName () &#123;</div><div class="line">  			return this.$store.state.appName</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		//Es6:</div><div class="line">		//数组展开形式</div><div class="line">        ...mapState([</div><div class="line">  			&apos;appName&apos;</div><div class="line">		]);</div><div class="line">		</div><div class="line">        //对象展开形式</div><div class="line">        ...mapState(&#123;</div><div class="line">  			appName: state =&gt; state.appName</div><div class="line">		&#125;)</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
+<h4 id="变量-（Template-Strings-模版字符串）"><a href="#变量-（Template-Strings-模版字符串）" class="headerlink" title="${ 变量 }（Template Strings 模版字符串）"></a>${ 变量 }（<code>Template Strings</code> 模版字符串）</h4><p>介绍：用来返回字符串，可以直接将变量（或者计算时的变量）放进里面然后转换为字符串输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">方式一：</div><div class="line">const name = &apos;小缘&apos;</div><div class="line">const age = 14</div><div class="line">console.info(`大家好，我叫$&#123;name&#125;，今年$&#123;age&#125;岁了`)</div><div class="line">// 等价于</div><div class="line">console.info(&apos;大家好，我叫&apos; + name + &apos;，今年&apos; + age + &apos;岁了&apos;)</div><div class="line"></div><div class="line">方式二：</div><div class="line">function arr(date)&#123;</div><div class="line">  return `$&#123; date + 1&#125;%` </div><div class="line">&#125;</div><div class="line">arr(10)   //  &apos;11%&apos;</div></pre></td></tr></table></figure>
+<h3 id="Css3总结"><a href="#Css3总结" class="headerlink" title="Css3总结"></a>Css3总结</h3><h4 id="calc-计算函数"><a href="#calc-计算函数" class="headerlink" title="calc()计算函数"></a>calc()计算函数</h4><p>介绍：任何长度值都可以使用calc()函数进行计算</p>
+<p>需要注意的是，运算符前后都需要保留一个空格，例如：<code>width: calc(100% - 10px)</code>；</p>
+<h3 id="Mack虚拟数据"><a href="#Mack虚拟数据" class="headerlink" title="Mack虚拟数据"></a>Mack虚拟数据</h3><h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p>1、在main.js给Vue框架引入Mack插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">main.js</div><div class="line">//判断是如果是生产环境就启用，非生产环境不用</div><div class="line">if (process.env.NODE_ENV !== &apos;production&apos;) require(&apos;./mock&apos;)</div></pre></td></tr></table></figure>
+<p>2、首先在index.js设置mock配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">index.js</div><div class="line">import Mock from &apos;mockjs&apos;</div><div class="line">const Random = Mock.Random</div><div class="line">import &#123; getFolderList &#125; from &apos;./response/data&apos;</div><div class="line"></div><div class="line">//参数：请求后缀名(/\/后缀名/)，请求方式，请求数据</div><div class="line">Mock.mock(/\/getFolderList/, &apos;get&apos;, getFolderList)</div><div class="line"></div><div class="line">// 延迟时间</div><div class="line">Mock.setup(&#123;</div><div class="line">  timeout: 0</div><div class="line">&#125;)</div><div class="line"></div><div class="line">Random.extend(&#123;</div><div class="line">  fruit () &#123;</div><div class="line">    const fruit = [&apos;apple&apos;, &apos;peach&apos;, &apos;lemon&apos;]</div><div class="line">    return this.pick(fruit)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">export default Mock</div></pre></td></tr></table></figure>
+<p>3、在date.js文件中设置接口数据格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">data.js</div><div class="line">import Mock from &apos;mockjs&apos;</div><div class="line">const Random = Mock.Random</div><div class="line"></div><div class="line">export const getFileList = () =&gt; &#123;</div><div class="line">  //数据类型配置</div><div class="line">  const template = &#123;</div><div class="line">    &apos;name|5&apos;: &apos;@cword&apos;,</div><div class="line">    &apos;creat_time&apos;: &apos;@datetime&apos;,</div><div class="line">    &apos;folder_id|1-5&apos;: 0,</div><div class="line">    &apos;id|+1&apos;: 10000</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  let arr = []</div><div class="line">  //调用循环函数的方法，传入的参数一为数据的条数，参数二为往arr数组push的回调函数</div><div class="line">  doCustomTimes(10, () =&gt; &#123;</div><div class="line">    arr.push(Mock.mock(template))</div><div class="line">  &#125;)</div><div class="line">  return arr</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4、在lib/tools.js中配置多条数据的循环函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">export const doCustomTimes = (times, callback) =&gt; &#123;</div><div class="line">  let i = -1</div><div class="line">  while (++i &lt; times) &#123;</div><div class="line">    callback(i)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>5、在组建中使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import &#123; getFolderList &#125; from &apos;@/api/data&apos;</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    return &#123;</div><div class="line">      folderList: [],</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mounted () &#123;</div><div class="line">    getFolderList().then(res =&gt; &#123;</div><div class="line">      this.folderList = res</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="将一组数据筛选进另一组数据"><a href="#将一组数据筛选进另一组数据" class="headerlink" title="将一组数据筛选进另一组数据"></a>将一组数据筛选进另一组数据</h4><p>使用到了vue的clonedeep深拷贝插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">.vue</div><div class="line">//调用方法</div><div class="line">putFileInFolder(被添加的数组，添加的数组)</div><div class="line"></div><div class="line"></div><div class="line">.util.js</div><div class="line">import clonedeep from &apos;clonedeep&apos;</div><div class="line"></div><div class="line">export const putFileInFolder = (folderList, fileList) =&gt; &#123;</div><div class="line">  const folderListCloned = clonedeep(folderList)</div><div class="line">  const fileListCloned = clonedeep(fileList)</div><div class="line">  return folderListCloned.map(folderItem =&gt; &#123;</div><div class="line">    const folderId = folderItem.id</div><div class="line">    let index = fileListCloned.length</div><div class="line">    while (--index &gt;= 0) &#123;</div><div class="line">      const fileItem = fileListCloned[index]</div><div class="line">      if (fileItem.folder_id === folderId) &#123;</div><div class="line">        const file = fileListCloned.splice(index, 1)[0]</div><div class="line">        file.title = file.name</div><div class="line">        if (folderItem.children) folderItem.children.push(file)</div><div class="line">        else folderItem.children = [file]</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    folderItem.type = &apos;folder&apos;</div><div class="line">    return folderItem</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><h4 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h4><p>快速打开VScode： 在当前文件使用编辑器指令（code .）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/29/Browser-sync浏览器就自动刷新/" rel="next" title="Browser-sync浏览器同步测试工具">
+                <i class="fa fa-chevron-left"></i> Browser-sync浏览器同步测试工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/23/React笔记/" rel="prev" title="React笔记">
+                React笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460"
+               alt="阿毛" />
+          <p class="site-author-name" itemprop="name">阿毛</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人在前端开发中遇到的一些问题总结</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS"><span class="nav-number">1.</span> <span class="nav-text">JS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取元素的大小及相视口位置"><span class="nav-number">1.1.</span> <span class="nav-text">获取元素的大小及相视口位置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6总结"><span class="nav-number"></span> <span class="nav-text">ES6总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的方法汇总"><span class="nav-number">1.</span> <span class="nav-text">对象的方法汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除对象"><span class="nav-number">1.1.</span> <span class="nav-text">删除对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环对象"><span class="nav-number">1.2.</span> <span class="nav-text">循环对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加对象"><span class="nav-number">1.3.</span> <span class="nav-text">添加对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-assign-复制和合并对象"><span class="nav-number">1.4.</span> <span class="nav-text">Object.assign()复制和合并对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-is-判断两个值是否相同"><span class="nav-number">1.5.</span> <span class="nav-text">Object.is()判断两个值是否相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-entries-对象转化二维数组"><span class="nav-number">1.6.</span> <span class="nav-text">Object.entries()对象转化二维数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回对象名称数组"><span class="nav-number">1.7.</span> <span class="nav-text">返回对象名称数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组操作方法"><span class="nav-number">2.</span> <span class="nav-text">数组操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#some-与every-数组判断"><span class="nav-number">2.1.</span> <span class="nav-text">some()与every()数组判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter-过滤数组"><span class="nav-number">2.2.</span> <span class="nav-text">filter()过滤数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reduce-数组求和"><span class="nav-number">2.3.</span> <span class="nav-text">reduce()数组求和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class创建构造函数"><span class="nav-number">2.4.</span> <span class="nav-text">class创建构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import-mapGetters-from-“vuex”（结构赋值）"><span class="nav-number">2.5.</span> <span class="nav-text">import { mapGetters } from “vuex”（结构赋值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#…（扩展运算符）"><span class="nav-number">2.6.</span> <span class="nav-text">…（扩展运算符）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量-（Template-Strings-模版字符串）"><span class="nav-number">2.7.</span> <span class="nav-text">${ 变量 }（Template Strings 模版字符串）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Css3总结"><span class="nav-number">3.</span> <span class="nav-text">Css3总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#calc-计算函数"><span class="nav-number">3.1.</span> <span class="nav-text">calc()计算函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mack虚拟数据"><span class="nav-number">4.</span> <span class="nav-text">Mack虚拟数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本使用"><span class="nav-number">4.1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将一组数据筛选进另一组数据"><span class="nav-number">4.2.</span> <span class="nav-text">将一组数据筛选进另一组数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器"><span class="nav-number">5.</span> <span class="nav-text">编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用技巧"><span class="nav-number">5.1.</span> <span class="nav-text">使用技巧</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿毛</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
