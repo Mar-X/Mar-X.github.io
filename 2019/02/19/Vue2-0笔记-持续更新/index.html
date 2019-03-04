@@ -1,0 +1,2423 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vue笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Vue总结（持续更新）">
+<meta name="keywords" content="Vue笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2.0笔记">
+<meta property="og:url" content="http://yoursite.com/2019/02/19/Vue2-0笔记-持续更新/index.html">
+<meta property="og:site_name" content="Mar-x 个人博客">
+<meta property="og:description" content="Vue总结（持续更新）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-04T14:20:08.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue2.0笔记">
+<meta name="twitter:description" content="Vue总结（持续更新）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/19/Vue2-0笔记-持续更新/"/>
+
+
+
+
+
+  <title>Vue2.0笔记 | Mar-x 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mar-x 个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一位在前端的道路上奋斗的阿毛同学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-Vue2.0 " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Vue2-0笔记-持续更新/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿毛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mar-x 个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue2.0笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T20:44:36-05:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  Vue总结（持续更新）
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Vue框架总结</p>
+<p>Vue优缺点</p>
+<p>优点：简单</p>
+<pre><code>轻量
+
+组件解耦
+
+超快虚拟DOM
+</code></pre><p>缺点：</p>
+<pre><code>出现晚（2014）不支持低版本，IE8一下不支持；
+
+仅限于view层，ajax需要额外的框架
+</code></pre><p>Vue的指令</p>
+<p>Options：</p>
+<p>-V ，–version     查看版本号</p>
+<p>-h，–help        调出vue拥有的命令</p>
+<p>Commands：</p>
+<p>create    创建新项目</p>
+<p>add        添加插件（如果对项目结构进行修改[ui库]，则使用vue  add    插件名；如果只是添加基础插件则还是使用 npm install 插件名）</p>
+<p>invoke    调用插件</p>
+<p>inspect    检查webpack配置</p>
+<p>serve    开发环境启动</p>
+<p>bulid    生产环境启动</p>
+<p>ui        调用Gui（Vue图形化项目管理器）</p>
+<p>init        生成一个项目</p>
+<p>Vue-cli 3.0项目结构</p>
+<p>创建指令：</p>
+<pre><code>       node官网下载                    =&gt;安装npm包资源管理器
+
+       npm install -g vue-cli     =&gt;安装Vue-cli脚手架
+
+       vue init 项目名              =&gt;创建项目
+
+       npm install                =&gt;安装依赖包
+
+       npm run serve            =&gt;运行项目
+
+       npm run build            =&gt;生成完成后项目             
+
+node_modules            node依赖包
+public
+    &gt;favicon.ico        页面标签显示的logo
+    &gt;index.html            入口页面
+src                        源码目录
+    assets                样式、静态文件
+    components            组件
+    &gt;views                存放组件文件
+    &gt;App.vue            Vue根组件
+    &gt;main.js            程序入口文件，实例化Vue对象，加载各种公共组件
+    &gt;router.js            Vue路由管理
+    &gt;store.js            Vue状态管理
+.gitignore                Git上传需要忽略的文件格式
+babel.cogfig.js            babel配置
+package-lock.json        记录当前状态下实际安装的各个npm package的具体来源和版本号。
+package.json            项目需要依赖的包依赖基础信息
+vue.config.js            项目配置文件
+README.md               项目说明
+
+补充目录（可选）：
+.editorconfig            编辑器代码风格统一配置
+.gitignore                git上传代码忽略文件配置
+.postcssrc.js            css补充兼容性代码，比如：添加各种浏览器私缀样式配置
+.eslintrc.js            配置代码检索规则，可以在rules自定义规则
+</code></pre><p>Vue自定义脚手架</p>
+<p>在.vuerc 文件中删除对应的prests 对应的脚手架。</p>
+<p>实例化vue对象</p>
+<pre><code>new Vue({
+  el:&quot;#vue-app&quot;,
+  data:{
+      name:&apos;字符串&apos;,
+      array:[],      
+      object:[],
+      arrayObject:[{},{}]
+  },
+  mehods:{
+       greet:function(time){
+          return time  
+     },
+     add:()=&gt;{
+          return this.name
+     }
+     updataXY:function(event){
+          return event.pageX + event.pageY;    
+     }
+  },
+  computed:{
+      numAdd:function(num){
+          return num++
+     }
+  }
+})
+</code></pre><p>el：绑定对象。</p>
+<p>data：数据存放。</p>
+<pre><code>可以存放字符串，数组，对象，数组对象等数据。
+</code></pre><p>mehods：方法存放。</p>
+<pre><code>this指向new Vue()中的data数据。
+
+函数中可以传值也可以取值，用event取得浏览器值。
+</code></pre><p>computed：计算属性。</p>
+<pre><code>在搜索或者耗时比较大的时候使用此属性，执行事件mehods会全部执行一遍，但computed计算属性中的函数会触发才执行，写法与方法一样，但在标签中使用不能加括号。
+</code></pre><p>多个实例化Vue对象</p>
+<p>可以写多个new Vue()在同一页面中，也可以相互改变触发对应的mehods或者date值。</p>
+<pre><code>例如：
+
+    var A = new Vue ({el:&quot;#app_A&quot;})
+
+    var B = new Vue ({el:&quot;#app_B&quot;})
+
+    B中的方法想调用A中的date，就可以A.data获取或者改变值。
+</code></pre><p>属性绑定</p>
+<pre><code>&lt;a v-bind:href=&quot;http&quot;&gt;百度一下&lt;/a&gt;
+&lt;input type=&quot;text&quot; :value=&quot;name&quot;&gt;
+&lt;p v-html=&quot;baidu&quot;&gt;&lt;/p&gt;
+
+new Vue({
+    el: &apos;#app_vue&apos;,
+    data: {
+        name: &apos;黎明&apos;,
+        http: &apos;https://www.baidu.com&apos;,
+        baidu: &apos;&lt;a href=&quot;https://www.baidu.com&quot;&gt;百度&lt;/a&gt;&apos;
+    }
+})
+</code></pre><p>使用v-bind或者：绑定到属性中。</p>
+<p>使用v-html：实现标签绑定。</p>
+<p>vue事件</p>
+<p> 事件命名：v-on:click或者@click；</p>
+<p>Vue生命周期</p>
+<ul>
+<li>beforeCreate（创建前）<br>data 和 $el 都没有初始化 全部为 undefined </li>
+<li>created（创建后）<br>data 初始化完成，但 $el 没有初始化</li>
+<li>beforeMount（载入前）<br>data 和 $el 均已存在，但 DOM 为虚拟DOM 仍未完全加载 eg：  </li>
+<li>mounted（载入后）<br>data 和 $el 均已存在，并且 DOM 加载完成 ，完成挂载</li>
+<li>beforeUpdate（更新前）<br>渲染完成，并监测到data发生变化，在变化的数据重新渲染视图之前会触发，这也是重新渲染之前最后修改数据的机会 </li>
+<li>updated（更新后）<br>监测到data发生变化，并完成渲染更新视图之后触发</li>
+<li>beforeDestroy（销毁前）<br>实例销毁之前调用 ， 实例仍然完全可用。 </li>
+<li><p>destroyed（销毁后）<br>实例销毁后调用。调用后，实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</p>
+<p>vue生命周期的应用场景：<br>beforeCreate 可以在此时加一些loading效果，在created时进行移除<br>created 需要异步请求数据的方法可以在此时执行，完成数据的初始化<br>mounted 当需要操作dom的时候执行，可以配合$.nextTick 使用进行单一事件对数据的更新后更新dom<br>updated 当数据更新需要做统一业务处理的时候使用</p>
+</li>
+</ul>
+<p>参考资料：<a href="https://segmentfault.com/a/1190000011381906?utm_source=tag-newest" target="_blank" rel="external">https://segmentfault.com/a/1190000011381906?utm_source=tag-newest</a></p>
+<p>vue引入插件</p>
+<p>使用：</p>
+<pre><code>Vue.use(引入插件名称)
+</code></pre><p>例如：</p>
+<pre><code>import Vuex from &apos;vuex&apos;
+import store from &apos;./vuex/store&apos;
+
+Vue.use(Vuex)
+</code></pre><p>动态绑定样式class</p>
+<pre><code>&lt;template&gt;
+    &lt;div :class=&quot;{widthData:true,backgroundData:false}&quot;&gt;需要绑定的样式&lt;div&gt;    
+    //或者
+    &lt;div :class=&quot;{widthData:widthData,backgroundData:backgroundData}&quot;&gt;需要绑定的样式&lt;div&gt;
+    &lt;button @click=&quot;widthData =! widthData&quot;&gt;&lt;button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+new Vue({
+    el: &apos;#app_vue&apos;,
+    data: {
+        widthData:false,
+        backgroundData:false
+    },
+    methods: {
+        compClass: () =&gt; {
+            return {
+                widthData：this.widthData,
+                backgroundData:this.backgroundData
+            }
+        },
+    }
+})
+&lt;/script&gt;
+
+&lt;style&gt;
+    div{
+          width: 100px;
+        height: 100px;
+        background:blue;
+    }
+    widthData{
+          width:200px
+    }
+    backgroundData{
+          background:red;
+    }
+&lt;/style&gt;
+</code></pre><p>Vue组件</p>
+<pre><code>全局组件
+html:
+&lt;greeting&gt;&lt;/greeting&gt;
+
+js:
+Vue.component(&apos;greeting&apos;,{
+  template:&apos;&lt;p&gt;内容&lt;/p&gt;&apos;,
+  data:function{
+      return{
+          name:&apos;&apos;
+    }
+  },
+  methods:{}
+})
+
+局部组件
+greeting.vue:
+单独创立出一个单独文件的组件，基本跟其他vue页面结构相符。
+
+headr.vue:
+import Greeting from &apos;./greeting.vue&apos;
+
+export default {
+  name:&apos;app&apos;,
+  components:{
+      &apos;Greeting&apos;:Greeting    //子组件附加到父组件上
+  }
+}
+</code></pre><p>全局组件在main.js引入，可以在任何组件页面使用，不用注册。</p>
+<p>组件缓存(keep-alive)</p>
+<pre><code>keep-alive是Vue提供的一个抽象组件，用来对组件进行缓存，从而节省性能，由于是一个抽象组件，所以在v页面渲染完毕后不会被渲染成一个DOM元素。
+
+被keep-alive包裹的动态组件或router-view会缓存不活动的实例，再次被调用这些被缓存的实例会被再次复用，对于我们的某些不是需要实时更新的页面来说大大减少了性能上的消耗，不需要再次发送HTTP请求，但是同样也存在一个问题就是被keep-alive包裹的组件我们请求获取的数据不会再重新渲染页面，这也就出现了例如我们使用动态路由做匹配的话页面只会保持第一次请求数据的渲染结果，所以需要我们在特定的情况下强制刷新某些组件
+</code></pre><p>1、利用include、exclude属性</p>
+ <!-- include除其属性内的组件缓存，其他组件都不缓存 -->
+ <!-- exclude除其属性内的组件不缓存，其他组件都缓存 -->
+<pre><code>&lt;keep-alive :include=&quot;cacheList&quot;&gt;     
+     &lt;!-- 路由配对内容 --&gt;     
+     &lt;router-view /&gt;
+&lt;/keep-alive&gt;
+</code></pre><p>2、利用meta属性</p>
+<p>参考资料：<a href="https://www.jianshu.com/p/4b55d312d297" target="_blank" rel="external">https://www.jianshu.com/p/4b55d312d297</a></p>
+<p>自定义组件插件结构</p>
+<p>目录结构</p>
+<pre><code>components &gt;
+    menu &gt;
+      index.js
+      a-menu-item.vue
+      a-menu.vue
+      a-submenu.vue
+</code></pre><p>引入方式</p>
+<pre><code>Home.vue
+
+//将目录写成如下，会自动查找文件中index.js的文件引入
+import menuComponents from &apos;view/menu&apos;
+
+index.js
+
+//将插件中把每一项功能都拆分出来组件并组合在引入index.js中
+import AMenu from &apos;./a-menu.vue&apos;
+import AMenuItem from &apos;./a-menu-item.vue&apos;
+import ASubmenu from &apos;./a-submenu.vue&apos;
+export default {
+  AMenu,
+  AMenuItem,
+  ASubmenu
+}
+</code></pre><p>动态组件</p>
+<p>动态的渲染vue标签。:is为动态组件需要渲染的标签</p>
+<pre><code>&lt;component :is=&quot;item.type&quot;&gt;
+    //如果遇到需要内部也渲染的组件，则用template包裹component做下判断
+    &lt;template v-if=&quot;item.children&quot;&gt;
+        &lt;component
+        v-for=&quot;(child, i) in item.children.list&quot;
+        :is=&quot;item.children.type&quot;
+        :key=&quot;`${_uid}_${index}_${i}`&quot;&gt;
+        {{ child.title }}
+        &lt;/component&gt;
+    &lt;/template&gt;
+&lt;/component&gt;
+</code></pre><p>样式独立作用域</p>
+<pre><code>&lt;style scoped&gt;
+    h1{
+          color:purple;
+      }
+&lt;/style&gt;
+</code></pre><p>scoped：为属性独立作用域使用</p>
+<p>组件间传值</p>
+<p>父组件给子组件传递值</p>
+<pre><code>1、在父组件引入子组件后，给子组件绑定一个自定义属性名，并放置要传的数据。
+父组件：
+&lt;template&gt;
+    &lt;Greeting :users=&quot;usersData&quot;&gt;&lt;Greeting&gt;
+&lt;/template&gt;
+
+export default {
+  name:&apos;app&apos;,
+  data(){
+       return {
+          usersData:[1,2,3]
+     }
+  },
+  components:{
+      &apos;Greeting&apos;:Greeting
+  }
+}
+
+2、在子组件中给export default添加一个属性props,用数组形式放置属性名。
+子组件：
+export default {
+  name:&apos;app&apos;,
+
+  //不严谨写法,不推荐使用
+  //props:[&apos;users&apos;],
+
+  //官方严谨写法，推荐使用
+  props:{
+      // fooA只接受数值类型的参数
+    fooA: Number,
+
+    // fooB可以接受字符串和数值类型的参数
+    fooB: [String, Number],
+
+    // fooC可以接受字符串类型的参数，并且这个参数必须传入
+    fooC: {
+        type: String,
+        required: true
+    },
+
+    // fooD接受数值类型的参数，如果不传入的话默认就是100
+    fooD: {
+        type: Number,
+        default: 100
+    },
+
+    // fooE接受对象或者数组类型的参数
+    fooE: {
+        type: Object,
+        // 当为对象类型设置默认值时必须使用函数返回
+        default: function(){
+            return { message: &apos;Hello, world&apos; }
+        }
+        或者
+        //对象
+        default: () =&gt; ({}) 
+        //数组
+        default: () =&gt; [] 
+        //函数
+        default: () =&gt; {}
+    },
+
+    // fooF使用一个自定义的验证器
+    fooF: {
+        validator: function(value){
+            return value&gt;=0 &amp;&amp; value&lt;=100;
+        }
+    }
+
+  }
+}
+
+3、使用传入的属性名给子组件使用父组件传入的数据。
+子组件：
+&lt;template&gt;
+    &lt;ul v-for=&quot;user in users&quot;&gt;
+        &lt;li&gt;{{user}}&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/template&gt;
+</code></pre><p>子组件给父组件传递值</p>
+<pre><code>1、在子组件中methods声明一个事件，并用this.$emit注册一个要传递给父组件的事件，以及参数。触发子组件传递。
+子组件：
+&lt;template&gt;
+    &lt;button v-on:click=&quot;change&quot;&gt;&lt;button&gt;
+&lt;/template&gt;
+export default {
+  name:&apos;app&apos;,
+  methods:{
+      &apos;change&apos;:function(){
+          this.$emit(&apos;titleChanged&apos;,&apos;子组件向父组件传值&apos;)
+    }
+  }
+}
+
+2、在父组件中，子组件的标签上创建从子组件里传递出来的自定义的事件（titleChanged），用 自定义事件调用父组件中methods中创建的一个新方法，获取到从子组件传递过来的参数，并赋值的data的参数中，让父组件使用子组件的数据。
+&lt;template&gt;
+    &lt;button @titleChanged=&quot;get&quot;&gt;&lt;button&gt;
+&lt;/template&gt;
+export default {
+  name:&apos;App&apos;,
+  data(){
+      return {
+          user:&apos;&apos;
+    }
+  }
+  methods:{
+      &apos;get&apos;:function(msg){
+          this.user = msg
+    }
+  }
+}
+</code></pre><p>子组件向子组件传递数据</p>
+<p>非跨文件传值时，使用父组件当媒介给子组件传递值</p>
+<p>把子组件传递的值传给父组件接受，在用父组件触发事件传递给另一个子组件中。</p>
+<p>跨文件传值时，使用Bus做通信</p>
+<p>1、在项目中创建bus.js文件做数据传导媒介。</p>
+<p>2、在main.js内引入bus文件并附给Vue.prototype中。</p>
+<p>3、需要传递组件的事件中传递</p>
+<p>4、在需要接受组件的mounted挂在后绑定事件监听获取数据</p>
+<pre><code>bus.js
+
+import Vue from &apos;vue&apos;
+const Bus = new Vue()
+export default Bus;
+
+main.js
+import Bus from &apos;./bus&apos; 
+Vue.prototype.$bus = Bus
+
+One.vue
+&lt;template&gt;
+   &lt;div id=&quot;emit&quot;&gt;
+       &lt;button @click=&quot;bus&quot;&gt;按钮&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/template&gt; 
+&lt;script&gt;
+export default { 
+    data() {
+        return {
+            message: &apos;&apos;;
+        }
+     },
+　　methods: {
+       bus () {
+          this.$bus.$emit(&apos;msg&apos;, &apos;我要传给兄弟组件们，你收到没有&apos;)
+       }
+    }
+}
+&lt;/script&gt;
+
+
+Two.vue
+&lt;template&gt;
+   &lt;div&gt;
+      &lt;p&gt;{{message}}&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/template&gt; 
+&lt;script&gt;
+export default { 
+    data() {
+        return {
+            message: &apos;&apos;;
+        }
+     },
+　　mounted: {
+      this.$bus.$on(&apos;msg&apos;, dete =&gt; {
+　　　　　console.log(`传来的数据是：${dete}`)
+　　　　　this.message = dete
+       })
+    }
+}
+&lt;/script&gt;
+</code></pre><p>参考资料：<a href="http://www.cnblogs.com/place-J-P/p/7586819.html" target="_blank" rel="external">http://www.cnblogs.com/place-J-P/p/7586819.html</a></p>
+<pre><code>https://www.sohu.com/a/251627249_216476
+</code></pre><p>传值与传引用</p>
+<pre><code>传值：string  number boolean 
+传值只会作用于当前绑定数据的组件内
+
+引用：array object
+传递一个数据，其他绑定数据的组件数据都会跟着变。
+</code></pre><p>Vuex状态管理工具</p>
+<p>基本使用</p>
+<p>Vuex是为了Vue 的状态管理工具，实现子组件之间传递数据。</p>
+<p>实现步骤：</p>
+<p>一、在main.js中引用。</p>
+<pre><code>main.js
+
+import Vuex from &apos;vuex&apos;
+import store from &apos;./vuex/store&apos;
+
+Vue.use(Vuex)
+new Vue({
+  el: &apos;#app&apos;,
+  store,
+  render: h =&gt; h(App)
+})
+</code></pre><p>二、在store.js 构建核心仓库，作为一个全局变量的仓库。首先在 store.js 中定义一个方法 newAuthor，其中第一个参数 state 就是 $store.state，第二个参数 msg 需要另外传入的数据。</p>
+<pre><code>store.js 
+
+import Vue from &apos;vue&apos;
+import Vuex from &apos;vuex&apos;
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  //放置state的值
+  state: {
+    author: &apos;Wise Wrong&apos;
+  }，
+
+  //放置getters方法
+  getters: {
+        //读取state的长度值
+      strLength: state =&gt; state.aString.length
+  },
+
+  //放置mutations方法
+  mutations:{
+       newAuthor(state,msg){
+            //在这里改变state中的数据
+          state.author = msg
+    }
+  }
+})
+
+export default store
+</code></pre><p>state:用来存储全局的数据</p>
+<p>getters:读取器，定义操作state的方法，外部可以访问方法返回全局变量的数据</p>
+<p>mutations：修改器：用于修改state中的数据</p>
+<p>actions：动作，接口请求和服务端请求数据（异步操作），相当于springMVC中的controller用于component和mutations之间进行数据交流</p>
+<p>modules:模块，当处理的类型比较多时，可以进行模块的划分挂载到vuex。</p>
+<p>Plugin:用于想vuex引入插件</p>
+<p>三、在需要调用的文件中使用vuex。</p>
+<pre><code>获取Vuex中state的数据：
+    1、直接使用this.$store.state获取（最常用）
+    this.$store.state.author 
+
+    2、利用vuex提供的mapState辅助函数将state映射到计算属性中去
+    import {mapState} from &apos;vuex&apos;
+    export default {  //组件中
+      computed{
+          ...mapState({
+            author: state =&gt; state.author
+        })
+      } 
+    }
+
+更改Vuex中state的数据：
+    1、同步操作触发mutation实现的（最常用）
+    this.$store.commit(&apos;newAuthor&apos;,data)
+
+    或者
+    this.$store.commit(&apos;newAuthor&apos;,{
+          appName:&apos;newAppName&apos;
+    })
+
+    或者
+    this.$store.commit({
+          type:&apos;newAuthor&apos;，
+          appName:&apos;newAppName&apos;
+    })
+
+    import {mapMutations} from &apos;vuex&apos;
+    export default {
+      computed: mapMutations([
+        &apos;mutationName&apos;
+      ])
+    }
+
+    2、异步操作触发mutation实现的(模块中使用)
+    this.$store.dispatch(actionName)
+
+    import {mapActions} from &apos;vuex&apos;
+    export default {
+      computed: mapActions([
+        &apos;actionName&apos;,
+      ])
+    }
+</code></pre><p>参考资料：<a href="https://www.cnblogs.com/kbnet/p/6938693.html" target="_blank" rel="external">https://www.cnblogs.com/kbnet/p/6938693.html</a></p>
+<p>mutations使用</p>
+<p>当state没有值时，如何给state设置属性值</p>
+<pre><code>mutations.js
+
+import vue from &apos;vue&apos;
+
+const mutations = {
+  Set_data(state) {
+   //错误写法    
+   state.appName = ‘不会触发视图更新’
+
+   //正确写法
+   vue.set(state,&apos;appName&apos;,&apos;会触发视图更新&apos;)
+  }
+}
+</code></pre><p>大型项目中Vuex目录结构</p>
+<p>将new Vuex.Store中的属性都拆开，分开到一个个文件中，方便管理使用。</p>
+<pre><code>文件目录：
+store&gt;
+   module&gt;
+         user.js
+   state.js
+   getters.js
+   mutations.js
+   actions.js
+   index.js
+
+index.js
+import Vue from &apos;vue&apos;
+import Vuex from &apos;vuex&apos;
+import state from &apos;./state&apos;
+import getters from &apos;./getters&apos;
+import mutations from &apos;./mutations&apos;
+import actions from &apos;./actions&apos;
+import modules from &apos;./modules&apos;
+import user from &apos;./module/user&apos;        //用户信息模块
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state,
+  getters,
+  mutations,
+  actions,
+  modules:{
+       user
+  }
+})
+
+state.js
+const state = {
+  appName: &apos;admin&apos;
+}
+export default state
+</code></pre><p>模块=》createNamespacedHelpers（命名空间）</p>
+<pre><code>user.js
+export default {
+  //打开命名空间
+  namespaced:true
+}
+
+.vue
+import {createNamespcedHelpers} from &apos;vuex&apos;
+//可以传入命名空间的模块名
+const { mapState, mapActions } = createNamespacedHelpers(&apos;user&apos;);
+
+computed: {
+        //没用命名空间调用模块
+        ...mapState(&apos;user&apos;,{
+              appName: state =&gt; state.user.appName
+        })
+
+        //使用命名空间调用模块
+        ...mapState({
+              appName: state =&gt; state.appName
+        })
+    }, 
+</code></pre><p>slot插槽分发</p>
+<pre><code>是“占坑”，在组件模板中占好了位置，当子组件使用该组件标签时候，组件标签里面的内容就会自动填坑（替换组件模板中&lt;slot&gt;位置）；
+</code></pre><p>单个插槽、多个插槽(具名插槽)</p>
+<p>将父组件的内容放到子组件指定的位置</p>
+<p>具名插槽：当插槽也就是填坑子组件中有命名时<slot name="”mySlot”">，父组件标签中使用属性slot=”mySlot”的元素就会替换该对应位置内容</slot></p>
+<p>作用域插槽</p>
+<p>将子组件的值传到父组件供使用</p>
+<p>参考资料：<a href="https://blog.csdn.net/kingov/article/details/78293384" target="_blank" rel="external">https://blog.csdn.net/kingov/article/details/78293384</a></p>
+<p>routes.js 路由配置与使用</p>
+<p>一个页面是由多个组件构成的，所以在跳转页面的时候，并不适合用传统的 href，于是 vue-router 应运而生</p>
+<p>实现步骤：</p>
+<p>一、在router.js 中引入所需的组件，创建 routers 对象</p>
+<pre><code>//主页面引入
+import Home from &apos;./components/home.vue&apos;
+
+// 子页面引入
+const introduce = () =&gt;
+    import (&apos;@/views/AboutSeaever/children/introducePage&apos;);
+const historyDevelopment = () =&gt;
+    import (&apos;@/views/AboutSeaever/children/historyDevelopment&apos;);
+
+export default new Router({
+    mode: &apos;history&apos;,
+    //在创建的 router 对象中，如果不配置 mode，就会使用默认的 hash 模式，该模式下会将路径格      //式化为 #! 开头。添加 mode: &apos;history&apos; 之后将使用 HTML5 history 模式，该模式下没有 #     //前缀，而且可以使用 pushState 和 replaceState 来管理记录。
+    base: process.env.BASE_URL,
+    routes: [
+        {
+            path: &apos;/AboutSeaever&apos;,
+
+            //别名：如果路由访问了别名的路由，也跳转到相同的界面。
+            alias：&apos;/main&apos;,
+
+            name: &apos;AboutSeaever&apos;,
+            component: Home,
+
+            // redirect重定向的属性当做默认跳转页面地址，把路径指向相应的子路由，使得点击过来默认显示的路由位置
+            // 重定向的路由由根目录路由开始排列。
+            redirect: &apos;/AboutSeaever/introduce&apos;,
+
+            //路由信息、可以当做权限管理传递关键词
+            meta:{
+                  title:&apos;关于&apos;
+            }
+            children: [
+                // 也可以作为重定向，但浏览器会报黄色提示，推荐使用redirect属性
+                // {
+                //     // 为空为默认子页面展示页面
+                //     path: &apos;&apos;,
+                //     name: &apos;公司介绍&apos;,
+                //     component: introduce
+                // }, 
+                {
+                    子路由设置path不用加/号，如果加则为从根目录开始找则报错。
+                    path: &apos;introduce&apos;,
+                    name: &apos;公司介绍&apos;,
+                    component: introduce
+                },
+                {
+                    path: &apos;historyDevelopment&apos;,
+                    name: &apos;发展历史&apos;,
+                    component: historyDevelopment
+                }]
+        },
+        //当查找的路由没有时，给 path: &apos;*&apos;，则直接跳转到默认页面。
+        {
+            path: &apos;*&apos;,
+            name: &apos;Home&apos;,
+            //路由懒加载形式，可以点击对应路由加载页面
+            component: () =&gt;
+                import (&apos;./views/Home/Home.vue&apos;)
+        }
+      ]
+})
+</code></pre><p>二、嵌套子路由使用时</p>
+<p><router-view>是用来渲染通过路由映射过来的组件，当路径更改时，<router-view> 中的内容也会发生更改</router-view></router-view></p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;!-- 路由匹配到的组件将渲染在这里 --&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>三、路由的实现跳转</p>
+<p>分为两种方式：<router-link> 映射路由和编程式导航</router-link></p>
+<p><router-link> 映射路由</router-link></p>
+<p>这种只需要跳转页面，不需要添加验证方法的情况，可以使用 <router-link> 来实现导航的功能：</router-link></p>
+<p>在编译之后，<router-link> 会被渲染为 <a> 标签， to 会被渲染为 href，当 <router-link> 被点击的时候，url 会发生相应的改变，如果使用 v-bind 指令，还可以在 to 后面接变量，配合 v-for 指令可以渲染导航菜单</router-link></a></router-link></p>
+<pre><code>静态路由
+&lt;router-link to=&quot;/AboutSeaever/introduce&quot;&gt;&lt;/router-link&gt;
+动态路由
+&lt;router-link :to=&quot;nav.method&quot;&gt;&lt;/router-link&gt;
+</code></pre><p>使用技巧：</p>
+<pre><code>1、&lt;router-link tag=&quot;div&quot; to=&quot;/&quot;&gt;&lt;/router-link&gt;    tag属性可以把a标签变成其他标签
+</code></pre><p>四、编程式导航</p>
+<p>实际情况下，有很多按钮在执行跳转之前，还会执行一系列方法，这时可以使用 this.$router.push(location) 来修改 url，完成跳转</p>
+<p>push与replace区别：</p>
+<p>this.$router.push：在浏览地址里面加入一个记录，可以回退到之前地址</p>
+<p>this.$router.replace：把当前的浏览地址替换，不可以回退到之前的地址</p>
+<pre><code>html:
+&lt;button @click=&quot;go&quot;&gt;&lt;button&gt;
+
+script:
+methods:{
+  go(){
+        //通过push跳转（最常用）
+
+            // 字符串
+            this.$router.push(&apos;/home/first&apos;)
+
+            // 对象
+            this.$router.push({ path: &apos;/home/first&apos; })
+
+            // 命名的路由
+            this.$router.push({ name: &apos;home&apos;, params: { userId: wise }})
+
+      //跳转到上一次浏览的页面
+      this.$router.go(-1)
+      this.$router.back()
+
+      //替换跳转地址
+      this.$router.replace(&apos;/menu&apos;)
+
+      //指定替换跳转地址的名字下
+      this.$router.replace(name:&apos;menuLink&apos;)
+
+      //添加参数传递(?name=lise)
+      this.$router.push({
+          query:{
+            name:&apos;lise&apos;
+        }
+      })
+
+
+  }
+}
+</code></pre><p>五、传参跳转路由</p>
+<p>传递参数：path: ‘/Product/productDetails/:id’,</p>
+<p>接收传递过去的参数：$route.params.id</p>
+<pre><code>router.js
+       {
+            path: &apos;/Product/productDetails/:id&apos;,
+            name: &apos;产品详情&apos;,
+            component: () =&gt;
+                import (&apos;@/views/Product/children/productDetails.vue&apos;),
+        },
+
+跳转路由：
+     const { href } = this.$router.resolve({
+                     //path与router.js里的path对应
+                    path:`/Product/productDetails/${id}`,
+
+                    //传递过去的参数
+                    query: {
+                        title:Select.title,
+                        urlID:Select.urlID
+                        }
+                     })
+
+      跳转新页面方式打开
+      //window.open(href, &apos;_blank&apos;);
+
+      跳转弹窗页面方式打开
+      window.open(href, &apos;_blank&apos;, &apos;toolbar=yes, width=1300, height=900&apos;)
+</code></pre><p>六、路由组件传参</p>
+<p> 三种传递方式：布尔传递，对象传递，函数传递。</p>
+<p>布尔传递：用于动态路由匹配中，拥有动态路由参数的路由配置中。</p>
+<p>对象传递：静态路由传递</p>
+<p>函数传递：根据传递数据来逻辑相关的处理在传递</p>
+<pre><code>router.js
+       {
+            path: &apos;/Product/nemes1/:name&apos;,
+            name: &apos;动态路由&apos;,
+            component: () =&gt;
+                import (&apos;@/views/Product/children/nemes1.vue&apos;),
+            //1、布尔传递
+            props：:true
+        },
+         {
+            path: &apos;/Product/nemes2&apos;,
+            name: &apos;静态路由&apos;,
+            component: () =&gt;
+                import (&apos;@/views/Product/children/nemes2.vue&apos;),
+             //2、对象传递
+            props：{
+                  food:&apos;apple&apos;
+            }
+        },
+        {
+            path: &apos;/Product/nemes3&apos;,
+            name: &apos;逻辑路由&apos;,
+            component: () =&gt;
+                import (&apos;@/views/Product/children/nemes3.vue&apos;),
+             //3、函数传递
+            props：router=&gt;({
+                  name: router.query.name
+            })
+        },
+
+.vue
+    export default {
+    使用props接收传递来的参数
+        props: {
+            name:{
+                  type:[String,Number],
+                  default:&apos;lison&apos;
+            }
+        }
+    }
+</code></pre><p>七、导航守卫</p>
+<p>触发顺序：</p>
+<p>1、导航被触发</p>
+<p>2、在失活的组件（即将离开的页面组件）里调用离开守卫beforeRouteLeave</p>
+<p>3、调用全局的前置守卫beforeEach</p>
+<p>4、在重用的组件里调用beforeRouteUpdate </p>
+<p>5、调用路由独享的守卫beforeEnter</p>
+<p>6、解析异步路由组件</p>
+<p>7、在被激活的组件（即将进入的页面组件}里调用beforeRouteEnter </p>
+<p>8、调用全局的解析守卫beforeResolve</p>
+<p>9、导航被确认</p>
+<p>10、调用全局的后fi守卫afterEach</p>
+<p>11、触发DOM更新</p>
+<p>12、用创建好的实例调用beforeRouterEnter守卫里传给next的回调函数</p>
+<pre><code>main.js
+
+全局守卫
+to：进入哪个路由
+from：从哪个路由离开
+next：是否展示看到的页面，next()进入页面；next(false)不准进入页面
+
+router.beforeEach((to,from,next)=&gt;{
+  if(to.path == &apos;/login&apos; || to.path == &apos;/register&apos;){
+      next();
+  }else{
+        alert(&apos;您还没有登录，请先登录或者注册！&apos;);
+        next(&apos;/login&apos;)
+  }
+})
+
+router.js
+
+独享守卫
+router.js
+        {
+            path: &apos;/Product/productDetails/:id&apos;,
+            name: &apos;产品详情&apos;,
+            component: () =&gt;
+                import (&apos;@/views/Product/children/productDetails.vue&apos;),
+            beforeEach((to,from,next)=&gt;{
+                if(to.path == &apos;/login&apos; || to.path == &apos;/register&apos;){
+                    next();
+                }else{
+                    alert(&apos;您还没有登录，请先登录或者注册！&apos;);
+                    next(&apos;/login&apos;)
+                }
+              })
+        },
+
+.vue
+
+组件守卫
+export default {
+  name:&apos;hellow&apos;,
+  data(){
+      return {
+          name:&apos;mar_x&apos;
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    // 在渲染该组件的对应路由被 confirm 前调用
+    // 不！能！获取组件实例 `this`
+    // 因为当守卫执行前，组件实例还没被创建
+
+   //运用异步加载next的回调函数，来取得data里的数据，否则beforeRouteEnter生命周期执行在data前，beforeRouteEnter无法获取数据
+     next(vm =&gt;{
+          console.log(vm.name)
+     })
+  },
+  beforeRouteUpdate (to, from, next) {
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
+  },
+  beforeRouteLeave (to, from, next) {
+    // 导航离开该组件的对应路由时调用，比如填写表单时离开页面
+    // 可以访问组件实例 `this`
+  }
+}
+</code></pre><p>  文献参考：    <a href="https://router.vuejs.org/zh-cn/advanced/navigation-guards.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/advanced/navigation-guards.html</a></p>
+<p>八、命名视图（路由复用）</p>
+<pre><code>使用命名视图，可以在一个路由下展示多个组件的界面
+
+App.vue
+
+    &lt;ul&gt;
+        &lt;li&gt;
+          &lt;router-view name=&quot;historyDevelopment&quot;&gt;&lt;/router-view&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;router-view name=&quot;introduce&quot;&gt;&lt;/router-view&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;router-view name=&quot;history&quot;&gt;&lt;/router-view&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+router.js
+
+        {
+            path: &apos;/&apos;,
+            name: &apos;Home&apos;,
+
+            //加载多个路由使用components命名
+            components:{
+                  default:Home,
+                  &apos;historyDevelopment&apos;:historyDevelopment,
+                  &apos;introduce&apos;:introduce,     
+                &apos;history&apos;:history
+            }
+        },
+</code></pre><p>九、滚动行为</p>
+<pre><code> scrollBehavior方法接收to，form路由对象
+ 第三个参数savedPosition当且仅当在浏览器前进后退按钮触发时才可用
+ 该方法会返回滚动位置的对象信息，如果返回false，或者是一个空的对象，那么不会发生滚动
+
+router.js
+
+const router = new VueRouter({
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+
+       //页面滚动的想x与y轴位置
+       return { x: number, y: number }
+
+    //页面滚动到的DOM锚点位置,如果页面有多个锚点，则只滚动到页面第一个锚点位置
+    return { selector: &apos;.btn&apos;, offset? : { x: number, y: number }} (offset 只在 2.6.0+ 支持)
+
+    //返回 savedPosition，记录页面滚动的距离，用户点击其他页面后退返回时，如果有该属性则返回之前操作滚动位置：
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+
+  }
+})
+</code></pre><p>文献参考：<a href="https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html" target="_blank" rel="external">https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html</a></p>
+<p>十、路由的切换动效</p>
+<p>transition或者transition-group</p>
+<pre><code>style:
+
+/*过度状态*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+/*v-enter 是进入之前，元素的起始状态*/
+/*v-leave-to 离开之后动画的终止状态*/
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+
+
+&lt;div id=&quot;demo&quot;&gt;
+  &lt;button v-on:click=&quot;show = !show&quot;&gt;
+    Toggle
+  &lt;/button&gt;
+
+  //name相当于class的标识(作用于类名的前缀)，给transition标识需要过渡的元素，将需要过渡的内容包裹在内。
+  &lt;transition name=&quot;fade&quot;&gt;
+    &lt;p v-if=&quot;show&quot;&gt;hello&lt;/p&gt;
+  &lt;/transition&gt;
+&lt;/div&gt;
+</code></pre><p>Vue跨域请求</p>
+<p>Vue-resource后台请求</p>
+<pre><code>main.js
+
+import VueResource from &apos;vue-resource&apos;
+Vue.use(VueResource)
+
+home.vue
+
+this.$http.get(&apos;http://...&apos;)
+    .then((res)=&gt;{
+
+    })
+this.$http.posh(&apos;http://...&apos;)
+    .then((res)=&gt;{
+
+    })
+</code></pre><p>axios后台请求</p>
+<p>基本使用</p>
+<p>安装  npm install axios</p>
+<pre><code>main.js
+
+import axios from &apos;axios&apos;
+
+axios.defaults.headers.common[&apos;token&apos;] = &quot;f4c9...&quot;;
+//post请求头
+axios.defaults.headers.post[&apos;Content-type&apos;] = &quot;application/json&quot;;
+
+Vue.prototype.$axios = axios
+
+vue文件中
+
+   posh请求:
+          this.$axios.post(&apos;/update&apos;, formData)
+              .then((response) =&gt; {
+                //成功时返回的函数
+                返回数据用response.Data获得
+              },
+              (response) =&gt; {
+                  //失败时返回的函数
+              });
+
+    get请求
+          this.$axios.get(&apos;/user/12345&apos;);
+</code></pre><p>自己封装</p>
+<pre><code>//创建实例
+//您可以使用自定义配置创建axios的新实例,参数为传入的配置方法。
+const instance = axios.create()
+
+传入配置参数
+instance(options)
+
+请求拦截器
+instance.interceptors.request.use(config =&gt; {
+   return config
+ }, error =&gt; {
+   return Promise.reject(error)
+ })
+
+ 响应拦截器
+ instance.interceptors.response.use(config =&gt; {
+   return config
+ }, error =&gt; {
+   return Promise.reject(error)
+ })
+</code></pre><p>参考资料：<a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="external">https://www.kancloud.cn/yunye/axios/234845</a></p>
+<p>Vue-Cli 3.0 全局变量与环境变量</p>
+<pre><code>.env  环境变量文件
+VUE_APP_url=http://localhost:8080/默认环境变量
+
+引用目录.vue
+&lt;template&gt;
+    //调用变量
+    &lt;p&gt;{{url}}&lt;p&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    //引用变量
+  export default {
+    data(){
+      return {
+        url: process.env.VUE_APP_url
+      }
+    }
+  } 
+&lt;/script&gt;
+</code></pre><p>在项目根目录创建文件。</p>
+<p>环境变量：.env</p>
+<p>开发环境变量：.env.development</p>
+<p>生产环境变量：.env.production</p>
+<p>注意</p>
+<ul>
+<li><p>VUE_APP为环境变量规定前缀，后面名称的可以自定义，否则会找不到。</p>
+</li>
+<li><p>当你在哪个环境运行项目会找到对应的环境变量文件，如果没有设置运行.env文件</p>
+</li>
+<li><p>每次修改完环境环境变量都要重启服务器。</p>
+</li>
+</ul>
+<p>vue.config.js项目配置</p>
+<pre><code>module.exports = {
+    baseUrl: process.env.NODE_ENV === &apos;production&apos; ? &apos;/online/&apos; : &apos;/&apos;,
+
+     // baseUrl  type:{string} default:&apos;/&apos; 
+    // 将部署应用程序的基本URL
+    // 默认情况下，Vue CLI假设您的应用程序将部署在域的根目录下。
+    // https://www.my-app.com/。如果应用程序部署在子路径上，则需要使用此选项指定子路径。例如，如果您的应用程序部署在https://www.foobar.com/my-app/，集baseUrl到&apos;/my-app/&apos;.
+
+      outputDir: &apos;dist&apos;,
+    // outputDir: 在npm run build时 构建打包输出生成文件的目录 type:string, default:&apos;dist&apos;
+
+    assetsDir:&apos;assets&apos;,
+    //静态资源目录（js，css，img，fonts）
+
+      pages: {
+        index: {
+            entry for the page
+            entry: &apos;src/index/main.js&apos;,
+            the source template
+            template: &apos;public/index.html&apos;,
+            output as dist/index.html
+            filename: &apos;index.html&apos;
+        },
+        when using the entry-only string format,
+        template is inferred to be `public/subpage.html`
+        and falls back to `public/index.html` if not found.
+        Output filename is inferred to be `subpage.html`.
+        subpage: &apos;src/subpage/main.js&apos;
+    },
+
+    // pages:{ type:Object,Default:undfind } 
+/*
+  构建多页面模式的应用程序.每个“页面”都应该有一个相应的JavaScript条目文件。该值应该是一
+  个对象，其中键是条目的名称，而该值要么是指定其条目、模板和文件名的对象，要么是指定其条目
+  的字符串，
+  注意：请保证pages里配置的路径和文件名 在你的文档目录都存在 否则启动服务会报错的
+*/
+
+    lintOnSave: false,
+     //   lintOnSave：{ type:Boolean default:true } 问你是否使用eslint保存检测
+
+     productionSourceMap: false,
+    // productionSourceMap：{ type:Bollean,default:true } 生产源映射
+    // 如果您不需要生产时的源映射，那么将此设置为false可以加速生产构建
+
+
+    devServer: {
+        port: 8085, // 端口号
+        host: &apos;localhost&apos;,//主机域名，比如真机测试域名&quot;0.0.0.0&quot;或者本机域名
+        post:8081,//端口号
+        https: false, //超文本传输协议选择，true：http://localhost:8080/；false：http。 https://localhost:8080/。
+        open: true, //配置自动启动浏览器
+        hotOnly:false,//是否启动热模块更新
+
+        // proxy: &apos;http://localhost:4000&apos; // 配置跨域处理,只有一个代理
+        proxy: {
+            &apos;/api&apos;: {
+                target: &apos;&lt;url&gt;&apos;,//跨域地址
+                ws: true,//是否跨域
+                changeOrigin: true,
+                pathRewrite:{
+                      &apos;^/api&apos;:&apos;&apos;
+              }
+            },
+            &apos;/foo&apos;: {
+                target: &apos;&lt;other_url&gt;&apos;
+            }
+        },  // 配置多个代理
+    }
+    // devServer:{type:Object} 3个属性host,port,https
+    // 它支持webPack-dev-server的所有选项
+
+}
+</code></pre><p>.EditorConfig 的编辑器代码风格统一配置</p>
+<pre><code># EditorConfig文件使用INI格式。斜杠(/)作为路径分隔符，#或者;作为注释。路径支持通配符:
+# 表明是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
+root = true
+
+# * 匹配除/之外的任意字符
+# **    匹配任意字符串
+# ? 匹配任意单个字符
+# [name]    匹配name字符
+# [!name]   不匹配name字符
+# [s1,s2,s3]    匹配给定的字符串
+# [num1..num2]  匹配num1到mun2直接的整数
+[*]
+# 文件的charset。有以下几种类型：latin1, utf-8, utf-8-bom, utf-16be, utf-16le
+charset = utf-8
+# 缩进使用 tab 或者 space
+indent_style = space
+# 缩进为 space 时，缩进的字符数
+indent_size = 2
+# 缩进为 tab 时，缩进的宽度
+# tab_width = 2
+# 换行符的类型。lf, cr, crlf三种
+end_of_line = lf
+# 是否将行尾空格自动删除
+trim_trailing_whitespace = true
+# 是否使文件以一个空白行结尾
+insert_final_newline = true
+</code></pre><p>配置 .babelrc 文件</p>
+<pre><code>{
+    &quot;presets&quot;: [
+        //  babel-preset-env插件，相当于 es2015 ，es2016 ，es2017 及最新版本。以后只需这一个preset就够了
+        [&quot;env&quot;, {  
+            &quot;modules&quot;: false, // 默认为 &quot;commonjs&quot;,为false的话则是es6模块语法
+
+            &quot;targets&quot;: {
+              &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;android 2.3&quot;]     // browserslist 
+            },
+
+            &quot;useBuiltIns&quot;: true  // 如果为 true 且引入了polyfill  (import &quot;babel-polyfill&quot;）的话，插件 会根据 targets 的配置，重写 import &quot;babel-polyfill&quot; ，只引入对应环境必须的 &quot;babel-polyfill&quot; 的子模块，减少了多余的代码引入
+        }]
+    ],
+
+    &quot;plugins&quot;: [
+        //  babel-plugin-transform-runtime 插件，无全局污染地使用新API，但是不能使用实例方法，建议在开发供他人使用的库时使用。一般业务情况下使用 babel-polyfill 感觉也没啥问题，那点污染对开发几乎无影响
+        &quot;transform-runtime&quot;, {   
+
+            // 以下都是默认配置
+            &quot;helpers&quot;: true,  // 将内联的语法转换代码替换为引用对应模块，减少重复代码
+
+            &quot;polyfill&quot;: true,  // 使用非全局污染的 polyfill
+
+            &quot;regenerator&quot;: true, // 使用不污染全局作用域的 regenerator 运行时
+
+            &quot;moduleName&quot;: &quot;babel-runtime&quot;  // 设置使用helper模块时的路径
+    }]
+}
+</code></pre><p>.postcss添加浏览器私缀</p>
+<pre><code>// https://github.com/michael-ciniawsky/postcss-load-config
+.vue   组件文件
+&lt;style lang=&quot;postcss&quot; scoped&gt;
+
+&lt;/style&gt;
+
+.postcssrc.js   配置文件中
+module.exports = {
+    &quot;plugins&quot;: {
+      &quot;postcss-import&quot;: {},
+      &quot;postcss-url&quot;: {},
+      // 编辑目标浏览器：使用package.json中的“browserslist”字段
+      &quot;autoprefixer&quot;: {}
+    }
+ }
+</code></pre><p>Sass简单总结</p>
+<p>Variables（变量）:变量可以用来储存值，可以增加重用性。在 Sass 中我们使用$来表示变量，变量类型可以是 Numbers（可以有单位或无单位）、Strings、Booleans、null值（视为空值），甚至可以使用 Lists、Maps。</p>
+<pre><code>转义前
+$translucent-white: rgba(255,255,255,0.3);
+p {
+    background-color: $translucent-white;
+}
+
+转义后
+p {
+    background-color: rgba(255,255,255,0.3);
+}
+</code></pre><p>Nesting（嵌套）:层级选择器，有助于降低父元素重复性</p>
+<pre><code>嵌套一：直接使用嵌套外层的父选择器
+转义前
+a {
+  font-weight: bold;
+  text-decoration: none;
+  &amp;:hover { text-decoration: underline; }
+  body.firefox &amp; { font-weight: normal; }
+}
+
+转义后
+a {
+  font-weight: bold;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  body.firefox a {
+    font-weight: normal; 
+ }
+
+嵌套二：同一个命名空间中的属性上嵌套使用
+转义前
+.funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+
+转义后
+.funky {
+  font-family: fantasy;
+  font-size: 30em;
+  font-weight: bold; 
+}
+</code></pre><p>Mixins（混入）:免了使用无语意的类（class），定义的混入@mixin 使用 @include 引用</p>
+<pre><code>混入引用一：变量版
+转义前
+@mixin large-text {
+  color: #ff0000;
+}
+.page-title {
+  @include large-text;
+}
+
+转义后
+.page-title {
+ color: #ff0000;
+}
+
+混入引用二：函数版
+转义前
+@mixin border-radius($radius或者$radius:10px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+.box1 { @include border-radius(); }
+.box2 { @include border-radius(20px); }
+.box { @include border-radius(10px); }
+
+转义后
+.box1 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+混入引用二：字符串插入（带引号的字符串将被编译为不带引号的字符串，需要使用#{}插值）
+转义前
+@mixin photo-content($file) {
+  content: url(#{$file}.jpg); 
+}
+.photo { 
+  @include photo-content(&apos;titanosaur&apos;);
+}
+
+转义后
+.photo {
+  content: url(titanosaur.jpg);
+}
+</code></pre><p>…    (可变参数):不能确定一个混入（mixin）或者一个函数（function）使用多少个参数，就可以用…代替，例如盒子阴影。</p>
+<pre><code>转义前
+@mixin box-shadow($shadows...) {
+      -moz-box-shadow: $shadows;
+      -webkit-box-shadow: $shadows;
+      box-shadow: $shadows;
+}
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+转义后
+.shadows {
+      -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+      -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+      box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}
+</code></pre><p>权限管理思路</p>
+<p>需要前后端配合完成：后端将name可以访问的字段判断返回给前端来处理页面访问权限</p>
+<p>后台数据格式</p>
+<pre><code>export const authorization = () =&gt; {
+ return {
+  code: 200,
+  data: {
+    token: &apos;xxx&apos;,
+    rules: {
+      //页面的name字段权限
+      page: {
+        home: true,
+        main: true
+      },
+      //组件的name字段权限
+      component: {
+        edit_button: true,
+        publish_button: false
+      }
+    }
+  },
+  mes: &apos;&apos;
+  }
+}
+</code></pre><p>前端实现</p>
+<p>1、页面权限少时</p>
+<pre><code>在router中的meta关键词中设置需要限制的关键词，然后在路由守卫中管理访问权限。
+
+缺点：当页面中权限太多的时候前端配置过多，不适用。
+
+router.js
+{
+  meta:{
+       access:[&apos;super_admin&apos;]
+  }
+}
+
+router.beforeEach((to, from, next) =&gt; {
+    //拉取用户信息，通过用户权限和跳转的页面的name来判断是否有权限来访问；access必须是一个数 组，如：[&apos;super_admin&apos;]
+    //参数(访问的页面neme值，获取后台用户的权限值，整个路由列表)
+    if(canTurnTo(to.name,user.access,router)) next()  有权限，可访问
+    else next({replace:true,name:&apos;error_401&apos;})    //无权限，重定向到401页面
+}
+</code></pre><p>2、页面权限多时</p>
+<pre><code>前端将返回的数据在路由守卫中用router的name与后台传入的name判断对比筛选出可以访问的数组动态渲染给router使用。
+
+缺点：router里面都需要加name字段。
+
+**router.js**
+
+//使用权限管理的路由
+export const routerMap = []
+
+//不使用权限管理的路由。比如：login与404
+export const routes = []
+
+**module/router.js**
+
+import { routes, routerMap } from &apos;@/router/router&apos;
+
+const state = {
+  //路由列表
+  routers: routes,
+  //是否获取到权限
+  hasGetRules: false
+}
+
+const mutations = {
+  CONCAT_ROUTES (state, routerList) {
+    state.routers = routerList.concat(routes)
+    state.hasGetRules = true
+  }
+}
+
+const getAccesRouterList = (routes, rules) =&gt; {
+  return routes.filter(item =&gt; {
+    if (rules[item.name]) {
+      if (item.children) item.children = getAccesRouterList(item.children, rules)
+      return true
+    } else return false
+  })
+}
+
+const actions = {
+  concatRoutes ({ commit }, rules) {
+    return new Promise((resolve, reject) =&gt; {
+      try {
+        let routerList = []
+        if (Object.entries(rules).every(item =&gt; item[1])) {
+          routerList = routerMap
+        } else {
+          routerList = getAccesRouterList(routerMap, rules)
+        }
+        commit(&apos;CONCAT_ROUTES&apos;, routerList)
+        resolve(routerList)
+      } catch (err) {
+        reject(err)
+      }
+    })
+  }
+}
+
+export default {
+  state,
+  mutations,
+  actions
+}
+
+路由守卫设置
+router.beforeEach((to, from, next) =&gt; {
+    //是否访问过权限列表
+   if (!store.state.router.hasGetRules) {
+      store.dispatch(&apos;authorization&apos;).then(rules =&gt; {
+        store.dispatch(&apos;concatRoutes&apos;, rules).then(routers =&gt; {
+          router.addRoutes(routers)
+          next({...to, replace: true })
+        }).catch(() =&gt; {
+          next({ name: &apos;login&apos; })
+        })
+      }).catch(() =&gt; {
+        setToken(&apos;&apos;)
+        next({ name: &apos;login&apos; })
+      })
+    } else {
+      next()
+    }
+})
+</code></pre><p>注意：如果使用深拷贝，会导致嵌套路由的一级路由不复用，建议不用深拷贝，把vuex的严格模式改为false</p>
+<p>3、组件上设置权限</p>
+<p>直接将获取到设置好权限的router列表传给vuex中的state保存，给需要权限管理的组件上加权限状态的判断</p>
+<pre><code>user.js
+const state = {
+  rules: {
+     edit_button: true,
+     publish_button: false
+  }
+}
+
+home.vue
+&lt;Button v-if=&quot;rules.edit_button&quot;&gt;编辑&lt;/Button&gt;
+&lt;Button v-if=&quot;rules.publish_button&quot;&gt;发布&lt;/Button&gt;
+
+import { mapState} from &apos;vuex&apos;
+
+computed: {
+  ...mapState({
+      rules: state =&gt; state.user.rules
+  })
+},
+</code></pre><p>小技巧</p>
+<p>$refs（获取元素节点）</p>
+<p>ref如果在标签上面获取的是标签内容，如果在组件上面获取的是实例（可以获取到子组件的数据方法等）</p>
+<pre><code>HTML 部分
+
+&lt;div id=&quot;ref-outside-component&quot; v-on:click=&quot;consoleRef&quot;&gt;
+    &lt;input ref=&quot;outsideComponentRef&quot;&gt;
+&lt;/div&gt;
+js部分
+new Vue({
+        el:&quot;#ref-outside-component&quot;,
+        components:{
+            &quot;component-father&quot;:refoutsidecomponentTem
+        },
+        methods:{
+            consoleRef:function () {
+                console.log(this); // #ref-outside-component     vue实例
+                console.log(this.$refs.outsideComponentRef);  获取节点实例
+            }
+        }
+    });
+</code></pre><p>对应元素中绑定的ref属性，在方法中使用this.$refs获取节点实例</p>
+<p>图片引入</p>
+<p>div标签使用background-image属性：要先在script中引入图片，在传递给data，绑定到属性上才能用。</p>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;demo&quot;&gt;
+    &lt;div class=&quot;img2&quot; :style=&quot;{backgroundImage: &apos;url(&apos; + bg2 + &apos;)&apos; }&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Bg2 from &apos;@/../static/images/logo2.png&apos;
+
+export default {
+    name: &apos;App&apos;,
+    data () {
+        return {
+            bg2: Bg2,
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre><p>解决Vue跨域问题</p>
+<p>1、服务器代理</p>
+<pre><code>vue.config.js
+
+module.exports = {
+  devServer: {
+     //统一设置代理地址，当其他不同域名访问时，统一替换成代理服务，实现跨域请求
+    proxy: &apos;http://localhost:3000&apos;
+  }
+} 
+</code></pre><p>2、后端添加三个header（node.js）</p>
+<p>_uid不重复标识</p>
+<p>有时候容易重复编译，所以要记得保存当前编译实例的id，这里可以通过 Vue 组件的_uid来唯一标识（每个Vue实例都会有一个递增的id，可以通过this._uid获取）</p>
+<p>.sync 修饰符</p>
+<p>让子组件改变父组件状态，sync和v-model 都是通过prop把外部数据下发到组件，组件再通过event把内部发生变化的数据回传出来改变父组件状态</p>
+<pre><code>父组件
+
+//先绑定value属性.offset为需要改变的添加的值
+&lt;vue-sync :value.sync=&quot;offset&quot;&gt;&lt;/vue-sync&gt;
+
+data(){
+    offset:0.8
+}
+
+子组件
+
+//update为固定写法,value为父组件的属性名，this.value需要回传的值
+this.$emit(&apos;update:value&apos;, this.value)
+</code></pre><p>@click.native组件绑定原生事件</p>
+<p>例子：如果使用router-link标签，加上@click事件，绑定的事件会无效因为：router-link的作用是单纯的路由跳转，会阻止click事件，你可以试试只用click不用native,事件是不会触发的。此时加上.native，才会触发事件。</p>
+<p>参考内容：<a href="https://www.jianshu.com/p/bf5ede24c6e3" target="_blank" rel="external">https://www.jianshu.com/p/bf5ede24c6e3</a></p>
+<p>递归组件</p>
+<p>1、当父组件想调用递归组件的时候，父组件的调用容器内使用template做循环列表使用的，v-for循环template的时候，不能在template上加key值，只能子组件上加key值。</p>
+<p>2、当制作树级列表的时候，要使用v-if 和v-else当判断条件，否则会无限循环。当children没有内容时只循环当前一级标题，当children有内容时，将children内容和index以属性的形式传入递归组件中，两个都要加key值。</p>
+<pre><code>Home.vue
+&lt;div&gt;
+    &lt;template v-for=&quot;(item,index) in list&quot;&gt;
+          &lt;li v-if=&quot;!item.children&quot; :key=&quot;`menu_${index}`&quot;&gt;{{item.title}}&lt;/li&gt;
+          &lt;Recursive v-else :key=&quot;`menu_item_${index}`&quot; :parent=&quot;item&quot; :index=&quot;index&quot;&gt;&lt;/Recursive&gt;
+    &lt;/template&gt;
+&lt;div&gt;
+
+&lt;script&gt;
+import Recursive from &apos;@/components/Recursive.vue&apos;
+
+export default {
+  name: &apos;Home&apos;,
+  data(){
+    return{
+      list: [
+        {
+          title: &apos;1111&apos;
+        },
+        {
+          title: &apos;2222&apos;
+        },
+        {
+          title: &apos;3333&apos;,
+          children: [
+            {
+              title: &apos;3333-1&apos;
+            },
+            {
+              title: &apos;3333-2&apos;,
+              children: [
+                {
+                  title: &apos;3333-2-1&apos;
+                },
+                {
+                  title: &apos;3333-2-2&apos;
+                },
+                {
+                  title: &apos;3333-2-3&apos;,
+                  children: [
+                    {
+                      title: &apos;3333-2-3-1&apos;
+                    },
+                    {
+                      title: &apos;3333-2-3-2&apos;
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  components: {
+    Recursive  
+  },
+}
+&lt;/script&gt;
+</code></pre><p>3、把父组件中的children和index接收过来，并给需要再次循环的地方调用自身（递归组件内必须有name值为组件名时，才能自己调用自己），并且加判断做循环终止条件和key值。</p>
+<pre><code>Recursive.vue
+&lt;template&gt;
+    //递归层级
+    &lt;ul&gt;
+        &lt;li&gt;{{parent.title}}&lt;li&gt;
+         &lt;template v-for=&quot;(item,i) in parent.children&quot;&gt;
+            &lt;li v-show=&quot;!item.children&quot; :key=&quot;`menu_${i}`&quot;&gt;{{item.title}}&lt;/li&gt;
+            &lt;Recursive v-show=&quot;item.children&quot; :key=&quot;`menu_${index}_${i}`&quot; :preat=&quot;item&quot;&gt;&lt;/Recursive&gt;
+        &lt;/template&gt; 
+    &lt;ul&gt;
+&lt;/template&gt;
+
+export default {
+  name: &apos;Recursive&apos;,
+  props:{
+       parent:{
+           type:Object,
+           default:() =&gt; ({})
+       },
+       index: Number
+  }
+}
+</code></pre><p>Jsx问题总结</p>
+<p>1、jsx中Vue组件名与原生标签名要用（i-）原生名做区分</p>
+<pre><code>比如：
+    retrun{
+          &lt;div&gt;
+              &lt;i-button&gt;&lt;i-buttom&gt;
+          &lt;/div&gt;
+    }
+</code></pre><p>2、iview的icon在jsx写小写标签，否则会报错</p>
+<pre><code>&lt;icon&gt;
+</code></pre><p>iview问题总结</p>
+<p>1、<upload>组件延迟上传</upload></p>
+<pre><code>文档中未提到的组建Upload组件的post()方法，用来延迟触发文件上传。
+
+&lt;Upload ref=&quot;upload&quot;&gt;&lt;Upload&gt;
+&lt;button @click=&quot;uploadclk&quot;&gt;&lt;button&gt;
+
+methods:{
+  handleUpload(){
+      this.$refs.upload.post(this.file)
+  }
+}
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue笔记/" rel="tag"># Vue笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/24/React笔记/" rel="next" title="React笔记">
+                <i class="fa fa-chevron-left"></i> React笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460"
+               alt="阿毛" />
+          <p class="site-author-name" itemprop="name">阿毛</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人在前端开发中遇到的一些问题总结</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿毛</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

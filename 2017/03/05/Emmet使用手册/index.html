@@ -1,0 +1,1224 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="开发工具," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。">
+<meta name="keywords" content="开发工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Emmet使用手册">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/Emmet使用手册/index.html">
+<meta property="og:site_name" content="Mar-x 个人博客">
+<meta property="og:description" content="Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2017/03/05/Emmet使用手册/images/emmet-p1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/05/Emmet使用手册/images/CheatSheet.jpg">
+<meta property="og:updated_time" content="2017-07-25T01:09:00.677Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Emmet使用手册">
+<meta name="twitter:description" content="Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。">
+<meta name="twitter:image" content="http://yoursite.com/2017/03/05/Emmet使用手册/images/emmet-p1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/05/Emmet使用手册/"/>
+
+
+
+
+
+  <title>Emmet使用手册 | Mar-x 个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mar-x 个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一位在前端的道路上奋斗的阿毛同学</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-Emmet使用手册 " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/05/Emmet使用手册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿毛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mar-x 个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Emmet使用手册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T21:36:10-05:00">
+                2017-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/实用工具/" itemprop="url" rel="index">
+                    <span itemprop="name">实用工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前端开发必备！Emmet使用手册"><a href="#前端开发必备！Emmet使用手册" class="headerlink" title="前端开发必备！Emmet使用手册"></a><center>前端开发必备！Emmet使用手册</center></h1><hr>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Emmet (前身为 Zen Coding) 是一个能大幅度提高前端开发效率的一个工具:</p>
+<center><img src="/2017/03/05/Emmet使用手册/images/emmet-p1.jpg" alt="Emmet"></center>
+
+<p>基本上，大多数的文本编辑器都会允许你存储和重用一些代码块，我们称之为“片段”。虽然片段能很好地推动你得生产力，但大多数的实现都有这样一个缺点：你必须先定义你得代码片段，并且不能再运行时进行拓展。</p>
+<p>Emmet把片段这个概念提高到了一个新的层次：你可以设置CSS形式的能够动态被解析的表达式，然后根据你所输入的缩写来得到相应的内容。Emmet是很成熟的并且非常适用于编写HTML/XML 和 CSS 代码的前端开发人员，但也可以用于编程语言。</p>
+<hr>
+<h3 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h3><p>在编辑器中输入缩写代码：ul&gt;li*5 ，然后按下拓展键（默认为tab），即可得到代码片段：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h3 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h3><p><strong>Emmet为大部分流行的编辑器都提供了安装插件，下面是它们的下载链接：</strong></p>
+<ul>
+<li><a href="https://github.com/sergeche/emmet-sublime#readme" target="_blank" rel="external">Sublime Text</a></li>
+<li><a href="https://github.com/emmetio/emmet-eclipse#readme" target="_blank" rel="external">Eclipse/Aptana</a></li>
+<li><a href="https://github.com/emmetio/Emmet.tmplugin#readme" target="_blank" rel="external">TextMate</a></li>
+<li><a href="https://github.com/emmetio/Emmet.codaplugin#readme" target="_blank" rel="external">Coda</a></li>
+<li><a href="https://github.com/emmetio/Emmet.sugar#readme" target="_blank" rel="external">Espresso</a></li>
+<li><a href="https://github.com/sergeche/emmet.chocmixin#readme" target="_blank" rel="external">Chocolat</a></li>
+<li><a href="http://community.activestate.com/xpi/zen-coding" target="_blank" rel="external">Komodo Edit</a></li>
+<li><a href="https://github.com/emmetio/npp#readme" target="_blank" rel="external">Notepad++</a></li>
+<li><a href="https://github.com/emmetio/pspad" target="_blank" rel="external">PSPad</a></li>
+<li><a href="https://github.com/emmetio/textarea" target="_blank" rel="external">textarea</a></li>
+<li><a href="https://github.com/emmetio/codemirror#readme" target="_blank" rel="external">CodeMirror</a></li>
+<li><a href="https://github.com/emmetio/brackets-emmet#readme" target="_blank" rel="external">Brackets</a></li>
+<li><a href="https://github.com/emmetio/netbeans#readme" target="_blank" rel="external">NetBeans</a></li>
+<li><a href="https://github.com/emmetio/dreamweaver#readme" target="_blank" rel="external">Adobe Dreamweaver</a></li>
+</ul>
+<h3 id="在线编辑器的支持："><a href="#在线编辑器的支持：" class="headerlink" title="在线编辑器的支持："></a>在线编辑器的支持：</h3><ul>
+<li><a href="http://jsfiddle.net/" target="_blank" rel="external">JSFiddle</a></li>
+<li><a href="http://jsbin.com/" target="_blank" rel="external">JS Bin</a></li>
+<li><a href="http://codepen.io/" target="_blank" rel="external">CodePen</a></li>
+<li><a href="http://icecoder.net/" target="_blank" rel="external">ICEcoder</a></li>
+<li><a href="http://www.divshot.com/" target="_blank" rel="external">Divshot</a></li>
+<li><a href="http://codio.com/" target="_blank" rel="external">Codio</a></li>
+</ul>
+<h3 id="第三方插件的支持"><a href="#第三方插件的支持" class="headerlink" title="第三方插件的支持"></a>第三方插件的支持</h3><p>下面这些编辑器的插件都是由第三方开发者所提供的，所以可能并不支持所有Emmet的功能和特性。</p>
+<ul>
+<li><a href="http://www.uvviewsoft.com/synwrite/" target="_blank" rel="external">SynWrite</a></li>
+<li><a href="http://www.jetbrains.com/webstorm/" target="_blank" rel="external">WebStorm</a></li>
+<li><a href="http://www.jetbrains.com/phpstorm/" target="_blank" rel="external">PhpStorm</a></li>
+<li><a href="https://github.com/mattn/emmet-vim" target="_blank" rel="external">Vim</a></li>
+<li><a href="http://www.htmlkit.com/" target="_blank" rel="external">HTML-Kit</a></li>
+<li><a href="http://wiki.hippoedit.com/plugins/emmet" target="_blank" rel="external">HippoEDIT</a></li>
+<li><a href="http://www.codelobster.com/" target="_blank" rel="external">CodeLobster PHP Edition</a></li>
+<li><a href="https://github.com/e-sites/tinymce-emmet-plugin#readme" target="_blank" rel="external">TinyMCE</a></li>
+</ul>
+<p><strong>因为我也是Sublime Text的使用者，所以下面为大家介绍一下sublime text中Emmet的安装方法：</strong></p>
+<p><strong>步骤一：</strong>首先你需要为sublime text安装Package Control组件：</p>
+<ul>
+<li><p>按 Ctrl+` 调出sublime text的console</p>
+</li>
+<li><p>粘贴以下代码到底部命令行并回车：</p>
+<p> import urllib2,os;<br> pf=’Package Control.sublime-package’;<br> ipp=sublime.installedpackagespath();<br> os.makedirs(ipp) if not os.path.exists(ipp) else None;<br> open(os.path.join(ipp,pf),’wb’).write(urllib2.urlopen(‘<a href="http://sublime.wbond.net/&#39;+pf.replace(" target="_blank" rel="external">http://sublime.wbond.net/&#39;+pf.replace(</a>‘ ‘,’%20’)).read())</p>
+</li>
+<li><p>重启Sublime Text</p>
+</li>
+<li><p>在 <code>Perferences-&gt;package settings</code> 中看到package control，则表示安装成功</p>
+</li>
+</ul>
+<p><strong>步骤二：</strong>使用Package Control安装Emmet插件：</p>
+<ul>
+<li>按Ctrl+Shift+P命令板</li>
+<li>输入install然后选择install Package，然后输入emmet找到 Emmet Css Snippets，点击就可以自动完成安装。</li>
+</ul>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>emmet的使用方法也非常简单，以sublime text为例，直接在编辑器中输入HTML或CSS的代码的缩写，然后按tab键就可以拓展为完整的代码片段。（如果与已有的快捷键有冲突的话，可以自行在编辑器中将拓展键设为其他快捷键）</p>
+<hr>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h2><h4 id="后代：-gt"><a href="#后代：-gt" class="headerlink" title="后代：&gt;"></a>后代：&gt;</h4><p><strong>缩写：</strong>nav&gt;ul&gt;li</p>
+<pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre><h4 id="兄弟："><a href="#兄弟：" class="headerlink" title="兄弟：+"></a>兄弟：+</h4><p><strong>缩写：</strong>div+p+bq</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+</code></pre><h4 id="上级："><a href="#上级：" class="headerlink" title="上级：^"></a>上级：^</h4><p><strong>缩写：</strong>div+div&gt;p&gt;span+em^bq</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;
+    &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+    &lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+</code></pre><p><strong>缩写：</strong>div+div&gt;p&gt;span+em^^bq</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;
+    &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
+</code></pre><h4 id="分组："><a href="#分组：" class="headerlink" title="分组：()"></a>分组：()</h4><p><strong>缩写：</strong>div&gt;(header&gt;ul&gt;li*2&gt;a)+footer&gt;p</p>
+<pre><code>&lt;div&gt;
+    &lt;header&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre><p><strong>缩写：</strong>(div&gt;dl&gt;(dt+dd)*3)+footer&gt;p</p>
+<pre><code>&lt;div&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+        &lt;dt&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+        &lt;dt&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+&lt;footer&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre><h4 id="乘法："><a href="#乘法：" class="headerlink" title="乘法：*"></a>乘法：*</h4><p><strong>缩写：</strong>ul&gt;li*5</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h4 id="自增符号："><a href="#自增符号：" class="headerlink" title="自增符号：$"></a>自增符号：$</h4><p><strong>缩写：</strong>ul&gt;li.item$*5</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item1&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item2&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item4&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item5&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><strong>缩写：</strong>h$[title=item$]{Header $}*3</p>
+<pre><code>&lt;h1 title=&quot;item1&quot;&gt;Header 1&lt;/h1&gt;
+&lt;h2 title=&quot;item2&quot;&gt;Header 2&lt;/h2&gt;
+&lt;h3 title=&quot;item3&quot;&gt;Header 3&lt;/h3&gt;
+</code></pre><p><strong>缩写：</strong>ul&gt;li.item$$$*5</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item001&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item002&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item003&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item004&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item005&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><strong>缩写：</strong>ul&gt;li.item$@-*5</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item5&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item4&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item2&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item1&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><strong>缩写：</strong>ul&gt;li.item$@3*5</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item4&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item5&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item6&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item7&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h4 id="ID和类属性"><a href="#ID和类属性" class="headerlink" title="ID和类属性"></a>ID和类属性</h4><p><strong>缩写：</strong>#header</p>
+<pre><code>&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>缩写：</strong>.title</p>
+<pre><code>&lt;div class=&quot;title&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>缩写：</strong>form#search.wide</p>
+<pre><code>&lt;form id=&quot;search&quot; class=&quot;wide&quot;&gt;&lt;/form&gt;
+</code></pre><p><strong>缩写：</strong>p.class1.class2.class3</p>
+<pre><code>&lt;p class=&quot;class1 class2 class3&quot;&gt;&lt;/p&gt;
+</code></pre><h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4><p><strong>缩写：</strong>p[title=”Hello world”]</p>
+<pre><code>&lt;p title=&quot;Hello world&quot;&gt;&lt;/p&gt;
+</code></pre><p><strong>缩写：</strong>td[rowspan=2 colspan=3 title]</p>
+<pre><code>&lt;td rowspan=&quot;2&quot; colspan=&quot;3&quot; title=&quot;&quot;&gt;&lt;/td&gt;
+</code></pre><p><strong>缩写：</strong>[a=’value1’ b=”value2”]</p>
+<pre><code>&lt;div a=&quot;value1&quot; b=&quot;value2&quot;&gt;&lt;/div&gt;
+</code></pre><h4 id="文本："><a href="#文本：" class="headerlink" title="文本：{}"></a>文本：{}</h4><p><strong>缩写：</strong>a{Click me}</p>
+<pre><code>&lt;a href=&quot;&quot;&gt;Click me&lt;/a&gt;
+</code></pre><p><strong>缩写：</strong>p&gt;{Click }+a{here}+{ to continue}</p>
+<pre><code>&lt;p&gt;Click &lt;a href=&quot;&quot;&gt;here&lt;/a&gt; to continue&lt;/p&gt;
+</code></pre><h4 id="隐式标签"><a href="#隐式标签" class="headerlink" title="隐式标签"></a>隐式标签</h4><p><strong>缩写：</strong>.class</p>
+<pre><code>&lt;div class=&quot;class&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>缩写：</strong>em&gt;.class</p>
+<pre><code>&lt;em&gt;&lt;span class=&quot;class&quot;&gt;&lt;/span&gt;&lt;/em&gt;
+</code></pre><p><strong>缩写：</strong>ul&gt;.class</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;class&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><strong>缩写：</strong>table&gt;.row&gt;.col</p>
+<pre><code>&lt;table&gt;
+    &lt;tr class=&quot;row&quot;&gt;
+        &lt;td class=&quot;col&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre><hr>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p><em>所有未知的缩写都会转换成标签，例如，foo → <foo></foo></em></p>
+<p><strong>缩写：</strong>!</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong>缩写：</strong>a</p>
+<p><a href=""></a><br>缩写：a:link</p>
+<pre><code>&lt;a href=&quot;http://&quot;&gt;&lt;/a&gt;
+</code></pre><p><strong>缩写：</strong>a:mail</p>
+<pre><code>&lt;a href=&quot;mailto:&quot;&gt;&lt;/a&gt;
+</code></pre><p><strong>缩写：</strong>abbr</p>
+<pre><code>&lt;abbr title=&quot;&quot;&gt;&lt;/abbr&gt;
+</code></pre><p><strong>缩写：</strong>acronym</p>
+<pre><code>&lt;acronym title=&quot;&quot;&gt;&lt;/acronym&gt;
+</code></pre><p><strong>缩写：</strong>base</p>
+<pre><code>&lt;base href=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>basefont</p>
+<pre><code>&lt;basefont /&gt;
+</code></pre><p><strong>缩写：</strong>br</p>
+<pre><code>&lt;br /&gt;
+</code></pre><p><strong>缩写：</strong>frame</p>
+<pre><code>&lt;frame /&gt;
+</code></pre><p><strong>缩写：</strong>hr</p>
+<pre><code>&lt;hr /&gt;
+</code></pre><p><strong>缩写：</strong>bdo</p>
+<pre><code>&lt;bdo dir=&quot;&quot;&gt;&lt;/bdo&gt;
+</code></pre><p><em>缩写：*</em>bdo:r</p>
+<pre><code>&lt;bdo dir=&quot;rtl&quot;&gt;&lt;/bdo&gt;
+</code></pre><p><strong>缩写：</strong>bdo:l</p>
+<pre><code>&lt;bdo dir=&quot;ltr&quot;&gt;&lt;/bdo&gt;
+</code></pre><p><strong>缩写：</strong>col</p>
+<pre><code>&lt;col /&gt;
+</code></pre><p><strong>缩写：</strong>link</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;&quot; /&gt;
+</code></pre><p>缩写：link:css</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+</code></pre><p>缩写：link:print</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;print.css&quot; media=&quot;print&quot; /&gt;
+</code></pre><p>缩写：link:favicon</p>
+<pre><code>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot; /&gt;
+</code></pre><p>缩写：link:touch</p>
+<pre><code>&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;favicon.png&quot; /&gt;
+</code></pre><p>缩写：link:rss</p>
+<pre><code>&lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot; href=&quot;rss.xml&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>link:atom</p>
+<pre><code>&lt;link rel=&quot;alternate&quot; type=&quot;application/atom+xml&quot; title=&quot;Atom&quot; href=&quot;atom.xml&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>meta</p>
+<pre><code>&lt;meta /&gt;
+</code></pre><p><strong>缩写：</strong>meta:utf</p>
+<pre><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=UTF-8&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>meta:win</p>
+<pre><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=windows-1251&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>meta:vp</p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>meta:compat</p>
+<pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=7&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>style</p>
+<pre><code>&lt;style&gt;&lt;/style&gt;
+</code></pre><p><strong>缩写：</strong>script</p>
+<pre><code>&lt;script&gt;&lt;/script&gt;
+</code></pre><p><strong>缩写：</strong>script:src</p>
+<pre><code>&lt;script src=&quot;&quot;&gt;&lt;/script&gt;
+</code></pre><p><strong>缩写：</strong>img</p>
+<pre><code>&lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>iframe</p>
+<pre><code>&lt;iframe src=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</code></pre><p><strong>缩写：</strong>embed</p>
+<pre><code>&lt;embed src=&quot;&quot; type=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>object</p>
+<pre><code>&lt;object data=&quot;&quot; type=&quot;&quot;&gt;&lt;/object&gt;
+</code></pre><p><strong>缩写：</strong>param</p>
+<pre><code>&lt;param name=&quot;&quot; value=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>map</p>
+<pre><code>&lt;map name=&quot;&quot;&gt;&lt;/map&gt;
+</code></pre><p><strong>缩写：</strong>area</p>
+<pre><code>&lt;area shape=&quot;&quot; coords=&quot;&quot; href=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>area:d</p>
+<pre><code>&lt;area shape=&quot;default&quot; href=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>area:c</p>
+<pre><code>&lt;area shape=&quot;circle&quot; coords=&quot;&quot; href=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>area:r</p>
+<pre><code>&lt;area shape=&quot;rect&quot; coords=&quot;&quot; href=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>area:p</p>
+<pre><code>&lt;area shape=&quot;poly&quot; coords=&quot;&quot; href=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>form</p>
+<pre><code>&lt;form action=&quot;&quot;&gt;&lt;/form&gt;
+</code></pre><p><strong>缩写：</strong>form:get</p>
+<pre><code>&lt;form action=&quot;&quot; method=&quot;get&quot;&gt;&lt;/form&gt;
+</code></pre><p><strong>缩写：</strong>form:post</p>
+<pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;&lt;/form&gt;
+</code></pre><p><strong>缩写：**</strong>label</p>
+<pre><code>&lt;label for=&quot;&quot;&gt;&lt;/label&gt;
+</code></pre><p><strong>缩写：</strong>input</p>
+<pre><code>&lt;input type=&quot;text&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>inp</p>
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:hidden</p>
+<p>别名：input[type=hidden name]</p>
+<pre><code>&lt;input type=&quot;hidden&quot; name=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:h</p>
+<p>别名：input:hidden</p>
+<pre><code>&lt;input type=&quot;hidden&quot; name=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:text, input:t</p>
+<p>别名：inp</p>
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:search</p>
+<p>别名：inp[type=search]</p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:email</p>
+<p>别名：inp[type=email]</p>
+<pre><code>&lt;input type=&quot;email&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:url</p>
+<p>别名：inp[type=url]</p>
+<pre><code>&lt;input type=&quot;url&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:password</p>
+<p>别名：inp[type=password]</p>
+<pre><code>&lt;input type=&quot;password&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:p</p>
+<p>别名：input:password</p>
+<pre><code>&lt;input type=&quot;password&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:datetime</p>
+<p>别名：inp[type=datetime]</p>
+<pre><code>&lt;input type=&quot;datetime&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:date</p>
+<p>别名：inp[type=date]</p>
+<pre><code>&lt;input type=&quot;date&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:datetime-local</p>
+<p>别名：inp[type=datetime-local]</p>
+<pre><code>&lt;input type=&quot;datetime-local&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:month</p>
+<p>别名：inp[type=month]</p>
+<pre><code>&lt;input type=&quot;month&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:week</p>
+<p>别名：inp[type=week]</p>
+<pre><code>&lt;input type=&quot;week&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:time</p>
+<p>别名：inp[type=time]</p>
+<pre><code>&lt;input type=&quot;time&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:number</p>
+<p>别名：inp[type=number]</p>
+<pre><code>&lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:color</p>
+<p>别名：inp[type=color]</p>
+<pre><code>&lt;input type=&quot;color&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:checkbox</p>
+<p>别名：inp[type=checkbox]</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:c</p>
+<p>别名：input:checkbox</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:radio</p>
+<p>别名：inp[type=radio]</p>
+<pre><code>&lt;input type=&quot;radio&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:r</p>
+<p>别名：input:radio</p>
+<pre><code>&lt;input type=&quot;radio&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:range</p>
+<p>别名：inp[type=range]</p>
+<pre><code>&lt;input type=&quot;range&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:file</p>
+<p>别名：inp[type=file]</p>
+<pre><code>&lt;input type=&quot;file&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:f</p>
+<p>别名：input:file</p>
+<pre><code>&lt;input type=&quot;file&quot; name=&quot;&quot; id=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:submit</p>
+<pre><code>&lt;input type=&quot;submit&quot; value=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:s</p>
+<p>别名：input:submit</p>
+<pre><code>&lt;input type=&quot;submit&quot; value=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:image</p>
+<pre><code>&lt;input type=&quot;image&quot; src=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:i</p>
+<p>别名：input:image</p>
+<pre><code>&lt;input type=&quot;image&quot; src=&quot;&quot; alt=&quot;&quot; /&gt;
+</code></pre><p>**缩写：input:button</p>
+<pre><code>&lt;input type=&quot;button&quot; value=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>input:b</p>
+<p>别名：input:button</p>
+<pre><code>&lt;input type=&quot;button&quot; value=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>isindex</p>
+<pre><code>&lt;isindex /&gt;
+</code></pre><p><strong>缩写：</strong>input:reset</p>
+<p>别名：input:button[type=reset]</p>
+<pre><code>&lt;input type=&quot;reset&quot; value=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>select</p>
+<pre><code>&lt;select name=&quot;&quot; id=&quot;&quot;&gt;&lt;/select&gt;
+</code></pre><p><strong>缩写：</strong>option</p>
+<pre><code>&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+</code></pre><p><strong>缩写：</strong>textarea</p>
+<pre><code>&lt;textarea name=&quot;&quot; id=&quot;&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+</code></pre><p><strong>缩写：</strong>menu:context</p>
+<p>别名：menu[type=context]&gt;</p>
+<pre><code>&lt;menu type=&quot;context&quot;&gt;&lt;/menu&gt;
+</code></pre><p><strong>缩写：</strong>menu:c</p>
+<p>别名：menu:context</p>
+<pre><code>&lt;menu type=&quot;context&quot;&gt;&lt;/menu&gt;
+</code></pre><p><strong>缩写：</strong>menu:toolbar</p>
+<p>别名：menu[type=toolbar]&gt;</p>
+<pre><code>&lt;menu type=&quot;toolbar&quot;&gt;&lt;/menu&gt;
+</code></pre><p><strong>缩写</strong>：menu:t</p>
+<p>别名：menu:toolbar</p>
+<pre><code>&lt;menu type=&quot;toolbar&quot;&gt;&lt;/menu&gt;
+</code></pre><p><strong>缩写：</strong>video</p>
+<pre><code>&lt;video src=&quot;&quot;&gt;&lt;/video&gt;
+</code></pre><p><strong>缩写：</strong>audio</p>
+<pre><code>&lt;audio src=&quot;&quot;&gt;&lt;/audio&gt;
+</code></pre><p><strong>缩写：</strong>html:xml</p>
+<pre><code>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;/html&gt;
+</code></pre><p><strong>缩写：</strong>keygen</p>
+<pre><code>&lt;keygen /&gt;
+</code></pre><p><strong>缩写：</strong>command</p>
+<pre><code>&lt;command /&gt;
+</code></pre><p><strong>缩写：</strong>bq</p>
+<p>别名：blockquote</p>
+<pre><code>&lt;blockquote&gt;&lt;/blockquote&gt;
+</code></pre><p><strong>缩写：</strong>acr</p>
+<p>别名：acronym</p>
+<pre><code>&lt;acronym title=&quot;&quot;&gt;&lt;/acronym&gt;
+</code></pre><p><strong>缩写：</strong>fig</p>
+<p>别名：figure</p>
+<pre><code>&lt;figure&gt;&lt;/figure&gt;
+</code></pre><p><strong>缩写：</strong>figc</p>
+<p>别名：figcaption</p>
+<pre><code>&lt;figcaption&gt;&lt;/figcaption&gt;
+</code></pre><p><strong>缩写：</strong>ifr</p>
+<p>别名：iframe</p>
+<pre><code>&lt;iframe src=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</code></pre><p><strong>缩写：</strong>emb</p>
+<p>别名：embed</p>
+<pre><code>&lt;embed src=&quot;&quot; type=&quot;&quot; /&gt;
+</code></pre><p><strong>缩写：</strong>obj</p>
+<p>别名：object</p>
+<pre><code>&lt;object data=&quot;&quot; type=&quot;&quot;&gt;&lt;/object&gt;
+</code></pre><p><strong>缩写：</strong>src</p>
+<p>别名：source</p>
+<pre><code>&lt;source&gt;&lt;/source&gt;
+</code></pre><p><strong>缩写：</strong>cap</p>
+<p>别名：caption</p>
+<pre><code>&lt;caption&gt;&lt;/caption&gt;
+</code></pre><p><strong>缩写：</strong>colg</p>
+<p>别名：colgroup</p>
+<pre><code>&lt;colgroup&gt;&lt;/colgroup&gt;
+</code></pre><p><strong>缩写：</strong>fst, fset</p>
+<p>别名：fieldset</p>
+<pre><code>&lt;fieldset&gt;&lt;/fieldset&gt;
+</code></pre><p><strong>缩写：</strong>btn</p>
+<p>别名：button</p>
+<pre><code>&lt;button&gt;&lt;/button&gt;
+</code></pre><p><strong>缩写：</strong>btn:b</p>
+<p>别名：button[type=button]</p>
+<pre><code>&lt;button type=&quot;button&quot;&gt;&lt;/button&gt;
+</code></pre><p><strong>缩写：</strong>btn:r</p>
+<p>别名：button[type=reset]</p>
+<pre><code>&lt;button type=&quot;reset&quot;&gt;&lt;/button&gt;
+</code></pre><p><strong>缩写：</strong>btn:s</p>
+<p>别名：button[type=submit]</p>
+<pre><code>&lt;button type=&quot;submit&quot;&gt;&lt;/button&gt;
+</code></pre><p>附：<center><img src="/2017/03/05/Emmet使用手册/images/CheatSheet.jpg" alt="cheat-sheet"></center></p>
+<p>原文: <a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html" target="_blank" rel="external">http://www.w3cplus.com/tools/emmet-cheat-sheet.html</a> © w3cplus.com</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/开发工具/" rel="tag"># 开发工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/02/mysql使用/" rel="next" title="mysql使用">
+                <i class="fa fa-chevron-left"></i> mysql使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/30/Browser-sync浏览器就自动刷新/" rel="prev" title="Browser-sync浏览器同步测试工具">
+                Browser-sync浏览器同步测试工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/26414149?v=3&s=460"
+               alt="阿毛" />
+          <p class="site-author-name" itemprop="name">阿毛</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人在前端开发中遇到的一些问题总结</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端开发必备！Emmet使用手册"><span class="nav-number">1.</span> <span class="nav-text">前端开发必备！Emmet使用手册</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.0.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用示例："><span class="nav-number">1.0.2.</span> <span class="nav-text">使用示例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载和安装"><span class="nav-number">1.0.3.</span> <span class="nav-text">下载和安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线编辑器的支持："><span class="nav-number">1.0.4.</span> <span class="nav-text">在线编辑器的支持：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方插件的支持"><span class="nav-number">1.0.5.</span> <span class="nav-text">第三方插件的支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.0.6.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#后代：-gt"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">后代：></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#兄弟："><span class="nav-number">1.1.0.2.</span> <span class="nav-text">兄弟：+</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上级："><span class="nav-number">1.1.0.3.</span> <span class="nav-text">上级：^</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组："><span class="nav-number">1.1.0.4.</span> <span class="nav-text">分组：()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#乘法："><span class="nav-number">1.1.0.5.</span> <span class="nav-text">乘法：*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自增符号："><span class="nav-number">1.1.0.6.</span> <span class="nav-text">自增符号：$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ID和类属性"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">ID和类属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义属性"><span class="nav-number">1.1.0.8.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本："><span class="nav-number">1.1.0.9.</span> <span class="nav-text">文本：{}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式标签"><span class="nav-number">1.1.0.10.</span> <span class="nav-text">隐式标签</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.2.</span> <span class="nav-text">HTML</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿毛</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
